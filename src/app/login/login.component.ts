@@ -20,6 +20,7 @@ export class LoginComponent implements OnInit {
   doLogin(){
    const resp =  this.service.login(this.username, this.password);
    resp.subscribe(data => {
+     sessionStorage.setItem('basicauth', btoa(this.username + ':' + this.password)) ;
      console.log(data);
     });
   }

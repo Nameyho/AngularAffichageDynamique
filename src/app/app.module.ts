@@ -7,7 +7,9 @@ import { HomeComponent } from './home/home.component';
 import {RestapiService} from './restapi.service';
 import {AppRoutingModule} from './app-routing.module';
 import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {BasicAuthInterceptService} from './service/basic-auth-intercept.service';
+
 
 @NgModule({
   declarations: [
@@ -21,7 +23,11 @@ import {HttpClientModule} from '@angular/common/http';
     FormsModule,
     HttpClientModule
   ],
-  providers: [RestapiService],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptService, multi: true
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
