@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {concat} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -28,5 +29,11 @@ export class RestapiService {
     console.log(localStorage.getItem('authString'));
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
     return this.http.get('http://localhost:8080/cours', {headers});
+  }
+
+  public getCoursid(id: any){
+    console.log(id);
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.get(('http://localhost:8080/cours/').concat(id), {headers});
   }
 }

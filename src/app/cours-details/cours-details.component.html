@@ -1,3 +1,6 @@
+<!DOCTYPE html>
+<html lang="fr">
+
 <head>
   <title>Affichage Dynamique</title>
   <meta charset="utf-8">
@@ -7,6 +10,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </head>
+
+<body>
 
 <nav class="navbar navbar-expand-sm bg-light .sticky-top">
   <!-- Brand/logo -->
@@ -34,26 +39,7 @@
     </li>
   </ul>
 </nav>
-
-<div class="container">
-  <table class="table table-hover">
-    <thead  class="thead-dark">
-    <tr>
-      <th>nom</th>
-      <th>options</th>
-
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let cours of cours">
-      <td>{{cours.name}} </td>
-      <td class="btn btn-info" routerLink="/details/{{cours.idRole}}"> détails</td>
-      <td class="btn btn-danger"> Supprimer</td>
-    </tr>
-
-    </tbody>
-  </table>
+<div *ngIf="cours">
+  <h2>{{cours.name}}</h2>
 </div>
-
-
 

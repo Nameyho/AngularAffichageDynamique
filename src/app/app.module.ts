@@ -10,6 +10,7 @@ import {FormsModule} from '@angular/forms';
 import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {BasicAuthInterceptService} from './service/basic-auth-intercept.service';
 import { CoursComponent } from './cours/cours.component';
+import { CoursDetailsComponent } from './cours-details/cours-details.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { CoursComponent } from './cours/cours.component';
     AppComponent,
     LoginComponent,
     HomeComponent,
-    CoursComponent
+    CoursComponent,
+    CoursDetailsComponent
   ],
   imports: [
     BrowserModule,
