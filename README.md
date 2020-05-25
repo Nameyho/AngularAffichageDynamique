@@ -1,6 +1,10 @@
 # AngularAffichageDynamique
 
 21 avril : petite mise a jour par rapport a la sécurité et la connection avec le front end
+22 mai : ajout de la liaison front-end , back end avec interceptor
+
+
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.4.
 
