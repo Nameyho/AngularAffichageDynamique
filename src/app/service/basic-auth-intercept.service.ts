@@ -14,12 +14,12 @@ export class BasicAuthInterceptService implements HttpInterceptor{
   intercept(req: HttpRequest<any>, next: HttpHandler) {
 
   console.log('interceptor');
-  console.log(sessionStorage.getItem('username'));
-
-    if (sessionStorage.getItem('username') && sessionStorage.getItem('basicauth')) {
+  console.log(localStorage.getItem('username'));
+  console.log(localStorage.getItem('basicauth'));
+    if (localStorage.getItem('username') && localStorage.getItem('basicauth')) {
       req = req.clone({
         setHeaders: {
-          Authorization: sessionStorage.getItem('basicauth')
+          Authorization: localStorage.getItem('basicauth')
         }
       });
     }

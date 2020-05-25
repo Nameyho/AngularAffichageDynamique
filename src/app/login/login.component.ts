@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {RestapiService} from '../restapi.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   password: string;
   message: any;
 
-  constructor(private service: RestapiService) { }
+  constructor(private service: RestapiService, private router: Router) { }
 
   ngOnInit(): void {
   }
@@ -22,6 +23,7 @@ export class LoginComponent implements OnInit {
    resp.subscribe(data => {
      sessionStorage.setItem('basicauth', btoa(this.username + ':' + this.password)) ;
      console.log(data);
+     this.router.navigate(["/home"]);
     });
   }
 

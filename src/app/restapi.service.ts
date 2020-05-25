@@ -10,20 +10,23 @@ export class RestapiService {
 
   public login(username: string, password: string){
 
-    const headers = new HttpHeaders({Authorization : 'basic  ' + btoa(username + ':' + password)});
+    const headers = new HttpHeaders({Authorization : 'Basic  ' + btoa(username + ':' + password)});
+    localStorage.setItem('username', username);
 
-    console.log(headers);
-    sessionStorage.setItem('username', username);
     let authString = 'Basic ' + btoa(username + ':' + password);
-    sessionStorage.setItem('basicauth', authString);
+    localStorage.setItem('basicauth', authString);
 
-    return this.http.get('http://localhost:8080/persons', {headers});
+    return this.http.get('http://localhost:8080/resource', {headers});
   }
 
-  public getPersons(username: string, password: string){
-
-
-    const headers = new HttpHeaders({Authorization : 'basic' + btoa(username + ':' + password)});
-    return this.http.get('http://localhost:8080/persons', {headers, responseType: 'text' as 'json'});
+  public getPersons(){
+    console.log(localStorage.getItem('authString'));
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.get('http://localhost:8080/persons', {headers});
+  }
+  public getCours(){
+    console.log(localStorage.getItem('authString'));
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.get('http://localhost:8080/cours', {headers});
   }
 }

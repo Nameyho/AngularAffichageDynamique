@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {RestapiService} from '../restapi.service';
+import {HttpHeaders} from '@angular/common/http';
 
 @Component({
   selector: 'app-home',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  person: any;
+  constructor(private service: RestapiService) { }
 
   ngOnInit(): void {
   }
+
+
+  getPerson(){
+  const response = this.service.getPersons();
+  response.subscribe(data => this.person = data);
+  }
+
+
 
 }
