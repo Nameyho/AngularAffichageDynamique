@@ -5,40 +5,24 @@
   <title>Affichage Dynamique</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
 </head>
 
 <body>
 
-<nav class="navbar navbar-expand-sm bg-light .sticky-top">
-  <!-- Brand/logo -->
-  <a class="navbar-brand" >Affichage Dynamique</a>
+<button mat-button [matMenuTriggerFor]="menu">Menu</button>
 
-  <!-- Links -->
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a routerLink="/cours" class="nav-link" href="#" >Liste des Cours</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Liste des absences</a>
-    </li>
+    <mat-menu #menu="matMenu" >Affichage Dynamique
 
-    <!-- Dropdown -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Elèves
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Listes</a>
-        <a class="dropdown-item" href="#">Résultat</a>
+      <a mat-button [routerLink]="['cours']"> Listes des Cours</a>
+      <a mat-button routerLink="/absences"> Listes des absences</a>
+      <a mat-button routerLink="/messages" > liste des messages</a>
+      <a mat-button routerLink="/eleves" > Eleves</a>
 
-      </div>
-    </li>
-  </ul>
-</nav>
+    </mat-menu>
+
+<router-outlet></router-outlet>
+
 
 
 </body>
