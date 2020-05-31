@@ -21,12 +21,12 @@ export class RestapiService {
   }
 
   public getPersons(){
-    console.log(localStorage.getItem('authString'));
+
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
     return this.http.get('http://localhost:8080/persons', {headers});
   }
   public getCours(){
-    console.log(localStorage.getItem('authString'));
+
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
     return this.http.get('http://localhost:8080/cours', {headers});
   }

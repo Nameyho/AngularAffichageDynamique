@@ -8,15 +8,20 @@ import {RestapiService} from '../restapi.service';
 })
 export class CoursComponent implements OnInit {
 
-  cours: any;
+  cours;
+
+  columnsToDisplay = ['name'];
+
+
   constructor(private service: RestapiService) { }
 
   ngOnInit(): void {
     this.getCours();
   }
-  getCours(){
+  getCours() {
     const response = this.service.getCours();
     response.subscribe(data => this.cours = data);
-    console.log(response);
+
+
   }
 }

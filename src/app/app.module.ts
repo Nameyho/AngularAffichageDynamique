@@ -16,7 +16,9 @@ import {MatSliderModule} from '@angular/material/slider';
 import {MatMenuModule} from '@angular/material/menu';
 import { AbsencesComponent } from './absences/absences.component';
 import { MessagesComponent } from './messages/messages.component';
-
+import {MatTableModule} from '@angular/material/table';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ElevesDetailsComponent } from './eleves-details/eleves-details.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,6 +29,7 @@ import { MessagesComponent } from './messages/messages.component';
     ElevesComponent,
     AbsencesComponent,
     MessagesComponent,
+    ElevesDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +39,8 @@ import { MessagesComponent } from './messages/messages.component';
     BrowserAnimationsModule,
     MatSliderModule,
     MatMenuModule,
+    MatTableModule,
+    NgbModule
 
 ],
 

@@ -8,6 +8,7 @@ import {CoursDetailsComponent} from './cours-details/cours-details.component';
 import {ElevesComponent} from './eleves/eleves.component';
 import {MessagesComponent} from './messages/messages.component';
 import {AbsencesComponent} from './absences/absences.component';
+import {ElevesDetailsComponent} from './eleves-details/eleves-details.component';
 
 
 
@@ -16,12 +17,14 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'home', component: HomeComponent,
   children: [
-    {path: 'cours', component: CoursComponent}
+    {path: 'cours', component: CoursComponent},
+    {path: 'detailscours/:id', component: CoursDetailsComponent},
+    {path : 'detailseleve/:id', component: ElevesDetailsComponent},
+    {path : 'eleves', component : ElevesComponent},
+    {path : 'messages', component : MessagesComponent},
+    {path : 'absences', component : AbsencesComponent},
   ]},
-  {path: 'details/:id', component: CoursDetailsComponent},
-  {path : 'eleves', component : ElevesComponent},
-  {path : 'messages', component : MessagesComponent},
-  {path : 'absences', component : AbsencesComponent},
+
 
 ];
 

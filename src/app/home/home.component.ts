@@ -16,10 +16,6 @@ export class HomeComponent implements OnInit {
   }
 
 
-  getPerson(){
-  const response = this.service.getPersons();
-  response.subscribe(data => this.person = data);
-  }
 
 
 

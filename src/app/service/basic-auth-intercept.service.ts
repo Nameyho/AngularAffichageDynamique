@@ -13,9 +13,6 @@ export class BasicAuthInterceptService implements HttpInterceptor{
 
   intercept(req: HttpRequest<any>, next: HttpHandler) {
 
-  console.log('interceptor');
-  console.log(localStorage.getItem('username'));
-  console.log(localStorage.getItem('basicauth'));
     if (localStorage.getItem('username') && localStorage.getItem('basicauth')) {
       req = req.clone({
         setHeaders: {
@@ -23,6 +20,6 @@ export class BasicAuthInterceptService implements HttpInterceptor{
         }
       });
     }
-  return next.handle(req);
+    return next.handle(req);
   }
 }

@@ -1,58 +1,36 @@
 <head>
   <title>Affichage Dynamique</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
 
 </head>
 
-<!--
-<nav class="navbar navbar-expand-sm bg-light .sticky-top">
-  &lt;!&ndash; Brand/logo &ndash;&gt;
-  <a class="navbar-brand" >Affichage Dynamique</a>
 
-  &lt;!&ndash; Links &ndash;&gt;
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a routerLink="/cours" class="nav-link" href="#" >Liste des Cours</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Liste des absences</a>
-    </li>
 
-    &lt;!&ndash; Dropdown &ndash;&gt;
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Elèves
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Listes</a>
-        <a class="dropdown-item" href="#">Résultat</a>
 
-      </div>
-    </li>
-  </ul>
-</nav>
--->
-
-<div class="container">
-  <table class="table table-hover">
-    <thead  class="thead-dark">
+  <table  class="table table-striped">
+    <thead>
     <tr>
-      <th>nom</th>
-      <th>options</th>
+      <th scope="col">#</th>
+      <th scope="col" sortable="name">Nom </th>
+      <th> Détails</th>
 
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let cours of cours">
-      <td>{{cours.name}} </td>
-      <td class="btn btn-info" routerLink="/details/{{cours.idRole}}"> détails</td>
-      <td class="btn btn-danger"> Supprimer</td>
+    <tr *ngFor="let cours of cours, index as i">
+      <th scope="row">{{ i + 1 }}</th>
+      <td scope="row">{{cours.name}}</td>
+      <td scope="row">
+      <button type="button" class="btn btn-primary" routerLink="../detailscours/{{cours.idRole}}"> Détails</button>
+
+      </td>
+
     </tr>
 
     </tbody>
   </table>
-</div>
 
 
 

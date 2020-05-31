@@ -1,1 +1,28 @@
-<p>eleves works!</p>
+<table class="table table-striped">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Nom</th>
+    <th scope="col">Prenom</th>
+    <th scope="col">Email</th>
+    <th scope="col"> Date de naissance</th>
+    <th scope="col"> </th>
+  </tr>
+
+<thead>
+
+</thead>
+<tbody>
+<tr *ngFor="let person of person, index as i">
+  <th scope="row">{{ i + 1 }}</th>
+
+
+  <td scope="row">{{person.nom}}</td>
+  <td scope="row">{{person.prenom}}</td>
+  <td scope="row">{{person.email}}</td>
+  <td scope="row">{{person.dateAnniversaire}}</td>
+  <td scope="row">
+    <button type="button" class="btn btn-primary" routerLink="../detailseleve/{{person.idPerson}}"> Détails</button>
+  </td>
+</tr>
+</tbody>
+</table>

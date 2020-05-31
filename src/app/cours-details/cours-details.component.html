@@ -10,32 +10,7 @@
 
 <body>
 
-<nav class="navbar navbar-expand-sm bg-light .sticky-top">
-  <!-- Brand/logo -->
-  <a class="navbar-brand" >Affichage Dynamique</a>
 
-  <!-- Links -->
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a [routerLink]="['/cours/task/read']" class="nav-link" href="#" >Liste des Cours</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="#">Liste des absences</a>
-    </li>
-
-    <!-- Dropdown -->
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-        Elèves
-      </a>
-      <div class="dropdown-menu">
-        <a class="dropdown-item" href="#">Listes</a>
-        <a class="dropdown-item" href="#">Résultat</a>
-
-      </div>
-    </li>
-  </ul>
-</nav>
 <div *ngIf="cours">
   <h2>{{cours.name}}</h2>
 </div>

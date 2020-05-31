@@ -4,23 +4,19 @@
 <head>
   <title>Affichage Dynamique</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 </head>
 
 <body>
+<ul ngbNav #nav="ngbNav" class="nav-tabs">
+  <li ngbNavItem>
+<button btn-primary ngbButtonLabel [routerLink]="['cours'] ">Liste des cours</button>
+  </li>
+<button btn-primary ngbButtonLabel [routerLink]="['absences']"> Listes des absences</button>
+<button btn-primary ngbButtonLabel [routerLink]="['messages']" > liste des messages</button>
+<button btn-primary ngbButtonLabel [routerLink]="['eleves']" > Eleves</button>
 
-<button mat-button [matMenuTriggerFor]="menu">Menu</button>
-
-    <mat-menu #menu="matMenu" >Affichage Dynamique
-
-      <a mat-button [routerLink]="['cours']"> Listes des Cours</a>
-      <a mat-button routerLink="/absences"> Listes des absences</a>
-      <a mat-button routerLink="/messages" > liste des messages</a>
-      <a mat-button routerLink="/eleves" > Eleves</a>
-
-    </mat-menu>
-
+</ul>
 <router-outlet></router-outlet>
 
 

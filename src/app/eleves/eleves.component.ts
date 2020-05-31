@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {RestapiService} from '../restapi.service';
+import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-eleves',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ElevesComponent implements OnInit {
 
-  constructor() { }
+  person: any;
+  constructor(private service: RestapiService, private route: ActivatedRoute,) { }
 
   ngOnInit(): void {
+    this.getPerson();
   }
-
+  getPerson(){
+    const response = this.service.getPersons();
+    response.subscribe(data => this.person = data);
+  }
 }
