@@ -19,7 +19,7 @@
   <td scope="row">{{person.nom}}</td>
   <td scope="row">{{person.prenom}}</td>
   <td scope="row">{{person.email}}</td>
-  <td scope="row">{{person.dateAnniversaire}}</td>
+  <td scope="row">{{person.dateAnniversaire | date :'dd-LL-yyyy'}}</td>
   <td scope="row">
     <button type="button" class="btn btn-primary" routerLink="../detailseleve/{{person.idPerson}}"> Détails</button>
   </td>

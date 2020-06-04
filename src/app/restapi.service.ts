@@ -32,8 +32,12 @@ export class RestapiService {
   }
 
   public getCoursid(id: any){
-    console.log(id);
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
     return this.http.get(('http://localhost:8080/cours/').concat(id), {headers});
+  }
+
+  public getPersonid(id: any){
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.get(('http://localhost:8080/persons/').concat(id), {headers});
   }
 }
