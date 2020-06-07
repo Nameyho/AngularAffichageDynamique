@@ -40,4 +40,9 @@ export class RestapiService {
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
     return this.http.get(('http://localhost:8080/persons/').concat(id), {headers});
   }
+
+  public  getResultatByPerson(id:any){
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.get(('http://localhost:8080/resultat/').concat(id), {headers});
+  }
 }

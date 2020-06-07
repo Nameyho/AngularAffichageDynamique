@@ -10,10 +10,12 @@ import {ActivatedRoute} from '@angular/router';
 export class ElevesDetailsComponent implements OnInit {
 
    person: any;
+   resultat : any;
   constructor(private service: RestapiService, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.getInfo();
+    this.getresultatbyPerson();
   }
 
 
@@ -22,4 +24,11 @@ export class ElevesDetailsComponent implements OnInit {
     this.service.getPersonid(id)
       .subscribe(person => this.person = person);
   }
+
+  getresultatbyPerson(){
+    const id = this.route.snapshot.params.id;
+    this.service.getResultatByPerson(id)
+      .subscribe(resultat => this.resultat = resultat);
+  }
+
 }
