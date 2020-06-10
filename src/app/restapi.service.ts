@@ -1,11 +1,15 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {concat} from 'rxjs';
+import {Observable} from 'rxjs';
+import {Eleve} from './eleves/eleve';
+
 
 @Injectable({
   providedIn: 'root'
 })
 export class RestapiService {
+
+
 
   constructor(private http: HttpClient) { }
 
@@ -20,10 +24,10 @@ export class RestapiService {
     return this.http.get('http://localhost:8080/resource', {headers});
   }
 
-  public getPersons(){
+  public getPersons(): Observable<Eleve>{
 
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.get('http://localhost:8080/persons', {headers});
+    return this.http.get<Eleve>('http://localhost:8080/persons', {headers});
   }
   public getCours(){
 
@@ -43,6 +47,22 @@ export class RestapiService {
 
   public  getResultatByPerson(id:any){
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.get(('http://localhost:8080/resultat/').concat(id), {headers});
+    return this.http.get(('http://localhost:8080/persons/').concat(id), {headers});
   }
+
+  public addEleve(eleve: Eleve): Observable<Eleve>{
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.post<Eleve>( 'http://localhost:8080/persons' , eleve, {headers});
+  }
+
+  public updateEleve( eleve: Eleve, id:any): Observable<Eleve>{
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.put<Eleve>( 'http://localhost:8080/persons/'.concat(id) , eleve, {headers});
+  }
+  public deleteEleve(id:any){
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.delete(('http://localhost:8080/persons/').concat(id), {headers});
+  }
+
+
 }

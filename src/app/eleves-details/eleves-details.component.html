@@ -1,28 +1,28 @@
-<div *ngIf="person">
-  <h1>{{person.nom}} {{person.prenom}}</h1>
-  <h2>{{person.dateAnniversaire|date :'dd-LL-yyyy'}}</h2>
-
-<h2> Tableau des résultat</h2>
-
-  <table class="table table-striped">
-    <thead>
-    <th scope="col">#</th>
-    <th scope="col">Cours</th>
-    <th scope="col">Annee</th>
-    <th scope="col">resultat</th>
-    <th scope="col"> Réussite </th>
-
-    </thead>
-    <tbody>
-    <tr *ngFor="let resultat of resultat, index as i">
-    <th scope="row">{{i+1}}</th>
-      <td scope="row">{{resultat.nomCours}}</td>
-      <td scope="row">{{resultat.annee| date :'yyyy'}}</td>
-      <td scope="row">{{resultat.resultat}}</td>
-      <td scope="row">{{resultat.reussite}}</td>
-
-    </tbody>
-
-  </table>
+<div >
+  <label>Nom</label>
+  <input #nom  placeholder="{{person.nom}}"/>
+</div>
+<div >
+  <label>Prenom</label>
+  <input #prenom placeholder="{{person.prenom}}">
 </div>
 
+<div >
+  <label >Adresse Email</label>
+  <input  type="email" class="form-control" placeholder="{{person.email}}"  #email/>
+
+</div >
+
+<label >Date de naissance</label>
+<br>
+<a >{{person.dateAnniversaire  | date :'dd-LL-yyyy'}} </a>
+<div class="alert alert-light" role="alert">
+  Veillez à bien remplir la date !
+</div>
+<div >
+  <input  class="form-control" type="date"  id="example-datetime-local-input" #date>
+</div>
+
+
+<button type="button" class="btn btn-success" (click)="update(nom.value,prenom.value,email.value, date.value ); nom.value =''">   Sauvegarder</button>
+<button type="button" class="btn btn-danger" (click)="goBack()">   Annuler </button>

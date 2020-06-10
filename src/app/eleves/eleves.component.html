@@ -1,3 +1,4 @@
+<body>
 <table class="table table-striped">
   <tr>
     <th scope="col">#</th>
@@ -12,17 +13,51 @@
 
 </thead>
 <tbody>
-<tr *ngFor="let person of person, index as i">
+<tr *ngFor="let eleve of eleve, index as i">
   <th scope="row">{{ i + 1 }}</th>
 
 
-  <td scope="row">{{person.nom}}</td>
-  <td scope="row">{{person.prenom}}</td>
-  <td scope="row">{{person.email}}</td>
-  <td scope="row">{{person.dateAnniversaire | date :'dd-LL-yyyy'}}</td>
+  <td scope="row">{{eleve.nom}}</td>
+  <td scope="row">{{eleve.prenom}}</td>
+  <td scope="row">{{eleve.email}}</td>
+  <td scope="row">{{eleve.dateAnniversaire | date :'dd-LL-yyyy'}}</td>
   <td scope="row">
-    <button type="button" class="btn btn-primary" routerLink="../detailseleve/{{person.idPerson}}"> Détails</button>
+    <button type="button" class="btn btn-info" routerLink="../detailseleve/{{eleve.idPerson}}"> Détails </button>
+  </td>
+  <td scope="row">
+    <button type="button" class="btn btn-secondary" routerLink="../modifier/{{eleve.idPerson}}"> Modifier </button>
+
+  </td>
+
+  <td scope="row">
+    <button type="button" class="btn btn-danger" (click)="delete(eleve.idPerson)"> Supprimer </button>
+
   </td>
 </tr>
+
+<div >
+  <label>Nom</label>
+  <input #nom />
+</div>
+<div >
+  <label>Prenom</label>
+  <input #prenom>
+</div>
+
+<div >
+  <label >Adresse Email</label>
+  <input  type="email" class="form-control" placeholder="Email"  #email/>
+
+</div >
+
+<label >Date de naissance</label>
+<div >
+  <input  class="form-control" type="date"  id="example-datetime-local-input" #date>
+</div>
+
+<button type="button" class="btn btn-success" (click)="save(nom.value,prenom.value,email.value, date.value ); nom.value =''">   Sauvegarder</button>
 </tbody>
+
 </table>
+
+</body>

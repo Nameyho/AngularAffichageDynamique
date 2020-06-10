@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {RestapiService} from '../restapi.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Eleve} from './eleve';
 
 @Component({
   selector: 'app-eleves',
@@ -9,14 +10,33 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class ElevesComponent implements OnInit {
 
-  person: any;
-  constructor(private service: RestapiService, private route: ActivatedRoute,) { }
+
+
+   eleve: Eleve;
+
+
+
+
+  constructor(private service: RestapiService, private route: ActivatedRoute,private router: Router,  ) { }
 
   ngOnInit(): void {
     this.getPerson();
   }
-  getPerson(){
+  getPerson() {
     const response = this.service.getPersons();
-    response.subscribe(data => this.person = data);
+    response.subscribe(eleve => this.eleve = eleve);
+  }
+
+
+
+  save(nom: string, prenom: string, email: string , dateAnniversaire: string) {
+
+ this.service.addEleve({nom, prenom, email, dateAnniversaire} as Eleve).subscribe();
+
+}
+
+  delete(id :any) {
+    this.service.deleteEleve(id).subscribe().add();
+
   }
 }

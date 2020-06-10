@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {RestapiService} from '../restapi.service';
-import {HttpHeaders} from '@angular/common/http';
 import {Router} from '@angular/router';
 
 @Component({

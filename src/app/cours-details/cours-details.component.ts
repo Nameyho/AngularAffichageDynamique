@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {RestapiService} from '../restapi.service';
 import {ActivatedRoute} from '@angular/router';
-import {CoursComponent} from '../cours/cours.component';
 
 @Component({
   selector: 'app-cours-details',

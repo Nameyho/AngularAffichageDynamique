@@ -1,6 +1,6 @@
-import { TestBed } from '@angular/core/testing';
+import {TestBed} from '@angular/core/testing';
 
-import { BasicAuthInterceptService } from './basic-auth-intercept.service';
+import {BasicAuthInterceptService} from './basic-auth-intercept.service';
 
 describe('BasicAuthInterceptService', () => {
   let service: BasicAuthInterceptService;

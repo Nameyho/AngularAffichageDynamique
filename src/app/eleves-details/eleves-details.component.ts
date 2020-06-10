@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {RestapiService} from '../restapi.service';
-import {ActivatedRoute} from '@angular/router';
+import {ActivatedRoute, Router} from '@angular/router';
+import {Eleve} from '../eleves/eleve';
 
 @Component({
   selector: 'app-eleves-details',
@@ -9,15 +10,13 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class ElevesDetailsComponent implements OnInit {
 
-   person: any;
-   resultat : any;
-  constructor(private service: RestapiService, private route: ActivatedRoute) { }
+  constructor(private service: RestapiService, private route: ActivatedRoute,private router : Router) { }
 
+  person: any;
   ngOnInit(): void {
     this.getInfo();
-    this.getresultatbyPerson();
-  }
 
+  }
 
   getInfo(){
     const id = this.route.snapshot.params.id;
@@ -25,10 +24,12 @@ export class ElevesDetailsComponent implements OnInit {
       .subscribe(person => this.person = person);
   }
 
-  getresultatbyPerson(){
+  update(nom: string, prenom: string, email: string , dateAnniversaire: string) {
     const id = this.route.snapshot.params.id;
-    this.service.getResultatByPerson(id)
-      .subscribe(resultat => this.resultat = resultat);
+    this.service.updateEleve({nom, prenom, email, dateAnniversaire} as Eleve,id).subscribe();
+    this.router.navigate(["./home/eleves"]);
   }
 
-}
+  goBack() {
+    this.router.navigate(["./home/eleves"]);
+  }}

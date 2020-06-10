@@ -1,0 +1,30 @@
+<div *ngIf="person">
+  <h1>{{person.nom}} {{person.prenom}}</h1>
+  <h2>{{person.dateAnniversaire|date :'dd-LL-yyyy'}}</h2>
+
+<h2> Tableau des résultat</h2>
+
+  <table class="table table-striped">
+    <thead>
+    <th scope="col">#</th>
+    <th scope="col">Cours</th>
+    <th scope="col">Annee</th>
+    <th scope="col">resultat</th>
+    <th scope="col"> Réussite </th>
+
+    </thead>
+    <tbody>
+    <tr *ngFor="let resultat of resultat, index as i">
+    <th scope="row">{{i+1}}</th>
+      <td scope="row">{{resultat.nomCours}}</td>
+      <td scope="row">{{resultat.annee| date :'yyyy'}}</td>
+      <td scope="row">{{resultat.resultat}}</td>
+      <td scope="row">{{resultat.reussite}}</td>
+
+    </tbody>
+
+  </table>
+
+
+</div>
+
