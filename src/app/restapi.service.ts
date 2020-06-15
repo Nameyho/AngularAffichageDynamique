@@ -64,5 +64,10 @@ export class RestapiService {
     return this.http.delete(('http://localhost:8080/persons/').concat(id), {headers});
   }
 
+  public getMessages(){
+
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.get('http://localhost:8080/messages', {headers});
+  }
 
 }

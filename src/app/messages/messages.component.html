@@ -1,1 +1,39 @@
-<p>messages works!</p>
+<h2>Liste des messages</h2>
+<button type="button" class="btn btn-info" routerLink="../creationmessage"> Nouveau Message </button>
+<body>
+<table class="table table-striped">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Contenu</th>
+    <th scope="col">Date de Création</th>
+    <th scope="col">Auteur</th>
+    <th scope="col"> </th>
+  </tr>
+
+  <thead>
+
+  </thead>
+
+  <tbody>
+  <tr *ngFor="let message of messages, index as i">
+    <th scope="row">{{ i + 1 }}</th>
+
+
+    <td scope="row">{{message.contenu}}</td>
+    <td scope="row">{{message.createdDate | date :'dd-LL-yyyy'}}</td>
+    <td scope="row">{{message.nomPerson }}</td>
+    <td scope="row">
+      <button type="button" class="btn btn-secondary" routerLink="{{messages.idMessage}}"> Modifier </button>
+
+    </td>
+
+    <td scope="row">
+      <button type="button" class="btn btn-danger" (click)="delete(messages.idMessage)"> Supprimer </button>
+
+    </td>
+  </tr>
+
+
+</table>
+
+</body>

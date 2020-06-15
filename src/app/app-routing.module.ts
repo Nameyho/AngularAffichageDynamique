@@ -9,6 +9,7 @@ import {MessagesComponent} from './messages/messages.component';
 import {AbsencesComponent} from './absences/absences.component';
 import {ElevesResultatsComponent} from './eleves-resultats/eleves-resultats.component';
 import {ElevesDetailsComponent} from './eleves-details/eleves-details.component';
+import {MessagesCreationComponent} from './messages-creation/messages-creation.component';
 
 
 const routes: Routes = [
@@ -23,6 +24,8 @@ const routes: Routes = [
     {path: 'modifier/:id', component: ElevesDetailsComponent},
     {path : 'messages', component : MessagesComponent},
     {path : 'absences', component : AbsencesComponent},
+    {path : 'creationmessage', component : MessagesCreationComponent},
+
   ]},
 
 

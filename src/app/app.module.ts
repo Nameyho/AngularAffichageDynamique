@@ -21,6 +21,8 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {ElevesResultatsComponent} from './eleves-resultats/eleves-resultats.component';
 import {MatDialogModule} from '@angular/material/dialog';
 import {ElevesDetailsComponent} from './eleves-details/eleves-details.component';
+import { MessagesCreationComponent } from './messages-creation/messages-creation.component';
+import {NgxWigModule} from 'ngx-wig';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,8 @@ import {ElevesDetailsComponent} from './eleves-details/eleves-details.component'
     AbsencesComponent,
     MessagesComponent,
     ElevesResultatsComponent,
-    ElevesDetailsComponent
+    ElevesDetailsComponent,
+    MessagesCreationComponent
   ],
   imports: [
     BrowserModule,
@@ -45,7 +48,8 @@ import {ElevesDetailsComponent} from './eleves-details/eleves-details.component'
     MatMenuModule,
     MatTableModule,
     NgbModule,
-    MatDialogModule
+    MatDialogModule,
+    NgxWigModule
 
 
 ],
