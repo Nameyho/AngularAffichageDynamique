@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./messages-creation.component.css']
 })
 export class MessagesCreationComponent implements OnInit {
-  text1: "test";
+  contenu: any;
+  titreMessage: any;
 
   constructor() { }
 
@@ -14,7 +15,16 @@ export class MessagesCreationComponent implements OnInit {
   }
 
   valider() {
-    console.log(this.text1)
+    if(!(this.contenu == null && this.titreMessage ==null)){
+      console.log(this.contenu)
+      console.log(this.titreMessage)
+      console.log(localStorage.getItem("username"))
+      console.log(Date.now())
+    }
+  }
+
+  annuler() {
+
   }
 }
 

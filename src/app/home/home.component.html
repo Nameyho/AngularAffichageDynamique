@@ -10,12 +10,16 @@
 <body>
 <ul ngbNav #nav="ngbNav" class="nav-tabs">
   <li ngbNavItem>
-<button class="btn-primary"  [routerLink]="['cours'] ">Liste des cours</button>
+<button class="btn-primary"  [routerLink]="['cours'] "> cours</button>
   </li>
-<button class="btn-primary" [routerLink]="['absences']"> Listes des absences</button>
-<button class="btn-primary" [routerLink]="['messages']" > liste des messages</button>
-<button class="btn-primary"[routerLink]="['eleves']" > Eleves</button>
+  <button class="btn-primary" [routerLink]="['absences']">  absences</button>
+  <button class="btn-primary" [routerLink]="['messages']" >  messages</button>
+  <button class="btn-primary"[routerLink]="['eleves']" > listes </button>
+
   <button class="btn-danger"  (click)="doLogout()" >Déconnection </button>
+
+
+
 
 </ul>
 <router-outlet></router-outlet>

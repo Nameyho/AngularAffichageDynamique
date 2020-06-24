@@ -10,7 +10,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {BasicAuthInterceptService} from './service/basic-auth-intercept.service';
 import {CoursComponent} from './cours/cours.component';
 import {CoursDetailsComponent} from './cours-details/cours-details.component';
-import {ElevesComponent} from './eleves/eleves.component';
+import {PersonsComponent} from './listes/persons.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatMenuModule} from '@angular/material/menu';
@@ -18,11 +18,13 @@ import {AbsencesComponent} from './absences/absences.component';
 import {MessagesComponent} from './messages/messages.component';
 import {MatTableModule} from '@angular/material/table';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {ElevesResultatsComponent} from './eleves-resultats/eleves-resultats.component';
+import {PersonsResultatsComponent} from './persons-resultats/persons-resultats.component';
 import {MatDialogModule} from '@angular/material/dialog';
-import {ElevesDetailsComponent} from './eleves-details/eleves-details.component';
+import {PersonsDetailsComponent} from './persons-details/persons-details.component';
 import { MessagesCreationComponent } from './messages-creation/messages-creation.component';
 import {NgxWigModule} from 'ngx-wig';
+import {MatSelectModule} from '@angular/material/select';
+import { PersonsFormComponent } from './persons-form/persons-form.component';
 
 @NgModule({
   declarations: [
@@ -31,12 +33,13 @@ import {NgxWigModule} from 'ngx-wig';
     HomeComponent,
     CoursComponent,
     CoursDetailsComponent,
-    ElevesComponent,
+    PersonsComponent,
     AbsencesComponent,
     MessagesComponent,
-    ElevesResultatsComponent,
-    ElevesDetailsComponent,
-    MessagesCreationComponent
+    PersonsResultatsComponent,
+    PersonsDetailsComponent,
+    MessagesCreationComponent,
+    PersonsFormComponent
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,8 @@ import {NgxWigModule} from 'ngx-wig';
     MatTableModule,
     NgbModule,
     MatDialogModule,
-    NgxWigModule
+    NgxWigModule,
+    MatSelectModule
 
 
 ],

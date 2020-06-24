@@ -4,10 +4,10 @@ import {ActivatedRoute} from '@angular/router';
 
 @Component({
   selector: 'app-eleves-details',
-  templateUrl: './eleves-resultats.component.html',
-  styleUrls: ['./eleves-resultats.component.css']
+  templateUrl: './persons-resultats.component.html',
+  styleUrls: ['./persons-resultats.component.css']
 })
-export class ElevesResultatsComponent implements OnInit {
+export class PersonsResultatsComponent implements OnInit {
 
    person: any;
    resultat : any;

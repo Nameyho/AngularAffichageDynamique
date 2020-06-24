@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Eleve} from './eleves/eleve';
+import {Persons} from './listes/persons';
 
 
 @Injectable({
@@ -21,13 +21,13 @@ export class RestapiService {
     let authString = 'Basic ' + btoa(username + ':' + password);
     localStorage.setItem('basicauth', authString);
 
-    return this.http.get('http://localhost:8080/resource', {headers});
+    return this.http.get('http://localhost:8080/users/login', {headers});
   }
 
-  public getPersons(): Observable<Eleve>{
+  public getPersons(): Observable<Persons>{
 
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.get<Eleve>('http://localhost:8080/persons', {headers});
+    return this.http.get<Persons>('http://localhost:8080/persons', {headers});
   }
   public getCours(){
 
@@ -47,17 +47,17 @@ export class RestapiService {
 
   public  getResultatByPerson(id:any){
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.get(('http://localhost:8080/persons/').concat(id), {headers});
+    return this.http.get(('http://localhost:8080/resultat/').concat(id), {headers});
   }
 
-  public addEleve(eleve: Eleve): Observable<Eleve>{
+  public addEleve(eleve: Persons): Observable<Persons>{
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.post<Eleve>( 'http://localhost:8080/persons' , eleve, {headers});
+    return this.http.post<Persons>( 'http://localhost:8080/persons' , eleve, {headers});
   }
 
-  public updateEleve( eleve: Eleve, id:any): Observable<Eleve>{
+  public updateEleve(eleve: Persons, id:any): Observable<Persons>{
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.put<Eleve>( 'http://localhost:8080/persons/'.concat(id) , eleve, {headers});
+    return this.http.put<Persons>( 'http://localhost:8080/persons/'.concat(id) , eleve, {headers});
   }
   public deleteEleve(id:any){
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
@@ -68,6 +68,17 @@ export class RestapiService {
 
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
     return this.http.get('http://localhost:8080/messages', {headers});
+  }
+
+  public getRoles(){
+
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.get('http://localhost:8080/roles', {headers});
+  }
+
+  public getPersonbyRoles(id:any) : Observable<Persons>{
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.get<Persons>('http://localhost:8080/persons/roles/'.concat(id), {headers});
   }
 
 }

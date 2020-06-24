@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import {RestapiService} from '../restapi.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Eleve} from '../eleves/eleve';
+import {Persons} from '../listes/persons';
 
 @Component({
   selector: 'app-eleves-details',
-  templateUrl: './eleves-details.component.html',
-  styleUrls: ['./eleves-details.component.css']
+  templateUrl: './persons-details.component.html',
+  styleUrls: ['./persons-details.component.css']
 })
-export class ElevesDetailsComponent implements OnInit {
+export class PersonsDetailsComponent implements OnInit {
 
   constructor(private service: RestapiService, private route: ActivatedRoute,private router : Router) { }
 
@@ -26,7 +26,7 @@ export class ElevesDetailsComponent implements OnInit {
 
   update(nom: string, prenom: string, email: string , dateAnniversaire: string) {
     const id = this.route.snapshot.params.id;
-    this.service.updateEleve({nom, prenom, email, dateAnniversaire} as Eleve,id).subscribe();
+    this.service.updateEleve({nom, prenom, email, dateAnniversaire} as Persons,id).subscribe();
     this.router.navigate(["./home/eleves"]);
   }
 

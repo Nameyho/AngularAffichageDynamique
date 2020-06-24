@@ -4,12 +4,13 @@ import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './home/home.component';
 import {CoursComponent} from './cours/cours.component';
 import {CoursDetailsComponent} from './cours-details/cours-details.component';
-import {ElevesComponent} from './eleves/eleves.component';
+import {PersonsComponent} from './listes/persons.component';
 import {MessagesComponent} from './messages/messages.component';
 import {AbsencesComponent} from './absences/absences.component';
-import {ElevesResultatsComponent} from './eleves-resultats/eleves-resultats.component';
-import {ElevesDetailsComponent} from './eleves-details/eleves-details.component';
+import {PersonsResultatsComponent} from './persons-resultats/persons-resultats.component';
+import {PersonsDetailsComponent} from './persons-details/persons-details.component';
 import {MessagesCreationComponent} from './messages-creation/messages-creation.component';
+import {PersonsFormComponent} from './persons-form/persons-form.component';
 
 
 const routes: Routes = [
@@ -19,13 +20,13 @@ const routes: Routes = [
   children: [
     {path: 'cours', component: CoursComponent},
     {path: 'detailscours/:id', component: CoursDetailsComponent},
-    {path : 'detailseleve/:id', component: ElevesResultatsComponent},
-    {path : 'eleves', component : ElevesComponent},
-    {path: 'modifier/:id', component: ElevesDetailsComponent},
+    {path : 'detailseleve/:id', component: PersonsResultatsComponent},
+    {path : 'eleves', component : PersonsComponent},
+    {path: 'modifier/:id', component: PersonsDetailsComponent},
     {path : 'messages', component : MessagesComponent},
     {path : 'absences', component : AbsencesComponent},
     {path : 'creationmessage', component : MessagesCreationComponent},
-
+    {path : 'formeleve', component: PersonsFormComponent}
   ]},
 
 

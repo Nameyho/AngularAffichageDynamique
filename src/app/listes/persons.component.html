@@ -1,4 +1,17 @@
 <body>
+<button  class="btn btn-info" routerLink="../formeleve"> Ajouter personne</button>
+
+<mat-form-field>
+
+  <mat-select [(ngModel)]="idRole"  name="roles ">
+
+    <mat-option  *ngFor="let role of roles" [value]="role.idRole" >
+      {{role.name}}
+    </mat-option>
+  </mat-select>
+
+</mat-form-field>
+<button type="button" class="btn-secondary" (click)="filtrage(idRole)"> Filtrer </button>
 <table class="table table-striped">
   <tr>
     <th scope="col">#</th>
@@ -35,27 +48,7 @@
   </td>
 </tr>
 
-<div >
-  <label>Nom</label>
-  <input #nom />
-</div>
-<div >
-  <label>Prenom</label>
-  <input #prenom>
-</div>
 
-<div >
-  <label >Adresse Email</label>
-  <input  type="email" class="form-control" placeholder="Email"  #email/>
-
-</div >
-
-<label >Date de naissance</label>
-<div >
-  <input  class="form-control" type="date"  id="example-datetime-local-input" #date>
-</div>
-
-<button type="button" class="btn btn-success" (click)="save(nom.value,prenom.value,email.value, date.value ); nom.value =''">   Sauvegarder</button>
 </tbody>
 
 </table>

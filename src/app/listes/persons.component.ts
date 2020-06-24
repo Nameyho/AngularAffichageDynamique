@@ -1,18 +1,20 @@
 import {Component, OnInit} from '@angular/core';
 import {RestapiService} from '../restapi.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Eleve} from './eleve';
+import {Persons} from './persons';
 
 @Component({
   selector: 'app-eleves',
-  templateUrl: './eleves.component.html',
-  styleUrls: ['./eleves.component.css']
+  templateUrl: './persons.component.html',
+  styleUrls: ['./persons.component.css']
 })
-export class ElevesComponent implements OnInit {
+export class PersonsComponent implements OnInit {
 
 
 
-   eleve: Eleve;
+   eleve: Persons;
+   roles: any;
+  idRole: String;
 
 
 
@@ -21,6 +23,7 @@ export class ElevesComponent implements OnInit {
 
   ngOnInit(): void {
     this.getPerson();
+    this.getRoles();
   }
   getPerson() {
     const response = this.service.getPersons();
@@ -28,15 +31,19 @@ export class ElevesComponent implements OnInit {
   }
 
 
+  private getRoles() {
+    const response = this.service.getRoles();
+    response.subscribe(role => this.roles = role);
+  }
 
-  save(nom: string, prenom: string, email: string , dateAnniversaire: string) {
-
- this.service.addEleve({nom, prenom, email, dateAnniversaire} as Eleve).subscribe();
-
-}
 
   delete(id :any) {
     this.service.deleteEleve(id).subscribe().add();
 
+  }
+
+  filtrage(idRoles: String) {
+    const response = this.service.getPersonbyRoles(idRoles);
+    response.subscribe(eleve => this.eleve = eleve);
   }
 }

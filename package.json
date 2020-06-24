@@ -23,6 +23,7 @@
     "@angular/platform-browser-dynamic": "~9.1.4",
     "@angular/router": "~9.1.4",
     "@ng-bootstrap/ng-bootstrap": "^6.1.0",
+    "@popperjs/core": "^2.4.2",
     "boostrap": "^2.0.0",
     "bootstrap": "^4.4.0",
     "ngx-wig": "^9.1.0",
