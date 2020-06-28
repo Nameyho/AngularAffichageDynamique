@@ -2,6 +2,7 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Persons} from './listes/persons';
+import {Message} from './messages/message';
 
 
 @Injectable({
@@ -69,6 +70,17 @@ export class RestapiService {
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
     return this.http.get('http://localhost:8080/messages', {headers});
   }
+
+  public addMessage(Message: Message): Observable<Message>{
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.post<Message>( 'http://localhost:8080/messages' , Message, {headers});
+  }
+
+  public deleteMessage(id:any){
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.delete(('http://localhost:8080/messages/').concat(id), {headers});
+  }
+
 
   public getRoles(){
 

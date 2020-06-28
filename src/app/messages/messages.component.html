@@ -4,7 +4,7 @@
 <table class="table table-striped">
   <tr>
     <th scope="col">#</th>
-    <th scope="col">Contenu</th>
+    <th scope="col">Titre message</th>
     <th scope="col">Date de Création</th>
     <th scope="col">Auteur</th>
     <th scope="col"> </th>
@@ -26,9 +26,9 @@
       <button type="button" class="btn btn-secondary" routerLink="{{messages.idMessage}}"> Modifier </button>
 
     </td>
-
     <td scope="row">
-      <button type="button" class="btn btn-danger" (click)="delete(messages.idMessage)"> Supprimer </button>
+
+      <button type="button" class="btn btn-danger" (click)="delete(message.idMessage)"> Supprimer </button>
 
     </td>
   </tr>

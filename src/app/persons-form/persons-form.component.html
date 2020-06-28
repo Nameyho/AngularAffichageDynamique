@@ -1,0 +1,38 @@
+<form xmlns="http://www.w3.org/1999/html">
+<div >
+  <label>Nom</label>
+  <input #nom />
+</div>
+<div >
+  <label>Prenom</label>
+  <input #prenom>
+</div>
+
+<div >
+  <label >Adresse Email</label>
+  <input  type="email" class="form-control" placeholder="Email"  #email/>
+
+</div >
+
+<label >Date de naissance</label>
+<div >
+  <input  class="form-control" type="date"  id="example-datetime-local-input" #date>
+</div>
+<div>
+
+  <mat-form-field>
+
+    <mat-select [(ngModel)]="idRole"  name="roles ">
+
+      <mat-option  *ngFor="let role of roles" [value]="role.idRole" >
+        {{role.name}}
+      </mat-option>
+    </mat-select>
+
+  </mat-form-field>
+
+</div>
+
+
+<button type="button" class="btn btn-success" (click)="save(nom.value,prenom.value,email.value, date.value ,idRole);">   Sauvegarder</button>
+</form>

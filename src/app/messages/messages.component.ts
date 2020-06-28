@@ -23,6 +23,9 @@ export class MessagesComponent implements OnInit {
   }
 
   delete(idPerson: any) {
+    console.log(idPerson)
 
+
+    this.service.deleteMessage(idPerson).subscribe();
   }
 }

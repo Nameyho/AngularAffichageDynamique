@@ -25,6 +25,7 @@ import { MessagesCreationComponent } from './messages-creation/messages-creation
 import {NgxWigModule} from 'ngx-wig';
 import {MatSelectModule} from '@angular/material/select';
 import { PersonsFormComponent } from './persons-form/persons-form.component';
+import {MatFormFieldModule} from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
@@ -53,8 +54,8 @@ import { PersonsFormComponent } from './persons-form/persons-form.component';
     NgbModule,
     MatDialogModule,
     NgxWigModule,
-    MatSelectModule
-
+    MatSelectModule,
+    MatFormFieldModule
 
 ],
 
