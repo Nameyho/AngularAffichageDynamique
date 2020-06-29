@@ -31,5 +31,6 @@ export class PersonsDetailsComponent implements OnInit {
   }
 
   goBack() {
+    //com useless pour commit
     this.router.navigate(["./home/eleves"]);
   }}
