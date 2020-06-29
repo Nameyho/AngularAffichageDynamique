@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {RestapiService} from '../restapi.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Message} from '../messages/message';
-import {Persons} from '../listes/persons';
+import {Persons} from '../persons/persons';
 import {dateComparator} from '@ng-bootstrap/ng-bootstrap/datepicker/datepicker-tools';
 import {MessagesComponent} from '../messages/messages.component';
 

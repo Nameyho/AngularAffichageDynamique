@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Persons} from './listes/persons';
+import {Persons} from './persons/persons';
 import {Message} from './messages/message';
 
 
@@ -92,5 +92,16 @@ export class RestapiService {
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
     return this.http.get<Persons>('http://localhost:8080/persons/roles/'.concat(id), {headers});
   }
+
+  public updateMessage (message: Message, id:any): Observable<Message> {
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+
+    return this.http.put<Message>( 'http://localhost:8080/messages/'.concat(id) , message, {headers});
+  }
+  public getMessageByID(id: any){
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.get(('http://localhost:8080/messages/').concat(id), {headers});
+  }
+
 
 }

@@ -10,7 +10,7 @@ import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {BasicAuthInterceptService} from './service/basic-auth-intercept.service';
 import {CoursComponent} from './cours/cours.component';
 import {CoursDetailsComponent} from './cours-details/cours-details.component';
-import {PersonsComponent} from './listes/persons.component';
+import {PersonsComponent} from './persons/persons.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatSliderModule} from '@angular/material/slider';
 import {MatMenuModule} from '@angular/material/menu';
@@ -26,6 +26,7 @@ import {NgxWigModule} from 'ngx-wig';
 import {MatSelectModule} from '@angular/material/select';
 import { PersonsFormComponent } from './persons-form/persons-form.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { MessagesModificationComponent } from './messages-modification/messages-modification.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     PersonsResultatsComponent,
     PersonsDetailsComponent,
     MessagesCreationComponent,
-    PersonsFormComponent
+    PersonsFormComponent,
+    MessagesModificationComponent
   ],
   imports: [
     BrowserModule,

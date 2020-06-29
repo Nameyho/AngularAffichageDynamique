@@ -4,13 +4,14 @@ import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './home/home.component';
 import {CoursComponent} from './cours/cours.component';
 import {CoursDetailsComponent} from './cours-details/cours-details.component';
-import {PersonsComponent} from './listes/persons.component';
+import {PersonsComponent} from './persons/persons.component';
 import {MessagesComponent} from './messages/messages.component';
 import {AbsencesComponent} from './absences/absences.component';
 import {PersonsResultatsComponent} from './persons-resultats/persons-resultats.component';
 import {PersonsDetailsComponent} from './persons-details/persons-details.component';
 import {MessagesCreationComponent} from './messages-creation/messages-creation.component';
 import {PersonsFormComponent} from './persons-form/persons-form.component';
+import {MessagesModificationComponent} from './messages-modification/messages-modification.component';
 
 
 const routes: Routes = [
@@ -26,7 +27,8 @@ const routes: Routes = [
     {path : 'messages', component : MessagesComponent},
     {path : 'absences', component : AbsencesComponent},
     {path : 'creationmessage', component : MessagesCreationComponent},
-    {path : 'formeleve', component: PersonsFormComponent}
+    {path : 'formeleve', component: PersonsFormComponent},
+    {path : 'modificationmessage/:id', component : MessagesModificationComponent},
   ]},
 
 

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {RestapiService} from '../restapi.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Persons} from '../listes/persons';
+import {Persons} from '../persons/persons';
 
 @Component({
   selector: 'app-eleves-details',
