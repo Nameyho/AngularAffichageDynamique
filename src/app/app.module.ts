@@ -27,6 +27,8 @@ import {MatSelectModule} from '@angular/material/select';
 import { PersonsFormComponent } from './persons-form/persons-form.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { MessagesModificationComponent } from './messages-modification/messages-modification.component';
+import { AbsenceFormComponent } from './absence-form/absence-form.component';
+
 
 @NgModule({
   declarations: [
@@ -42,7 +44,8 @@ import { MessagesModificationComponent } from './messages-modification/messages-
     PersonsDetailsComponent,
     MessagesCreationComponent,
     PersonsFormComponent,
-    MessagesModificationComponent
+    MessagesModificationComponent,
+    AbsenceFormComponent
   ],
   imports: [
     BrowserModule,
@@ -57,7 +60,7 @@ import { MessagesModificationComponent } from './messages-modification/messages-
     MatDialogModule,
     NgxWigModule,
     MatSelectModule,
-    MatFormFieldModule
+    MatFormFieldModule,
 
 ],
 

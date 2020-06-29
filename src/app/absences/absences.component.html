@@ -1,1 +1,38 @@
-<p>absences works!</p>
+<h1> Liste des absences</h1>
+
+<button  class="btn btn-info" routerLink="../creationabsence"> Ajouter absence</button>
+
+<table class="table table-striped">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Personne</th>
+    <th scope="col">Type Absence</th>
+    <th scope="col">Date de Début</th>
+    <th scope="col"> Date de fin</th>
+    <th scope="col"> </th>
+  </tr>
+
+  <tbody>
+  <tr *ngFor="let absence of absence, index as i">
+    <th scope="row">{{ i + 1 }}</th>
+
+
+    <td scope="row">{{absence.nomPerson}}  {{absence.prenomPerson}}</td>
+    <td scope="row">{{absence.nomIndispo}}</td>
+    <td scope="row">{{absence.dateDebut  | date :'dd-LL-yyyy'}}</td>
+    <td scope="row">{{absence.dateFin | date :'dd-LL-yyyy'}}</td>
+    <td scope="row">
+      <button type="button" class="btn btn-info" routerLink="../"> Détails </button>
+    </td>
+    <td scope="row">
+      <button type="button" class="btn btn-secondary" routerLink="}}"> Modifier </button>
+
+    </td>
+
+    <td scope="row">
+      <button type="button" class="btn btn-danger" > Supprimer </button>
+
+    </td>
+  </tr>
+  </tbody>
+  </table>

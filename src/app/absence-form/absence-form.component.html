@@ -1,0 +1,24 @@
+<h1> Ajout absence </h1>
+
+
+<h2>Personne absente</h2>
+  <mat-form-field>
+
+    <mat-select [(ngModel)]="idPerson"  name="person">
+
+      <mat-option  *ngFor="let person of persons" [value]="person.idRole" >
+        {{person.nom}} {{person.prenom}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+<h2> raison absence </h2>
+<mat-form-field>
+
+  <mat-select [(ngModel)]="idPerson"  name="person">
+
+    <mat-option  *ngFor="let person of persons" [value]="person.idRole" >
+      {{person.nom}} {{person.prenom}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

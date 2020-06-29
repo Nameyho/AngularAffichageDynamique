@@ -12,6 +12,7 @@ import {PersonsDetailsComponent} from './persons-details/persons-details.compone
 import {MessagesCreationComponent} from './messages-creation/messages-creation.component';
 import {PersonsFormComponent} from './persons-form/persons-form.component';
 import {MessagesModificationComponent} from './messages-modification/messages-modification.component';
+import {AbsenceFormComponent} from './absence-form/absence-form.component';
 
 
 const routes: Routes = [
@@ -29,6 +30,7 @@ const routes: Routes = [
     {path : 'creationmessage', component : MessagesCreationComponent},
     {path : 'formeleve', component: PersonsFormComponent},
     {path : 'modificationmessage/:id', component : MessagesModificationComponent},
+    {path : 'creationabsence', component : AbsenceFormComponent}
   ]},
 
 

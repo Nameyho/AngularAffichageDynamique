@@ -1,4 +1,6 @@
 import {Component, OnInit} from '@angular/core';
+import {RestapiService} from '../restapi.service';
+import {ActivatedRoute, Router} from '@angular/router';
 
 @Component({
   selector: 'app-absences',
@@ -6,10 +8,16 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['./absences.component.css']
 })
 export class AbsencesComponent implements OnInit {
+   absence: any;
 
-  constructor() { }
+  constructor(private service: RestapiService, private route: ActivatedRoute,private router: Router) { }
 
   ngOnInit(): void {
+    this.getAbsence();
   }
 
+  getAbsence(){
+    const response = this.service.getAbsences();
+    response.subscribe(absence => this.absence = absence);
+  }
 }

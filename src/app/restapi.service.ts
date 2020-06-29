@@ -3,6 +3,10 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Persons} from './persons/persons';
 import {Message} from './messages/message';
+import {Absence} from './absences/absence';
+
+
+
 
 
 @Injectable({
@@ -101,6 +105,27 @@ export class RestapiService {
   public getMessageByID(id: any){
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
     return this.http.get(('http://localhost:8080/messages/').concat(id), {headers});
+  }
+
+  public getAbsences(){
+
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.get('http://localhost:8080/indisponibilite', {headers});
+  }
+  public getAbsenceByID(id: any){
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.get(('http://localhost:8080/indisponibilite/').concat(id), {headers});
+  }
+
+  public updateAbsence (absence: Absence, id:any): Observable<Absence> {
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+
+    return this.http.put<Absence>( 'http://localhost:8080/indisponibilite/'.concat(id) , absence, {headers});
+  }
+
+  public deleteAbsence(id:any){
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.delete(('http://localhost:8080/indisponibilite/').concat(id), {headers});
   }
 
 
