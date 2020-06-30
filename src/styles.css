@@ -2,3 +2,31 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.example-additional-selection {
+  opacity: 0.75;
+  font-size: 0.75em;
+}
+.form-control{
+  background-color: #fff;
+  border: #777 1px solid;
+  margin: 0 0 1.5em 0;
+  border-radius: 0;
+  width: 60%;
+
+
+}
+
+form{
+  padding: 15px;
+}
+
+
+h2{
+
+  padding: 15px;
+}
+
+#example-datetime-local-input{
+  margin-left:15px
+}

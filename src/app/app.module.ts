@@ -12,22 +12,17 @@ import {CoursComponent} from './cours/cours.component';
 import {CoursDetailsComponent} from './cours-details/cours-details.component';
 import {PersonsComponent} from './persons/persons.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MatSliderModule} from '@angular/material/slider';
-import {MatMenuModule} from '@angular/material/menu';
 import {AbsencesComponent} from './absences/absences.component';
 import {MessagesComponent} from './messages/messages.component';
-import {MatTableModule} from '@angular/material/table';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {PersonsResultatsComponent} from './persons-resultats/persons-resultats.component';
-import {MatDialogModule} from '@angular/material/dialog';
 import {PersonsDetailsComponent} from './persons-details/persons-details.component';
 import { MessagesCreationComponent } from './messages-creation/messages-creation.component';
 import {NgxWigModule} from 'ngx-wig';
-import {MatSelectModule} from '@angular/material/select';
 import { PersonsFormComponent } from './persons-form/persons-form.component';
-import {MatFormFieldModule} from '@angular/material/form-field';
 import { MessagesModificationComponent } from './messages-modification/messages-modification.component';
 import { AbsenceFormComponent } from './absence-form/absence-form.component';
+import { IndisponibiliteComponent } from './indisponibilite/indisponibilite.component';
 
 
 @NgModule({
@@ -45,7 +40,8 @@ import { AbsenceFormComponent } from './absence-form/absence-form.component';
     MessagesCreationComponent,
     PersonsFormComponent,
     MessagesModificationComponent,
-    AbsenceFormComponent
+    AbsenceFormComponent,
+    IndisponibiliteComponent
   ],
   imports: [
     BrowserModule,
@@ -53,14 +49,8 @@ import { AbsenceFormComponent } from './absence-form/absence-form.component';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatSliderModule,
-    MatMenuModule,
-    MatTableModule,
     NgbModule,
-    MatDialogModule,
     NgxWigModule,
-    MatSelectModule,
-    MatFormFieldModule,
 
 ],
 

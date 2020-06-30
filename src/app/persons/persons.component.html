@@ -1,14 +1,14 @@
 <body>
 <button  class="btn btn-info" routerLink="../formeleve"> Ajouter personne</button>
 
-<mat-form-field >
-  <mat-select  [(ngModel)]="idRole"  name="roles " class="form-control form-control-sm">
-    <mat-option  *ngFor="let role of roles" [value]="role.idRole" >
+<form>
+  <select  [(ngModel)]="idRole"  name="roles " class="form-control form-control-sm">
+    <option  *ngFor="let role of roles" [value]="role.idRole" >
       {{role.name}}
-    </mat-option>
-  </mat-select>
+    </option>
+  </select>
 
-</mat-form-field>
+</form>
 
 <button type="button" class="btn-secondary" (click)="filtrage(idRole)"> Filtrer </button>
 

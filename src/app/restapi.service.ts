@@ -4,6 +4,9 @@ import {Observable} from 'rxjs';
 import {Persons} from './persons/persons';
 import {Message} from './messages/message';
 import {Absence} from './absences/absence';
+import {Indisponibilite} from './indisponibilite/Indisponibilite';
+
+
 
 
 
@@ -110,22 +113,54 @@ export class RestapiService {
   public getAbsences(){
 
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.get('http://localhost:8080/indisponibilite', {headers});
+    return this.http.get('http://localhost:8080/absences', {headers});
   }
   public getAbsenceByID(id: any){
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.get(('http://localhost:8080/indisponibilite/').concat(id), {headers});
+    return this.http.get(('http://localhost:8080/absences/').concat(id), {headers});
   }
 
   public updateAbsence (absence: Absence, id:any): Observable<Absence> {
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
 
-    return this.http.put<Absence>( 'http://localhost:8080/indisponibilite/'.concat(id) , absence, {headers});
+    return this.http.put<Absence>( 'http://localhost:8080/absences/'.concat(id) , absence, {headers});
   }
 
   public deleteAbsence(id:any){
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.delete(('http://localhost:8080/indisponibilite/').concat(id), {headers});
+    return this.http.delete(('http://localhost:8080/absences/').concat(id), {headers});
+  }
+
+  public addAbsence(absence: Absence): Observable<Absence>{
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.post<Absence>( 'http://localhost:8080/absences' , absence, {headers});
+  }
+
+  public getIndisponibilite(){
+
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.get('http://localhost:8080/indisponibilite', {headers});
+  }
+
+  public getIndisponibiliteByID(idPerson: any,idIndispo : any ,idCours :any){
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.get(('http://localhost:8080/indisponibilite/').concat(idPerson + "/" + idIndispo +"/" + idCours), {headers});
+  }
+
+  public updateIndisponibilite (indisponibilite: Indisponibilite, idPerson: any,idIndispo : any ,idCours :any): Observable<Indisponibilite> {
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+
+    return this.http.put<Indisponibilite>( 'http://localhost:8080/indisponibilite/'.concat(idPerson + "/" + idIndispo +"/" + idCours) , indisponibilite, {headers});
+  }
+
+  public deleteindisponibilite(idPerson: any,idIndispo : any ,idCours :any){
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.delete(('http://localhost:8080/indindisponibilite/').concat(idPerson + "/" + idIndispo +"/" + idCours), {headers});
+  }
+
+  public addindisponibilite(indisponibilite: Indisponibilite): Observable<Indisponibilite>{
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.post<Message>( 'http://localhost:8080/indisponibilite' , indisponibilite, {headers});
   }
 
 

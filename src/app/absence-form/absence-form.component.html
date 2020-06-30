@@ -2,23 +2,34 @@
 
 
 <h2>Personne absente</h2>
-  <mat-form-field>
+  <form appearance="fill">
+    <label>Personne absente</label>
+    <select  matNativeControl [(ngModel)]="idPerson"  name="person"  class="form-control form-control-sm">
 
-    <mat-select [(ngModel)]="idPerson"  name="person">
-
-      <mat-option  *ngFor="let person of persons" [value]="person.idRole" >
+      <option  *ngFor="let person of persons" [value]="person.idRole" >
         {{person.nom}} {{person.prenom}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
+      </option>
+    </select>
+  </form>
 
 <h2> raison absence </h2>
-<mat-form-field>
+<form>
 
-  <mat-select [(ngModel)]="idPerson"  name="person">
+  <select [(ngModel)]=" idAbsence"  name="absence"  class="form-control form-control-sm">
 
-    <mat-option  *ngFor="let person of persons" [value]="person.idRole" >
-      {{person.nom}} {{person.prenom}}
-    </mat-option>
-  </mat-select>
-</mat-form-field>
+    <option  *ngFor="let absence of absences" [value]="absence.idRole" >
+      {{absence.type}}
+    </option>
+  </select>
+</form>
+<br>
+<label >Date début</label>
+<div >
+  <input  class="form-control" type="date"  id="example-datetime-local-input" #date>
+</div>
+<div>
+  <label >Date de fin</label>
+  <div >
+    <input  class="form-control" type="date"  id="example-datetime-local-input" #date>
+  </div>
+  <div>
