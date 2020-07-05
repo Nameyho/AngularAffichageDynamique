@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {RestapiService} from '../restapi.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {Absence} from '../absences/absence';
 
 @Component({
   selector: 'app-absence-form',
@@ -10,7 +11,6 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class AbsenceFormComponent implements OnInit {
   persons: any;
   idPerson:any;
-
   absences :any;
   idAbsence :any;
 
@@ -32,4 +32,8 @@ export class AbsenceFormComponent implements OnInit {
       .subscribe(absence => this.absences = absence);
   }
 
+  save(idPerson: String, indispo_id: String, dateDebut: String, dateFin: String) {
+    console.log(idPerson)
+    this.service.addAbsence({idPerson,indispo_id,dateDebut,dateFin}as Absence).subscribe()
+  }
 }

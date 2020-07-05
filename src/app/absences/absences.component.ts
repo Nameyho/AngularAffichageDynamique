@@ -20,4 +20,8 @@ export class AbsencesComponent implements OnInit {
     const response = this.service.getAbsences();
     response.subscribe(absence => this.absence = absence);
   }
+
+  delete(indispo_id: any, idPerson: any, idSpecifique: any) {
+this.service.deleteAbsence(idPerson,indispo_id,idSpecifique).subscribe()
+  }
 }

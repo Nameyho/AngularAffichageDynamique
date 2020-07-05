@@ -22,15 +22,12 @@
     <td scope="row">{{absence.dateDebut  | date :'dd-LL-yyyy'}}</td>
     <td scope="row">{{absence.dateFin | date :'dd-LL-yyyy'}}</td>
     <td scope="row">
-      <button type="button" class="btn btn-info" routerLink="../"> Détails </button>
-    </td>
-    <td scope="row">
-      <button type="button" class="btn btn-secondary" routerLink="}}"> Modifier </button>
+      <button type="button" class="btn btn-secondary" routerLink="../modificationabsence/{{absence.indispo_id}}/{{absence.idPerson}}/{{absence.idSpecifique}}"> Modifier </button>
 
     </td>
 
     <td scope="row">
-      <button type="button" class="btn btn-danger" > Supprimer </button>
+      <button type="button" class="btn btn-danger" (click)="delete(absence.indispo_id,absence.idPerson,absence.idSpecifique)"> Supprimer </button>
 
     </td>
   </tr>

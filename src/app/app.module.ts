@@ -23,6 +23,7 @@ import { PersonsFormComponent } from './persons-form/persons-form.component';
 import { MessagesModificationComponent } from './messages-modification/messages-modification.component';
 import { AbsenceFormComponent } from './absence-form/absence-form.component';
 import { IndisponibiliteComponent } from './indisponibilite/indisponibilite.component';
+import { AbsenceUpdateFormComponent } from './absence-update-form/absence-update-form.component';
 
 
 @NgModule({
@@ -41,7 +42,8 @@ import { IndisponibiliteComponent } from './indisponibilite/indisponibilite.comp
     PersonsFormComponent,
     MessagesModificationComponent,
     AbsenceFormComponent,
-    IndisponibiliteComponent
+    IndisponibiliteComponent,
+    AbsenceUpdateFormComponent
   ],
   imports: [
     BrowserModule,

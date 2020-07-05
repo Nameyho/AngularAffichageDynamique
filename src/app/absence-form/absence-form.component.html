@@ -4,9 +4,9 @@
 <h2>Personne absente</h2>
   <form appearance="fill">
     <label>Personne absente</label>
-    <select  matNativeControl [(ngModel)]="idPerson"  name="person"  class="form-control form-control-sm">
+    <select  matNativeControl [(ngModel)]="idPerson"  name="person"  class="form-control form-control-sm" #id_person>
 
-      <option  *ngFor="let person of persons" [value]="person.idRole" >
+      <option  *ngFor="let person of persons" [value]="person.idPerson" >
         {{person.nom}} {{person.prenom}}
       </option>
     </select>
@@ -15,9 +15,9 @@
 <h2> raison absence </h2>
 <form>
 
-  <select [(ngModel)]=" idAbsence"  name="absence"  class="form-control form-control-sm">
+  <select [(ngModel)]=" idAbsence"  name="absence"  class="form-control form-control-sm" #idindisponibilite >
 
-    <option  *ngFor="let absence of absences" [value]="absence.idRole" >
+    <option  *ngFor="let absence of absences" [value]="absence.idindisponibilite"  >
       {{absence.type}}
     </option>
   </select>
@@ -25,11 +25,12 @@
 <br>
 <label >Date début</label>
 <div >
-  <input  class="form-control" type="date"  id="example-datetime-local-input" #date>
+  <input  class="form-control" type="date"  id="example-datetime-local-input" #datedebut>
 </div>
 <div>
   <label >Date de fin</label>
   <div >
-    <input  class="form-control" type="date"  id="example-datetime-local-input" #date>
+    <input  class="form-control" type="date"  id="example-datetime-local-input" #datefin>
   </div>
   <div>
+    <button type="button" class="btn btn-success" (click)="save(id_person.value,idindisponibilite.value,datedebut.value,datefin.value);">   Sauvegarder</button>
