@@ -1,5 +1,8 @@
 # AngularAffichageDynamique
 
+
+// fef
+
 25 mai: Ajout d'un menu basique et d'un menu cours
 
 22 mai : ajout de la liaison front-end , back end avec interceptor
