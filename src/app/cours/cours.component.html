@@ -4,7 +4,7 @@
 
 </head>
 
-<button type="button" class="btn btn-primary" routerLink="../detailscours/{{cours.idCours}}"> Ajouter Cours</button>
+<button type="button" class="btn btn-primary" routerLink="../detailscours/{{cours?.idCours}}"> Ajouter Cours</button>
 
 
 
@@ -23,11 +23,11 @@
     <tbody>
     <tr *ngFor="let cours of cours, index as i">
       <th scope="row">{{ i + 1 }}</th>
-      <td scope="row">{{cours.name}}</td>
-      <td scope="row">{{cours.datedebut |date :"dd-MM-yyyy"}}</td>
-      <td scope="row">{{cours.datefin |date :"dd-MM-yyyy"}}</td>
+      <td scope="row">{{cours?.name}}</td>
+      <td scope="row">{{cours?.datedebut |date :"dd-MM-yyyy"}}</td>
+      <td scope="row">{{cours?.datefin |date :"dd-MM-yyyy"}}</td>
       <td scope="row">
-      <button type="button" class="btn btn-primary" routerLink="../detailscours/{{cours.idCours}}"> Détails</button>
+      <button type="button" class="btn btn-primary" routerLink="../detailscours/{{cours?.idCours}}"> Détails</button>
 
       </td>
 

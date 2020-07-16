@@ -17,7 +17,7 @@ import {Indisponibilite} from './indisponibilite/Indisponibilite';
 })
 export class RestapiService {
 
-
+   url : String = "https://back-end-springboot.herokuapp.com";
 
   constructor(private http: HttpClient) { }
 
@@ -29,53 +29,53 @@ export class RestapiService {
     let authString = 'Basic ' + btoa(username + ':' + password);
     localStorage.setItem('basicauth', authString);
 
-    return this.http.get('http://localhost:8080/users/login', {headers});
+    return this.http.get(this.url.concat('/users/login'), {headers});
   }
 
   public getPersons(): Observable<Persons>{
 
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.get<Persons>('http://localhost:8080/persons', {headers});
+    return this.http.get<Persons>(this.url.concat('/persons/'), {headers});
   }
   public getCours(){
 
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.get('http://localhost:8080/cours', {headers});
+    return this.http.get(this.url.concat('/cours/'), {headers});
   }
 
   public getCoursid(id: any){
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.get(('http://localhost:8080/cours/').concat(id), {headers});
+    return this.http.get((this.url.concat('/cours/' +id)), {headers});
   }
 
   public getPersonid(id: any){
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.get(('http://localhost:8080/persons/').concat(id), {headers});
+    return this.http.get((this.url.concat('/persons/' +id)), {headers});
   }
 
   public  getResultatByPerson(id:any){
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.get(('http://localhost:8080/resultat/').concat(id), {headers});
+    return this.http.get((this.url.concat('/resultat/' +id)), {headers});
   }
 
   public addEleve(eleve: Persons): Observable<Persons>{
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.post<Persons>( 'http://localhost:8080/persons' , eleve, {headers});
+    return this.http.post<Persons>( this.url.concat('/eleves') , eleve, {headers});
   }
 
   public updateEleve(eleve: Persons, id:any): Observable<Persons>{
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.put<Persons>( 'http://localhost:8080/persons/'.concat(id) , eleve, {headers});
+    return this.http.put<Persons>( this.url.concat(/persons/+id) , eleve, {headers});
   }
   public deleteEleve(id:any){
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.delete(('http://localhost:8080/persons/').concat(id), {headers});
+    return this.http.delete(( this.url.concat(/persons/+id)), {headers});
   }
 
   public getMessages(){
 
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.get('http://localhost:8080/messages', {headers});
+    return this.http.get(this.url.concat('/messages'), {headers});
   }
 
   public addMessage(Message: Message): Observable<Message>{
@@ -92,80 +92,80 @@ export class RestapiService {
   public getRoles(){
 
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.get('http://localhost:8080/roles', {headers});
+    return this.http.get(this.url.concat('/roles'), {headers});
   }
 
   public getPersonbyRoles(id:any) : Observable<Persons>{
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.get<Persons>('http://localhost:8080/persons/roles/'.concat(id), {headers});
+    return this.http.get<Persons>(this.url.concat(/roles/+id), {headers});
   }
 
   public updateMessage (message: Message, id:any): Observable<Message> {
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
 
-    return this.http.put<Message>( 'http://localhost:8080/messages/'.concat(id) , message, {headers});
+    return this.http.put<Message>( this.url.concat(/messages/+id) , message, {headers});
   }
   public getMessageByID(id: any){
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.get(('http://localhost:8080/messages/').concat(id), {headers});
+    return this.http.get(( this.url.concat(/messages/+id)), {headers});
   }
 
   public getAbsences(){
 
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.get('http://localhost:8080/absences', {headers});
+    return this.http.get(this.url.concat('/absences'), {headers});
   }
   public getAbsenceByID(idperson: any,idindispo : any,idspecifique : any){
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.get(('http://localhost:8080/absences/').concat(idperson+"/"+idindispo+"/"+idspecifique), {headers});
+    return this.http.get(this.url.concat('/absences/'+idperson+"/"+idindispo+"/"+idspecifique), {headers});
   }
 
   public updateAbsence (absence: Absence, idperson: any,idindispo : any,idspecifique : any): Observable<Absence> {
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
 
-    return this.http.put<Absence>( 'http://localhost:8080/absences/'.concat(idperson+"/"+idindispo+"/"+idspecifique) , absence, {headers});
+    return this.http.put<Absence>( this.url.concat('/absences/'+idperson+"/"+idindispo+"/"+idspecifique), absence, {headers});
   }
 
   public deleteAbsence( idperson: any,idindispo : any,idspecifique : any){
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.delete(('http://localhost:8080/absences/').concat(idperson+"/"+idindispo+"/"+idspecifique), {headers});
+    return this.http.delete(this.url.concat('/absences/'+idperson+"/"+idindispo+"/"+idspecifique), {headers});
   }
 
   public addAbsence(absence: Absence): Observable<Absence>{
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.post<Absence>( 'http://localhost:8080/absences' , absence, {headers});
+    return this.http.post<Absence>( this.url.concat('/absences') , absence, {headers});
   }
 
   public getIndisponibilite(){
 
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.get('http://localhost:8080/indisponibilite', {headers});
+    return this.http.get(this.url.concat('/indisponibilite'), {headers});
   }
 
   public getIndisponibiliteByID(idPerson: any,idIndispo : any ,idCours :any){
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.get(('http://localhost:8080/indisponibilite/').concat(idPerson + "/" + idIndispo +"/" + idCours), {headers});
+    return this.http.get(this.url.concat('/indisponibilite/'+idPerson + "/" + idIndispo +"/" + idCours), {headers});
   }
 
   public updateIndisponibilite (indisponibilite: Indisponibilite, idPerson: any,idIndispo : any ,idCours :any): Observable<Indisponibilite> {
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
 
-    return this.http.put<Indisponibilite>( 'http://localhost:8080/indisponibilite/'.concat(idPerson + "/" + idIndispo +"/" + idCours) , indisponibilite, {headers});
+    return this.http.put<Indisponibilite>( this.url.concat('/indisponibilite/'+idPerson + "/" + idIndispo +"/" + idCours) , indisponibilite, {headers});
   }
 
   public deleteindisponibilite(idPerson: any,idIndispo : any ,idCours :any){
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.delete(('http://localhost:8080/indindisponibilite/').concat(idPerson + "/" + idIndispo +"/" + idCours), {headers});
+    return this.http.delete(this.url.concat('/indisponibilite/'+idPerson + "/" + idIndispo +"/" + idCours), {headers});
   }
 
   public addindisponibilite(indisponibilite: Indisponibilite): Observable<Indisponibilite>{
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.post<Message>( 'http://localhost:8080/indisponibilite' , indisponibilite, {headers});
+    return this.http.post<Message>( this.url.concat('/indisponilite'), indisponibilite, {headers});
   }
 
   public  getResultatByCours(id:any){
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.get(('http://localhost:8080/resultat/cours/').concat(id), {headers});
+    return this.http.get(this.url.concat('/resultat/cours/'+id), {headers});
   }
 
 }
