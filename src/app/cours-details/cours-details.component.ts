@@ -10,17 +10,23 @@ import {ActivatedRoute} from '@angular/router';
 export class CoursDetailsComponent implements OnInit {
 
    cours: any;
+   resultat : any;
   constructor(private service: RestapiService, private route: ActivatedRoute, ) { }
 
   ngOnInit(): void {
     this.getInfo();
+    this.getElevesresultat();
   }
 
   getInfo(){
     const id = this.route.snapshot.params.id;
-    console.log(id);
     this.service.getCoursid(id)
       .subscribe(cours => this.cours = cours);
   }
 
+  getElevesresultat(){
+    const id = this.route.snapshot.params.id;
+    this.service.getResultatByCours(id)
+      .subscribe(resultat => this.resultat = resultat);
+  }
 }

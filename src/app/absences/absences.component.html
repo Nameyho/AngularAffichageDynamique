@@ -3,6 +3,7 @@
 <button  class="btn btn-info" routerLink="../creationabsence"> Ajouter absence</button>
 
 <table class="table table-striped">
+  <thead>
   <tr>
     <th scope="col">#</th>
     <th scope="col">Personne</th>
@@ -10,8 +11,9 @@
     <th scope="col">Date de Début</th>
     <th scope="col"> Date de fin</th>
     <th scope="col"> </th>
+    <th scope="col"> </th>
   </tr>
-
+  </thead>
   <tbody>
   <tr *ngFor="let absence of absence, index as i">
     <th scope="row">{{ i + 1 }}</th>

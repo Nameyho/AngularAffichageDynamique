@@ -163,5 +163,9 @@ export class RestapiService {
     return this.http.post<Message>( 'http://localhost:8080/indisponibilite' , indisponibilite, {headers});
   }
 
+  public  getResultatByCours(id:any){
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.get(('http://localhost:8080/resultat/cours/').concat(id), {headers});
+  }
 
 }

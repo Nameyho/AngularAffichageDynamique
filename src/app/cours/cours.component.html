@@ -1,9 +1,10 @@
 <head>
   <title>Affichage Dynamique</title>
- 
+
 
 </head>
 
+<button type="button" class="btn btn-primary" routerLink="../detailscours/{{cours.idCours}}"> Ajouter Cours</button>
 
 
 
@@ -12,7 +13,10 @@
     <tr>
       <th scope="col">#</th>
       <th scope="col" sortable="name">Nom </th>
-      <th> Détails</th>
+      <th scope="col" sortable="datedebut"> Date Début</th>
+      <th scope="col" sortable="datefin"> Date fin</th>
+      <th scope="col" > Détails</th>
+      <th scope="col" > </th>
 
     </tr>
     </thead>
@@ -20,6 +24,8 @@
     <tr *ngFor="let cours of cours, index as i">
       <th scope="row">{{ i + 1 }}</th>
       <td scope="row">{{cours.name}}</td>
+      <td scope="row">{{cours.datedebut |date :"dd-MM-yyyy"}}</td>
+      <td scope="row">{{cours.datefin |date :"dd-MM-yyyy"}}</td>
       <td scope="row">
       <button type="button" class="btn btn-primary" routerLink="../detailscours/{{cours.idCours}}"> Détails</button>
 

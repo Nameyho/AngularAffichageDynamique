@@ -5,3 +5,26 @@
   <h2>{{cours.name}}</h2>
 </div>
 
+<h2> Tableau des résultat</h2>
+
+<table class="table table-striped">
+  <thead>
+  <th scope="col">#</th>
+  <th scope="col">Nom</th>
+  <th scope="col">Prenom</th>
+  <th scope="col">resultat</th>
+  <th scope="col"> Réussite </th>
+
+  </thead>
+  <tbody>
+  <tr *ngFor="let resultat of resultat, index as i">
+    <th scope="row">{{i+1}}</th>
+    <td scope="row">{{resultat.nomPerson}}</td>
+    <td scope="row">{{resultat.prenomPerson}}</td>
+    <td scope="row">{{resultat.resultat}}</td>
+    <td scope="row">{{resultat.reussite}}</td>
+
+  </tbody>
+
+</table>
+

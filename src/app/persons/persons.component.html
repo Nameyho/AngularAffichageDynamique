@@ -20,6 +20,10 @@
     <th scope="col">Email</th>
     <th scope="col"> Date de naissance</th>
     <th scope="col"> </th>
+    <th scope="col"> </th>
+    <th scope="col"> </th>
+    <th scope="col"> Ajout sur écran </th>
+
   </tr>
 <tbody>
 <tr *ngFor="let eleve of eleve, index as i">
@@ -41,6 +45,18 @@
   <td scope="row">
     <button type="button" class="btn btn-danger" (click)="delete(eleve.idPerson)"> Supprimer </button>
 
+  </td>
+  <td>
+    <form>
+      <select  [(ngModel)]="idRole"  name="roles " class="form-control form-control-sm">
+        <option  *ngFor="let role of roles" [value]="role.idRole" >
+          {{role.name}}
+        </option>
+      </select>
+
+    </form>
+
+    <button type="button" class="btn-secondary" (click)="filtrage(idRole)"> Filtrer </button>
   </td>
 </tr>
 
