@@ -1,1 +1,1 @@
-ng serve --port 4200
+web ng serve --port 4200
