@@ -3,5 +3,5 @@ export interface Persons {
   nom: string;
   email: string;
   dateAnniversaire: string;
-  idRole : String;
+  idRole : any;
 }

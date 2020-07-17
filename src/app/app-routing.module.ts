@@ -14,6 +14,8 @@ import {PersonsFormComponent} from './persons-form/persons-form.component';
 import {MessagesModificationComponent} from './messages-modification/messages-modification.component';
 import {AbsenceFormComponent} from './absence-form/absence-form.component';
 import {AbsenceUpdateFormComponent} from './absence-update-form/absence-update-form.component';
+import {AjoutCoursComponent} from './ajout-cours/ajout-cours.component';
+import {AjoutResultatComponent} from './ajout-resultat/ajout-resultat.component';
 
 
 const routes: Routes = [
@@ -33,6 +35,8 @@ const routes: Routes = [
     {path : 'modificationmessage/:id', component : MessagesModificationComponent},
     {path : 'creationabsence', component : AbsenceFormComponent},
     {path : 'modificationabsence/:id1/:id2/:id3', component : AbsenceUpdateFormComponent},
+    {path : 'ajoutcours',component : AjoutCoursComponent},
+    {path : 'ajoutresultat/:id', component : AjoutResultatComponent }
   ]},
 
 

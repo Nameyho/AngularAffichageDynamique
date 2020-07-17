@@ -33,7 +33,6 @@ export class AbsenceFormComponent implements OnInit {
   }
 
   save(idPerson: String, indispo_id: String, dateDebut: String, dateFin: String) {
-    console.log(idPerson)
     this.service.addAbsence({idPerson,indispo_id,dateDebut,dateFin}as Absence).subscribe()
   }
 }

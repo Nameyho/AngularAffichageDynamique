@@ -1,11 +1,13 @@
 
 
 
-<div *ngIf="cours">
-  <h2>{{cours.name}}</h2>
+<div>
+  <h2>{{cours?.name}}</h2>
 </div>
 
-<h2> Tableau des résultat</h2>
+<h2> Tableau des résultats</h2>
+
+<button  class="btn btn-info" routerLink="../../ajoutresultat/{{cours?.idCours}}"> Ajouter resultat</button>
 
 <table class="table table-striped">
   <thead>
@@ -19,10 +21,10 @@
   <tbody>
   <tr *ngFor="let resultat of resultat, index as i">
     <th scope="row">{{i+1}}</th>
-    <td scope="row">{{resultat.nomPerson}}</td>
-    <td scope="row">{{resultat.prenomPerson}}</td>
-    <td scope="row">{{resultat.resultat}}</td>
-    <td scope="row">{{resultat.reussite}}</td>
+    <td scope="row">{{resultat?.nomPerson}}</td>
+    <td scope="row">{{resultat?.prenomPerson}}</td>
+    <td scope="row">{{resultat?.resultat}}</td>
+    <td scope="row">{{resultat?.reussite}}</td>
 
   </tbody>
 

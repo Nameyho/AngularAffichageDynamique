@@ -1,0 +1,19 @@
+<h1> Ajout de cours </h1>
+
+<div >
+  <label>Nom</label>
+  <input #nom />
+</div>
+<label >Date début</label>
+<div >
+  <input  class="form-control" type="date"  id="example-datetime-local-input" #dateDebut>
+</div>
+<div>
+  <label >Date de fin</label>
+  <div>
+    <input  class="form-control" type="date"  id="example-datetime-local-input" #dateFin>
+  </div>
+
+</div>
+
+<button type="button" class="btn btn-success" (click)="save(nom.value, dateDebut.value ,dateFin.value);">   Sauvegarder</button>

@@ -24,6 +24,8 @@ import { MessagesModificationComponent } from './messages-modification/messages-
 import { AbsenceFormComponent } from './absence-form/absence-form.component';
 import { IndisponibiliteComponent } from './indisponibilite/indisponibilite.component';
 import { AbsenceUpdateFormComponent } from './absence-update-form/absence-update-form.component';
+import { AjoutCoursComponent } from './ajout-cours/ajout-cours.component';
+import { AjoutResultatComponent } from './ajout-resultat/ajout-resultat.component';
 
 
 @NgModule({
@@ -43,7 +45,9 @@ import { AbsenceUpdateFormComponent } from './absence-update-form/absence-update
     MessagesModificationComponent,
     AbsenceFormComponent,
     IndisponibiliteComponent,
-    AbsenceUpdateFormComponent
+    AbsenceUpdateFormComponent,
+    AjoutCoursComponent,
+    AjoutResultatComponent
   ],
   imports: [
     BrowserModule,

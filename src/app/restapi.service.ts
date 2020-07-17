@@ -5,6 +5,8 @@ import {Persons} from './persons/persons';
 import {Message} from './messages/message';
 import {Absence} from './absences/absence';
 import {Indisponibilite} from './indisponibilite/Indisponibilite';
+import {Cours} from './cours/cours';
+import {Resultat} from './ajout-resultat/resultat';
 
 
 
@@ -48,6 +50,15 @@ export class RestapiService {
     return this.http.get((this.url.concat('/cours/' +id)), {headers});
   }
 
+  public addCours(cours: Cours): Observable<Cours>{
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.post<Cours>( this.url.concat('/cours') , cours, {headers});
+  }
+
+
+
+
+
   public getPersonid(id: any){
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
     return this.http.get((this.url.concat('/persons/' +id)), {headers});
@@ -60,7 +71,7 @@ export class RestapiService {
 
   public addEleve(eleve: Persons): Observable<Persons>{
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.post<Persons>( this.url.concat('/eleves') , eleve, {headers});
+    return this.http.post<Persons>( this.url.concat('/persons') , eleve, {headers});
   }
 
   public updateEleve(eleve: Persons, id:any): Observable<Persons>{
@@ -168,4 +179,8 @@ export class RestapiService {
     return this.http.get(this.url.concat('/resultat/cours/'+id), {headers});
   }
 
+  public addResultat(resultat: Resultat): Observable<Resultat>{
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.post<Resultat>( this.url.concat('/resultat') , resultat, {headers});
+  }
 }
