@@ -1,7 +1,7 @@
 # AngularAffichageDynamique
 
 
-// fef
+
 
 25 mai: Ajout d'un menu basique et d'un menu cours
 
