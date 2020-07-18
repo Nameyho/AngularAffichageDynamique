@@ -6,7 +6,6 @@ import {Persons} from './persons';
 @Component({
   selector: 'app-eleves',
   templateUrl: './persons.component.html',
-  styleUrls: ['./persons.component.css']
 })
 export class PersonsComponent implements OnInit {
 
