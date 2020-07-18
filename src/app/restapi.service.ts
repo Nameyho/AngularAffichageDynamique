@@ -108,7 +108,7 @@ export class RestapiService {
 
   public getPersonbyRoles(id:any) : Observable<Persons>{
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.get<Persons>(this.url.concat(/roles/+id), {headers});
+    return this.http.get<Persons>(this.url.concat('/persons/roles/'+id), {headers});
   }
 
   public updateMessage (message: Message, id:any): Observable<Message> {
