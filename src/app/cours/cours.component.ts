@@ -1,5 +1,9 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {RestapiService} from '../restapi.service';
+import {Ecranresultat} from './ecranresultat';
+
+
+
 
 @Component({
   selector: 'app-cours-detail',
@@ -9,19 +13,34 @@ import {RestapiService} from '../restapi.service';
 export class CoursComponent implements OnInit {
 
   cours;
+  ecran :any;
+  idE: any;
 
-  columnsToDisplay = ['name'];
+
+
+
 
 
   constructor(private service: RestapiService) { }
 
   ngOnInit(): void {
     this.getCours();
+    this.getEcrans();
   }
   getCours() {
     const response = this.service.getCours();
     response.subscribe(data => this.cours = data);
+  }
 
+  getEcrans() {
+    const response = this.service.getEcran();
+    response.subscribe(data => this.ecran = data);
+  }
+
+  Ajouter(idCours: string) {
+
+   let  idEcran = this.idE;
+   this.service.addEcranResultat({idEcran,idCours} as Ecranresultat).subscribe();
 
   }
 }

@@ -7,6 +7,7 @@ import {Absence} from './absences/absence';
 import {Indisponibilite} from './indisponibilite/Indisponibilite';
 import {Cours} from './cours/cours';
 import {Resultat} from './ajout-resultat/resultat';
+import {Ecranresultat} from './cours/ecranresultat';
 
 
 
@@ -183,4 +184,18 @@ export class RestapiService {
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
     return this.http.post<Resultat>( this.url.concat('/resultat') , resultat, {headers});
   }
-}
+
+  //Service sur Ecran Resultat
+
+  public getEcran(){
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.get(this.url.concat('/ecrans'), {headers});
+  }
+
+
+  public addEcranResultat(ecranResultat : Ecranresultat): Observable<Ecranresultat>{
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.post<Ecranresultat>(this.url.concat('/ecranresultat'), ecranResultat, {headers});
+
+
+  }}

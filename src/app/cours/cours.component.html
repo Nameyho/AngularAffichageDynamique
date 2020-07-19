@@ -7,7 +7,7 @@
 <button type="button" class="btn btn-primary" routerLink="../ajoutcours"> Ajouter Cours</button>
 
 
-
+<div>
   <table  class="table table-striped">
     <thead>
     <tr>
@@ -16,7 +16,17 @@
       <th scope="col" sortable="datedebut"> Date Début</th>
       <th scope="col" sortable="datefin"> Date fin</th>
       <th scope="col" > Détails</th>
-      <th scope="col" > </th>
+      <th scope="col" > choix affichage
+        <form>
+      <select [(ngModel)]="idE" name="ecrans" >
+        <option *ngFor="let ecran of ecran" [value]="ecran.idEcran"> {{ecran.nomEcran}}</option>
+
+      </select>
+
+
+
+        </form>
+      </th>
 
     </tr>
     </thead>
@@ -30,12 +40,16 @@
       <button type="button" class="btn btn-primary" routerLink="../detailscours/{{cours?.idCours}}"> Détails</button>
 
       </td>
-      <td></td>
+
+
+      <td> <button class="btn btn-primary" (click)="Ajouter(cours?.idCours)" > Ajouter a l'affichage </button>  </td>
 
     </tr>
 
     </tbody>
-  </table>
 
+
+  </table>
+</div>
 
 
