@@ -1,6 +1,8 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {RestapiService} from '../restapi.service';
 import {Ecranresultat} from './ecranresultat';
+import {animation} from '@angular/animations';
+
 
 
 
@@ -15,6 +17,8 @@ export class CoursComponent implements OnInit {
   cours;
   ecran :any;
   idE: any;
+  debut = 0;
+  fin=  1;
 
 
 
@@ -26,7 +30,12 @@ export class CoursComponent implements OnInit {
   ngOnInit(): void {
     this.getCours();
     this.getEcrans();
+
+
+
   }
+
+
   getCours() {
     const response = this.service.getCours();
     response.subscribe(data => this.cours = data);
@@ -43,4 +52,8 @@ export class CoursComponent implements OnInit {
    this.service.addEcranResultat({idEcran,idCours} as Ecranresultat).subscribe();
 
   }
+
+
+
+
 }

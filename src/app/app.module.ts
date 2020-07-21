@@ -26,6 +26,8 @@ import { IndisponibiliteComponent } from './indisponibilite/indisponibilite.comp
 import { AbsenceUpdateFormComponent } from './absence-update-form/absence-update-form.component';
 import { AjoutCoursComponent } from './ajout-cours/ajout-cours.component';
 import { AjoutResultatComponent } from './ajout-resultat/ajout-resultat.component';
+import { AffichageresultatComponent } from './affichageresultat/affichageresultat.component';
+import { AffichageabsenceComponent } from './affichageabsence/affichageabsence.component';
 
 
 @NgModule({
@@ -47,7 +49,9 @@ import { AjoutResultatComponent } from './ajout-resultat/ajout-resultat.componen
     IndisponibiliteComponent,
     AbsenceUpdateFormComponent,
     AjoutCoursComponent,
-    AjoutResultatComponent
+    AjoutResultatComponent,
+    AffichageresultatComponent,
+    AffichageabsenceComponent
   ],
   imports: [
     BrowserModule,
