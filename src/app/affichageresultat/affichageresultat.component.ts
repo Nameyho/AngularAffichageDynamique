@@ -11,7 +11,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 export class AffichageresultatComponent implements OnInit {
   resultat: any;
 
-  cours ;
+    cours ;
    debut= 0;
    fin = 1;
 
@@ -30,16 +30,18 @@ export class AffichageresultatComponent implements OnInit {
 
     const interval = setInterval(
       () =>{
-        const response = this.service.getResultatByCours(this?.cours[this?.debut]?.idCours);
+        const response = this?.service.getResultatByCours(this?.cours[this?.debut]?.idCours);
         response.subscribe(data =>this.resultat = data)
         this.debut++,this.fin++;
         if(this.cours?.length<this.fin){
           this.debut=0;
           this.fin= 1;
 
+           clearInterval(interval)
+           setTimeout(()=>this.router.navigate(["/home/affichageabsences"]),1000)
 
-           clearInterval(interval);
-          this.router.navigate(["/home/affichageabsences"]);
+
+
       }
 
 

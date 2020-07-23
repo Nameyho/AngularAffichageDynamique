@@ -18,6 +18,7 @@ import {AjoutCoursComponent} from './ajout-cours/ajout-cours.component';
 import {AjoutResultatComponent} from './ajout-resultat/ajout-resultat.component';
 import {AffichageresultatComponent} from './affichageresultat/affichageresultat.component';
 import {AffichageabsenceComponent} from './affichageabsence/affichageabsence.component';
+import {AffichagemessageComponent} from './affichagemessage/affichagemessage.component';
 
 
 const routes: Routes = [
@@ -40,7 +41,8 @@ const routes: Routes = [
     {path : 'ajoutcours',component : AjoutCoursComponent},
     {path : 'ajoutresultat/:id', component : AjoutResultatComponent },
     {path : 'affichageresultat', component : AffichageresultatComponent},
-    {path : 'affichageabsences',component : AffichageabsenceComponent}
+    {path : 'affichageabsences',component : AffichageabsenceComponent},
+    {path : 'affichagemessage', component : AffichagemessageComponent}
   ]},
 
 
