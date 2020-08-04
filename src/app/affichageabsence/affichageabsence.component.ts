@@ -37,14 +37,14 @@ export class AffichageabsenceComponent implements OnInit {
         this.debut= this.debut+15;
         this.fin = this.fin +15;
         if ((this.absence?.length-this.fin)<0 ) {
-          setTimeout(()=>this.router.navigate(["/home/affichagemessage"]),1000)
+          setTimeout(()=>this.router.navigate(["/affichagemessage"]),5000)
 
           clearInterval(interval);
 
         }
 
       }
-      , 1000);
+      , 5000);
 
   }
 }

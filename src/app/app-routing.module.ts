@@ -16,14 +16,22 @@ import {AbsenceFormComponent} from './absence-form/absence-form.component';
 import {AbsenceUpdateFormComponent} from './absence-update-form/absence-update-form.component';
 import {AjoutCoursComponent} from './ajout-cours/ajout-cours.component';
 import {AjoutResultatComponent} from './ajout-resultat/ajout-resultat.component';
+
+
 import {AffichageresultatComponent} from './affichageresultat/affichageresultat.component';
+
+
 import {AffichageabsenceComponent} from './affichageabsence/affichageabsence.component';
 import {AffichagemessageComponent} from './affichagemessage/affichagemessage.component';
+import {AffichagesComponent} from './affichages/affichages.component';
 
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
+  {path : 'affichageresultat', component : AffichageresultatComponent},
+  {path : 'affichageabsences',component : AffichageabsenceComponent},
+  {path : 'affichagemessage', component : AffichagemessageComponent},
   {path: 'home', component: HomeComponent,
   children: [
     {path: 'cours', component: CoursComponent},
@@ -40,9 +48,8 @@ const routes: Routes = [
     {path : 'modificationabsence/:id1/:id2/:id3', component : AbsenceUpdateFormComponent},
     {path : 'ajoutcours',component : AjoutCoursComponent},
     {path : 'ajoutresultat/:id', component : AjoutResultatComponent },
-    {path : 'affichageresultat', component : AffichageresultatComponent},
-    {path : 'affichageabsences',component : AffichageabsenceComponent},
-    {path : 'affichagemessage', component : AffichagemessageComponent}
+    {path : 'affichages', component :AffichagesComponent}
+
   ]},
 
 

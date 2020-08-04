@@ -29,6 +29,7 @@ import { AjoutResultatComponent } from './ajout-resultat/ajout-resultat.componen
 import { AffichageresultatComponent } from './affichageresultat/affichageresultat.component';
 import { AffichageabsenceComponent } from './affichageabsence/affichageabsence.component';
 import { AffichagemessageComponent } from './affichagemessage/affichagemessage.component';
+import { AffichagesComponent } from './affichages/affichages.component';
 
 
 @NgModule({
@@ -53,7 +54,8 @@ import { AffichagemessageComponent } from './affichagemessage/affichagemessage.c
     AjoutResultatComponent,
     AffichageresultatComponent,
     AffichageabsenceComponent,
-    AffichagemessageComponent
+    AffichagemessageComponent,
+    AffichagesComponent
   ],
   imports: [
     BrowserModule,

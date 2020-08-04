@@ -40,12 +40,12 @@ export class AffichagemessageComponent implements OnInit {
 
 
           clearInterval(interval);
-          setTimeout(()=>this.router.navigate(["/home/affichageresultat"]),1000)
+          setTimeout(()=>this.router.navigate(["/affichageresultat"]),5000)
         }
         this.debut++;
         this.fin ++;
       }
-      , 1000);
+      , 5000);
 
   }
 }

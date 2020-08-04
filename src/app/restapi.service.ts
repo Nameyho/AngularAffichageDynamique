@@ -8,6 +8,7 @@ import {Indisponibilite} from './indisponibilite/Indisponibilite';
 import {Cours} from './cours/cours';
 import {Resultat} from './ajout-resultat/resultat';
 import {Ecranresultat} from './cours/ecranresultat';
+import {Ecran} from './affichages/ecran';
 
 
 
@@ -187,7 +188,7 @@ export class RestapiService {
 
   //Service sur Ecran Resultat
 
-  public getEcran(){
+  public getEcrans(){
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
     return this.http.get(this.url.concat('/ecrans'), {headers});
   }
@@ -196,6 +197,14 @@ export class RestapiService {
   public addEcranResultat(ecranResultat : Ecranresultat): Observable<Ecranresultat>{
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
     return this.http.post<Ecranresultat>(this.url.concat('/ecranresultat'), ecranResultat, {headers});
+  }
+
+  public addEcran(ecran: Ecran): Observable<Ecran>{
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.post<Ecran>( this.url.concat('/ecrans') , ecran, {headers});
+  }
 
 
-  }}
+
+
+}

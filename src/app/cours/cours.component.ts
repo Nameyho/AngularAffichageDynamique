@@ -42,7 +42,7 @@ export class CoursComponent implements OnInit {
   }
 
   getEcrans() {
-    const response = this.service.getEcran();
+    const response = this.service.getEcrans();
     response.subscribe(data => this.ecran = data);
   }
 

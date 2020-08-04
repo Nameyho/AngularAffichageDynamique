@@ -38,7 +38,7 @@ export class AffichageresultatComponent implements OnInit {
           this.fin= 1;
 
            clearInterval(interval)
-           setTimeout(()=>this.router.navigate(["/home/affichageabsences"]),1000)
+           setTimeout(()=>this.router.navigate(["/affichageabsences"]),5000)
 
 
 
@@ -47,7 +47,7 @@ export class AffichageresultatComponent implements OnInit {
 
 
 }
-      , 1000);
+      , 5000);
 
 
   }
