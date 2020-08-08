@@ -9,6 +9,16 @@
     <th scope="col">Auteur</th>
     <th scope="col"> </th>
     <th scope="col"> </th>
+    <th> choix affichage
+      <form>
+        <select [(ngModel)]="idE" name="ecrans" >
+          <option *ngFor="let ecran of ecran" [value]="ecran.idEcran"> {{ecran.nomEcran}}</option>
+
+        </select>
+
+
+
+      </form></th>
   </tr>
 
   <thead>
@@ -32,6 +42,8 @@
       <button type="button" class="btn btn-danger" (click)="delete(message.idMessage)"> Supprimer </button>
 
     </td>
+    <td> <button class="btn btn-primary" (click)="Ajouter(message.idMessage)" >
+      Ajouter a l'affichage </button>  </td>
   </tr>
 
 

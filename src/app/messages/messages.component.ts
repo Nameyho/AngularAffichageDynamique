@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {RestapiService} from '../restapi.service';
 import {ActivatedRoute, Router} from '@angular/router';
+import {Ecranabsence} from '../absences/ecranabsence';
+import {Ecranmessage} from './ecranmessage';
 
 @Component({
   selector: 'app-messages',
@@ -8,13 +10,16 @@ import {ActivatedRoute, Router} from '@angular/router';
   styleUrls: ['./messages.component.css']
 })
 export class MessagesComponent implements OnInit {
+ ecran: Object;
 
   constructor(private service: RestapiService, private route: ActivatedRoute,private router: Router, ) { }
 
   messages:any
+  idE: any;
 
   ngOnInit(): void {
     this.getMessages()
+  this.getEcrans()
   }
 
   getMessages() {
@@ -27,5 +32,14 @@ export class MessagesComponent implements OnInit {
 
 
     this.service.deleteMessage(idPerson).subscribe();
+  }
+  getEcrans() {
+    const response = this.service.getEcrans();
+    response.subscribe(data => this.ecran = data);
+  }
+
+  Ajouter(idMessage: String) {
+    let  idEcran = this.idE;
+    this.service.addEcranMessage({idEcran,idMessage} as Ecranmessage).subscribe();
   }
 }

@@ -2,6 +2,8 @@
 
 <button  class="btn btn-info" routerLink="../creationabsence"> Ajouter absence</button>
 
+
+
 <table class="table table-striped">
   <thead>
   <tr>
@@ -12,6 +14,17 @@
     <th scope="col"> Date de fin</th>
     <th scope="col"> </th>
     <th scope="col"> </th>
+    <th> choix affichage
+    <form>
+      <select [(ngModel)]="idE" name="ecrans" >
+        <option *ngFor="let ecran of ecran" [value]="ecran.idEcran"> {{ecran.nomEcran}}</option>
+
+      </select>
+
+
+
+    </form></th>
+
   </tr>
   </thead>
   <tbody>
@@ -32,6 +45,8 @@
       <button type="button" class="btn btn-danger" (click)="delete(absence.indispo_id,absence.idPerson,absence.idSpecifique)"> Supprimer </button>
 
     </td>
+
+    <td> <button class="btn btn-primary" (click)="Ajouter(absence.indispo_id,absence.idPerson,absence.idSpecifique)" > Ajouter a l'affichage </button>  </td>
   </tr>
   </tbody>
   </table>

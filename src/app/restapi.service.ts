@@ -9,6 +9,8 @@ import {Cours} from './cours/cours';
 import {Resultat} from './ajout-resultat/resultat';
 import {Ecranresultat} from './cours/ecranresultat';
 import {Ecran} from './affichages/ecran';
+import {Ecranabsence} from './absences/ecranabsence';
+import {Ecranmessage} from './messages/ecranmessage';
 
 
 
@@ -203,8 +205,15 @@ export class RestapiService {
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
     return this.http.post<Ecran>( this.url.concat('/ecrans') , ecran, {headers});
   }
+  public addEcranAbsence(ecranAbsence : Ecranabsence): Observable<Ecranabsence>{
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.post<Ecranabsence>(this.url.concat('/ecranabsence'), ecranAbsence, {headers});
+  }
 
-
+  public addEcranMessage(ecranmessage : Ecranmessage): Observable<Ecranresultat>{
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.post<Ecranresultat>(this.url.concat('/ecranmessage'), ecranmessage, {headers});
+  }
 
 
 }
