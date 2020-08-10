@@ -21,7 +21,7 @@ export class AffichagemessageComponent implements OnInit {
   }
 
   animationMessage() {
-
+    const id = this.route.snapshot.params.id;
     const response = this.service.getMessages();
     response.subscribe(data => this.messages = data);
 
@@ -40,7 +40,7 @@ export class AffichagemessageComponent implements OnInit {
 
 
           clearInterval(interval);
-          setTimeout(()=>this.router.navigate(["/affichageresultat"]),5000)
+          setTimeout(()=>this.router.navigate(["/affichageresultat/".concat(id)]),5000)
         }
         this.debut++;
         this.fin ++;

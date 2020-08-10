@@ -201,6 +201,16 @@ export class RestapiService {
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
     return this.http.get(this.url.concat('/ecranresultat/' + id), {headers});
   }
+  public getEcransmessage(id :any){
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.get(this.url.concat('/ecranmessage/' + id), {headers});
+  }
+
+  public getecranAbsence(id :any){
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.get(this.url.concat('/ecranabsence/' + id), {headers});
+  }
+
 
   public addEcranResultat(ecranResultat : Ecranresultat): Observable<Ecranresultat>{
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));

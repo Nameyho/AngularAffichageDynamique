@@ -30,8 +30,8 @@ const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path : 'affichageresultat/:id', component : AffichageresultatComponent},
-  {path : 'affichageabsences',component : AffichageabsenceComponent},
-  {path : 'affichagemessage', component : AffichagemessageComponent},
+  {path : 'affichageabsences/:id',component : AffichageabsenceComponent},
+  {path : 'affichagemessage/:id', component : AffichagemessageComponent},
   {path: 'home', component: HomeComponent,
   children: [
     {path: 'cours', component: CoursComponent},

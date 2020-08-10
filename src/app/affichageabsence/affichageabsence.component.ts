@@ -29,7 +29,7 @@ export class AffichageabsenceComponent implements OnInit {
 
     const response = this.service.getAbsences();
     response.subscribe(data => this.absence = data);
-
+    const id = this.route.snapshot.params.id;
     const interval = setInterval(
 
       () => {
@@ -37,7 +37,7 @@ export class AffichageabsenceComponent implements OnInit {
         this.debut= this.debut+15;
         this.fin = this.fin +15;
         if ((this.absence?.length-this.fin)<0 ) {
-          setTimeout(()=>this.router.navigate(["/affichagemessage"]),5000)
+          setTimeout(()=>this.router.navigate(["/affichagemessage/".concat(id)]),5000)
 
           clearInterval(interval);
 

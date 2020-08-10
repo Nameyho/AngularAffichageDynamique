@@ -41,7 +41,7 @@ export class AffichageresultatComponent implements OnInit {
           this.fin= 1;
 
            clearInterval(interval)
-           setTimeout(()=>this.router.navigate(["/affichageabsences"]),5000)
+           setTimeout(()=>this.router.navigate(["/affichageabsences/".concat(id)]),5000)
 
 
 
