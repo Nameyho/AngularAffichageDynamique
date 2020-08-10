@@ -10,7 +10,7 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class AffichageresultatComponent implements OnInit {
   resultat: any;
-
+  nomCours : string;
     cours ;
    debut= 0;
    fin = 1;
@@ -25,11 +25,14 @@ export class AffichageresultatComponent implements OnInit {
 
   animationCours() {
 
-    const response = this.service.getCours();
+    const id = this.route.snapshot.params.id;
+
+    const response = this.service.getEcransresultat(id);
     response.subscribe(data => this.cours = data);
 
     const interval = setInterval(
       () =>{
+        this.nomCours= this?.cours[this?.debut]?.nomCours;
         const response = this?.service.getResultatByCours(this?.cours[this?.debut]?.idCours);
         response.subscribe(data =>this.resultat = data)
         this.debut++,this.fin++;

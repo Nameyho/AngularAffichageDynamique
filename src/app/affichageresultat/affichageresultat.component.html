@@ -1,7 +1,7 @@
-<div *ngIf="resultat">
+
   <h2> Tableau des résultats</h2>
 
-  <h3> {{resultat?.nomCours}}</h3>
+<h3> {{nomCours}}</h3>
 
   <table class="table table-striped">
     <thead>
@@ -12,15 +12,16 @@
 
     </thead>
     <tbody>
-    <tr *ngFor="let resultat of resultat, index as i">
+    <tr *ngFor="let resultats of resultat, index as i">
 
       <th scope="row">{{i+1}}</th>
-      <td scope="row">{{resultat?.numerounique}}</td>
-      <td scope="row">{{resultat?.resultat}}</td>
-      <td scope="row">{{resultat?.reussite}}</td>
+
+      <td scope="row">{{resultats?.numerounique}}</td>
+      <td scope="row">{{resultats?.resultat}}</td>
+      <td scope="row">{{resultats?.reussite}}</td>
 
     </tbody>
 
   </table>
 
-</div>
+

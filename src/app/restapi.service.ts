@@ -183,6 +183,8 @@ export class RestapiService {
     return this.http.get(this.url.concat('/resultat/cours/'+id), {headers});
   }
 
+
+
   public addResultat(resultat: Resultat): Observable<Resultat>{
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
     return this.http.post<Resultat>( this.url.concat('/resultat') , resultat, {headers});
@@ -195,6 +197,10 @@ export class RestapiService {
     return this.http.get(this.url.concat('/ecrans'), {headers});
   }
 
+  public getEcransresultat(id :any){
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.get(this.url.concat('/ecranresultat/' + id), {headers});
+  }
 
   public addEcranResultat(ecranResultat : Ecranresultat): Observable<Ecranresultat>{
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));

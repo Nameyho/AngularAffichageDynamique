@@ -29,7 +29,7 @@ import {AffichagesComponent} from './affichages/affichages.component';
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
-  {path : 'affichageresultat', component : AffichageresultatComponent},
+  {path : 'affichageresultat/:id', component : AffichageresultatComponent},
   {path : 'affichageabsences',component : AffichageabsenceComponent},
   {path : 'affichagemessage', component : AffichagemessageComponent},
   {path: 'home', component: HomeComponent,
