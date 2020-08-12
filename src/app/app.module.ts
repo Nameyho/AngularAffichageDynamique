@@ -30,6 +30,7 @@ import { AffichageresultatComponent } from './affichageresultat/affichageresulta
 import { AffichageabsenceComponent } from './affichageabsence/affichageabsence.component';
 import { AffichagemessageComponent } from './affichagemessage/affichagemessage.component';
 import { AffichagesComponent } from './affichages/affichages.component';
+import { GestionsAffichagesComponent } from './gestions-affichages/gestions-affichages.component';
 
 
 @NgModule({
@@ -55,7 +56,8 @@ import { AffichagesComponent } from './affichages/affichages.component';
     AffichageresultatComponent,
     AffichageabsenceComponent,
     AffichagemessageComponent,
-    AffichagesComponent
+    AffichagesComponent,
+    GestionsAffichagesComponent
   ],
   imports: [
     BrowserModule,

@@ -231,5 +231,9 @@ export class RestapiService {
     return this.http.post<Ecranresultat>(this.url.concat('/ecranmessage'), ecranmessage, {headers});
   }
 
+  public deleteEcran(id :any){
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.delete<Ecranresultat>(this.url.concat('/ecrans/'.concat(id)), {headers});
+}
 
 }

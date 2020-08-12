@@ -26,12 +26,12 @@
 
     <td scope="row">{{ecran.nomEcran}}</td>
     <td scope="row">
-      <button type="button" class="btn btn-secondary" routerLink=""> Gestion </button>
+      <button type="button" class="btn btn-secondary" routerLink="../gestions/{{ecran.idEcran}}"> Gestion </button>
 
     </td>
     <td scope="row">
 
-      <button type="button" class="btn btn-danger" > Supprimer </button>
+      <button type="button" class="btn btn-danger" (click)="supprimer(ecran.idEcran)" > Supprimer </button>
 
     </td>
 

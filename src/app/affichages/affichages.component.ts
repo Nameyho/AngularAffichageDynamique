@@ -27,4 +27,9 @@ export class AffichagesComponent implements OnInit {
 this.service.addEcran({nomEcran} as Ecran).subscribe();
 this.getEcrans();
   }
+
+  supprimer(idEcran: any) {
+    this.service.deleteEcran(idEcran).subscribe();
+    this.getEcrans();
+  }
 }

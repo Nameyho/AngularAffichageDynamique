@@ -24,6 +24,7 @@ import {AffichageresultatComponent} from './affichageresultat/affichageresultat.
 import {AffichageabsenceComponent} from './affichageabsence/affichageabsence.component';
 import {AffichagemessageComponent} from './affichagemessage/affichagemessage.component';
 import {AffichagesComponent} from './affichages/affichages.component';
+import {GestionsAffichagesComponent} from './gestions-affichages/gestions-affichages.component';
 
 
 const routes: Routes = [
@@ -48,7 +49,8 @@ const routes: Routes = [
     {path : 'modificationabsence/:id1/:id2/:id3', component : AbsenceUpdateFormComponent},
     {path : 'ajoutcours',component : AjoutCoursComponent},
     {path : 'ajoutresultat/:id', component : AjoutResultatComponent },
-    {path : 'affichages', component :AffichagesComponent}
+    {path : 'affichages', component :AffichagesComponent},
+    {path : 'gestions/:id', component :GestionsAffichagesComponent}
 
   ]},
 
