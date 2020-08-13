@@ -26,10 +26,10 @@ export class AffichageabsenceComponent implements OnInit {
 
 
   animationAbsence() {
-
-    const response = this.service.getAbsences();
-    response.subscribe(data => this.absence = data);
     const id = this.route.snapshot.params.id;
+    const response = this.service.getecranAbsence(id);
+    response.subscribe(data => this.absence = data);
+
     const interval = setInterval(
 
       () => {

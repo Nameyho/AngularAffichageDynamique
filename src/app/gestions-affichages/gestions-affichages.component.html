@@ -1,1 +1,61 @@
-<p>gestions-affichages works!</p>
+<h1>Administration de l'Ecran : {{ecran?.nomEcran}}</h1>
+
+<h2> Resultats affichés </h2>
+<table class="table table-striped">
+  <thead>
+  <th scope="col">#</th>
+  <th> Nom du Cours </th>
+  <th> suppression de l'affichage</th>
+
+  </thead>
+  <tbody>
+  <tr *ngFor="let resultats of resultat, index as i">
+
+    <th scope="row">{{i+1}}</th>
+
+    <td scope="row">{{resultats?.nomCours}}</td>
+    <td>  <button type="button" class="btn btn-secondary" routerLink=""> retrait de l'affichage  </button></td>
+ </tbody>
+
+</table>
+
+<h2> Message affichés </h2>
+
+<table class="table table-striped">
+  <thead>
+  <th scope="col">#</th>
+  <th> titre du message </th>
+  <th> suppression de l'affichage</th>
+
+  </thead>
+  <tbody>
+  <tr *ngFor="let message of messages, index as i">
+
+    <th scope="row">{{i+1}}</th>
+
+    <td scope="row">{{message.titreMessage}} </td>
+    <td>  <button type="button" class="btn btn-secondary" routerLink=""> retrait de l'affichage  </button></td>
+  </tbody>
+
+</table>
+
+
+<h2> Absences affichés </h2>
+
+<table class="table table-striped">
+  <thead>
+  <th scope="col">#</th>
+  <th> Nom de l'absent </th>
+  <th> suppression de l'affichage</th>
+
+  </thead>
+  <tbody>
+  <tr *ngFor="let absence of absences, index as i">
+
+    <th scope="row">{{i+1}}</th>
+
+    <td scope="row">{{absence.nomPerson}} </td>
+    <td>  <button type="button" class="btn btn-secondary" routerLink=""> retrait de l'affichage  </button></td>
+  </tbody>
+
+</table>

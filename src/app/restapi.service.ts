@@ -95,12 +95,12 @@ export class RestapiService {
 
   public addMessage(Message: Message): Observable<Message>{
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.post<Message>( 'http://localhost:8080/messages' , Message, {headers});
+    return this.http.post<Message>( this.url.concat('/messages'), Message, {headers});
   }
 
   public deleteMessage(id:any){
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.delete(('http://localhost:8080/messages/').concat(id), {headers});
+    return this.http.delete((this.url.concat('/messages/')).concat(id), {headers});
   }
 
 
@@ -117,7 +117,6 @@ export class RestapiService {
 
   public updateMessage (message: Message, id:any): Observable<Message> {
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-
     return this.http.put<Message>( this.url.concat(/messages/+id) , message, {headers});
   }
   public getMessageByID(id: any){
@@ -236,4 +235,8 @@ export class RestapiService {
     return this.http.delete<Ecranresultat>(this.url.concat('/ecrans/'.concat(id)), {headers});
 }
 
+  public getEcranByID(id :any){
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.get<Ecranresultat>(this.url.concat('/ecrans/'.concat(id)), {headers});
+  }
 }
