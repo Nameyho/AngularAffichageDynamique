@@ -239,4 +239,19 @@ export class RestapiService {
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
     return this.http.get<Ecranresultat>(this.url.concat('/ecrans/'.concat(id)), {headers});
   }
+
+  public deleteEcranAbsence(idEcran: any,idPerson : any ,idIndispo :any,idspecifique : any){
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.delete(this.url.concat('/ecranabsence/'+idEcran + "/" + idPerson +"/" + idIndispo + "/" + idspecifique), {headers});
+  }
+
+  public deleteEcranMessage(idEcran: any,idMessage : any ){
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.delete(this.url.concat('/ecranmessage/'+idEcran + "/" + idMessage ), {headers});
+  }
+
+  public deleteEcranResultat(idEcran: any,idCours : any ){
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.delete(this.url.concat('/ecranresultat/'+idEcran + "/" + idCours ), {headers});
+  }
 }

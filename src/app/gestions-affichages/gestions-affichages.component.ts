@@ -11,7 +11,7 @@ export class GestionsAffichagesComponent implements OnInit {
   ecran: any;
   resultat : any;
   messages: any;
-   absences: Object;
+   absences: any;
 
   constructor(private service: RestapiService, private route: ActivatedRoute, private router: Router,) {
   }
@@ -50,4 +50,16 @@ export class GestionsAffichagesComponent implements OnInit {
   }
 
 
+  delete(idEcran: string,idPerson : string,idIndisponibilite : string, idSpecifique : string) {
+
+    this.service.deleteEcranAbsence(idEcran,idPerson,idIndisponibilite,idSpecifique).subscribe();
+  }
+
+  deleteMessage(idEcran: any, idMessage: any) {
+    this.service.deleteEcranMessage(idEcran,idMessage).subscribe();
+  }
+
+  deleteResultat(idEcran: any, idCours: any) {
+    this.service.deleteEcranResultat(idEcran,idCours).subscribe();
+  }
 }

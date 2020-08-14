@@ -22,7 +22,7 @@ export class AffichagemessageComponent implements OnInit {
 
   animationMessage() {
     const id = this.route.snapshot.params.id;
-    const response = this.service.getMessages();
+    const response = this.service.getEcransmessage(id);
     response.subscribe(data => this.messages = data);
 
     const interval = setInterval(

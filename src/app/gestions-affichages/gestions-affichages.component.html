@@ -14,7 +14,7 @@
     <th scope="row">{{i+1}}</th>
 
     <td scope="row">{{resultats?.nomCours}}</td>
-    <td>  <button type="button" class="btn btn-secondary" routerLink=""> retrait de l'affichage  </button></td>
+    <td>  <button type="button" class="btn btn-secondary" (click)="deleteResultat(resultats.idEcran,resultats.idCours)"> retrait de l'affichage  </button></td>
  </tbody>
 
 </table>
@@ -34,7 +34,7 @@
     <th scope="row">{{i+1}}</th>
 
     <td scope="row">{{message.titreMessage}} </td>
-    <td>  <button type="button" class="btn btn-secondary" routerLink=""> retrait de l'affichage  </button></td>
+    <td>  <button type="button" class="btn btn-secondary" (click)="deleteMessage(message.idEcran,message.idMessage)" > retrait de l'affichage  </button></td>
   </tbody>
 
 </table>
@@ -55,7 +55,7 @@
     <th scope="row">{{i+1}}</th>
 
     <td scope="row">{{absence.nomPerson}} </td>
-    <td>  <button type="button" class="btn btn-secondary" routerLink=""> retrait de l'affichage  </button></td>
+    <td>  <button type="button" class="btn btn-secondary" (click)="delete(absence.idEcran,absence.idPerson,absence.idIndisponibilite,absence.idSpecifique)"> retrait de l'affichage  </button></td>
   </tbody>
 
 </table>
