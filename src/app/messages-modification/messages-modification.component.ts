@@ -31,6 +31,7 @@ export class MessagesModificationComponent implements OnInit {
 
       const id = this.route.snapshot.params.id;
 
+      console.log()
 
       const nomPerson = localStorage.getItem('username');
       const createdDate = Date.now().toString();
