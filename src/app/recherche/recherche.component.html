@@ -1,0 +1,29 @@
+<h1> recherche de resultat </h1>
+
+<label> Entrez votre identifiant unique</label>
+<br>
+
+<input type="number" min="1000000000" max="9999999999" placeholder="Votre identifiant" #code>
+
+<button type="button" class="btn btn-primary" (click)="obtenir(code.value)"> Obtenir </button>
+
+<h2> Tableau des résultat</h2>
+
+<table class="table table-striped">
+  <thead>
+  <th scope="col">#</th>
+  <th scope="col">Cours</th>
+  <th scope="col">Note</th>
+  <th scope="col"> Réussite </th>
+
+  </thead>
+  <tbody>
+  <tr *ngFor="let resultat of resultat, index as i">
+    <th scope="row">{{i+1}}</th>
+    <td scope="row">{{resultat?.nomCours}}</td>
+    <td scope="row">{{resultat?.resultat}}</td>
+    <td scope="row">{{resultat?.reussite}}</td>
+
+  </tbody>
+
+</table>

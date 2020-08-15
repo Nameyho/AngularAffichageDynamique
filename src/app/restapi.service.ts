@@ -254,4 +254,8 @@ export class RestapiService {
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
     return this.http.delete(this.url.concat('/ecranresultat/'+idEcran + "/" + idCours ), {headers});
   }
-}
+
+  public findByNumeroUnique( numerounique : number){
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.get(this.url.concat('/persons/n/'+ numerounique ), {headers});
+}}

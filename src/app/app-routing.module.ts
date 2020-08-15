@@ -25,14 +25,16 @@ import {AffichageabsenceComponent} from './affichageabsence/affichageabsence.com
 import {AffichagemessageComponent} from './affichagemessage/affichagemessage.component';
 import {AffichagesComponent} from './affichages/affichages.component';
 import {GestionsAffichagesComponent} from './gestions-affichages/gestions-affichages.component';
+import {RechercheComponent} from './recherche/recherche.component';
 
 
 const routes: Routes = [
   {path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
+  {path: 'resultat', component: RechercheComponent},
   {path : 'affichageresultat/:id', component : AffichageresultatComponent},
   {path : 'affichageabsences/:id',component : AffichageabsenceComponent},
-  {path : 'affichagemessage/:id', component : AffichagemessageComponent},
+  {path : 'affichagemessage/:id', component : RechercheComponent},
   {path: 'home', component: HomeComponent,
   children: [
     {path: 'cours', component: CoursComponent},
