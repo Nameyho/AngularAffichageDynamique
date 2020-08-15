@@ -1,0 +1,3 @@
+interface Indisponibilite {
+  type : string;
+}

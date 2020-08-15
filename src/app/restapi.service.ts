@@ -174,7 +174,7 @@ export class RestapiService {
 
   public addindisponibilite(indisponibilite: Indisponibilite): Observable<Indisponibilite>{
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.post<Message>( this.url.concat('/indisponilite'), indisponibilite, {headers});
+    return this.http.post<Message>( this.url.concat('/indisponibilite'), indisponibilite, {headers});
   }
 
   public  getResultatByCours(id:any){

@@ -13,9 +13,18 @@
   </form>
 
 <h2> raison absence </h2>
-<form>
 
+
+
+<form>
+  <label> Ajouter une raison absence si nécessaire : </label>
+  <input #nom >
+  <button type="button" class="btn btn-primary" (click)="AjouterMaladie(nom.value)"> Ajouter</button>
+  <br><br>
   <select [(ngModel)]=" idAbsence"  name="absence"  class="form-control form-control-sm" #idindisponibilite >
+
+
+
 
     <option  *ngFor="let absence of absences" [value]="absence.idindisponibilite"  >
       {{absence.type}}

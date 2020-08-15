@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {RestapiService} from '../restapi.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Absence} from '../absences/absence';
+import { Indisponibilite } from '../indisponibilite/Indisponibilite';
 
 @Component({
   selector: 'app-absence-form',
@@ -34,5 +35,10 @@ export class AbsenceFormComponent implements OnInit {
 
   save(idPerson: String, indispo_id: String, dateDebut: String, dateFin: String) {
     this.service.addAbsence({idPerson,indispo_id,dateDebut,dateFin}as Absence).subscribe()
+  }
+
+  AjouterMaladie(type: string) {
+    this.service.addindisponibilite({type} as Indisponibilite) .subscribe();
+    this.getPersoninfo();
   }
 }
