@@ -1,24 +1,31 @@
-<table class="table table-striped">
-  <thead>
-  <tr>
-    <th scope="col">#</th>
-    <th scope="col">Personne</th>
-    <th scope="col">Date de Début</th>
-    <th scope="col"> Date de fin</th>
-    <th scope="col"> </th>
-    <th scope="col"> </th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let absence of absence |slice:debut:fin index as i">
-    <th scope="row">{{ i + 1  }}  </th>
+<div *ngIf="absence">
 
-    <td scope="row">{{absence.nomPerson}}  {{absence.prenomPerson}}</td>
-    <td scope="row">{{absence.dateDebut  | date :'dd-LL-yyyy'}}</td>
-    <td scope="row">{{absence.dateFin | date :'dd-LL-yyyy'}}</td>
+  <table class="table table-striped">
+    <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Personne</th>
+      <th scope="col">Date de Début</th>
+      <th scope="col"> Date de fin</th>
+      <th scope="col"> </th>
+      <th scope="col"> </th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let absences of absence |slice:debut:fin index as i">
+      <th scope="row">{{ i + 1  }}  </th>
 
-  </tr>
-  </tbody>
-  <a> page : {{page}}</a>
-</table>
+      <td scope="row">{{absences.nomPerson}} {{absences.prenomPerson}}  </td>
+      <td scope="row">{{absences.dateDebut  | date :'dd-LL-yyyy'}}</td>
+      <td scope="row">{{absences.dateFin | date :'dd-LL-yyyy'}}</td>
+
+    </tr>
+    </tbody>
+    <a> page : {{page}}</a>
+  </table>
+
+
+</div>
+
+
 

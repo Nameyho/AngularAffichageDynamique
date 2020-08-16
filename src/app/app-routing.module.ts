@@ -34,7 +34,7 @@ const routes: Routes = [
   {path: 'resultat', component: RechercheComponent},
   {path : 'affichageresultat/:id', component : AffichageresultatComponent},
   {path : 'affichageabsences/:id',component : AffichageabsenceComponent},
-  {path : 'affichagemessage/:id', component : RechercheComponent},
+  {path : 'affichagemessage/:id', component : AffichagemessageComponent},
   {path: 'home', component: HomeComponent,
   children: [
     {path: 'cours', component: CoursComponent},
