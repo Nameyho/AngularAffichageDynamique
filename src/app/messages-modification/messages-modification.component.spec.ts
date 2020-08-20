@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { MessagesModificationComponent } from './messages-modification.component';
+import {MessagesModificationComponent} from './messages-modification.component';
 
 describe('MessagesModificationComponent', () => {
   let component: MessagesModificationComponent;

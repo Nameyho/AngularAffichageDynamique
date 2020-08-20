@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {RestapiService} from '../restapi.service';
+import {RestapiService} from '../service/restapi.service';
 import {Router} from '@angular/router';
 
 @Component({
@@ -21,7 +21,6 @@ export class LoginComponent implements OnInit {
   doLogin(){
    const resp =  this.service.login(this.username, this.password);
    resp.subscribe(data => {
-     sessionStorage.setItem('basicauth', btoa(this.username + ':' + this.password)) ;
      this.router.navigate(["/home"]);
     });
   }

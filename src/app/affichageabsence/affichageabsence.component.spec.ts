@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AffichageabsenceComponent } from './affichageabsence.component';
+import {AffichageabsenceComponent} from './affichageabsence.component';
 
 describe('AffichageabsenceComponent', () => {
   let component: AffichageabsenceComponent;

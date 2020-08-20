@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {RestapiService} from '../restapi.service';
+import {RestapiService} from '../service/restapi.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Ecranabsence} from '../absences/ecranabsence';
 import {Ecranmessage} from './ecranmessage';
 
 @Component({

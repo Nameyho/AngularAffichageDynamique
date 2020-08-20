@@ -1,7 +1,6 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {RestapiService} from '../restapi.service';
+import {Component, OnInit} from '@angular/core';
+import {RestapiService} from '../service/restapi.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import {Persons} from '../persons/persons';
 import {Message} from '../messages/message';
 
 @Component({

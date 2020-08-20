@@ -1,10 +1,6 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
-import {RestapiService} from '../restapi.service';
+import {Component, OnInit} from '@angular/core';
+import {RestapiService} from '../service/restapi.service';
 import {Ecranresultat} from './ecranresultat';
-import {animation} from '@angular/animations';
-
-
-
 
 
 @Component({

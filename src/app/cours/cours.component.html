@@ -22,9 +22,6 @@
         <option *ngFor="let ecran of ecran" [value]="ecran.idEcran"> {{ecran.nomEcran}}</option>
 
       </select>
-
-
-
         </form>
       </th>
 
@@ -40,8 +37,6 @@
       <button type="button" class="btn btn-primary" routerLink="../detailscours/{{cours?.idCours}}"> Détails</button>
 
       </td>
-
-
       <td> <button class="btn btn-primary" (click)="Ajouter(cours?.idCours)" > Ajouter a l'affichage </button>  </td>
 
     </tr>

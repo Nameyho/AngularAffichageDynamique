@@ -1,7 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {RestapiService} from '../restapi.service';
+import {Component, OnInit} from '@angular/core';
+import {RestapiService} from '../service/restapi.service';
 import {ActivatedRoute, Router} from '@angular/router';
-import set = Reflect.set;
 
 @Component({
   selector: 'app-affichageabsence',
@@ -20,30 +19,19 @@ export class AffichageabsenceComponent implements OnInit {
   ngOnInit(): void {
     this.animationAbsence();
 
-
   }
-
-
-
   animationAbsence() {
     const id = this.route.snapshot.params.id;
     const response = this.service.getecranAbsence(id);
 
-
-
     response.subscribe(data => this.absence = data,
       ()=>console.log("Erreur chargement données absence"),
       ()=>affichage(this.fin,this.debut,this.page,this.absence,this.route,this.router));
-
-
-
-    }}
+  }}
 
   function affichage(fin: number, debut: number,page:any,absence:any,route:any,router) {
-    console.log(this?.absence?.length)
-    console.log(fin)
 
-    const interval = setInterval(
+  const interval = setInterval(
       () => {
         page++;
         debut = debut + 15;
@@ -54,9 +42,7 @@ export class AffichageabsenceComponent implements OnInit {
         if (((absence?.length - fin) < 0)) {
           const id = route.snapshot.params.id;
           setTimeout(()=>router.navigate(["/affichagemessage/".concat(id)]),5000)
-
           clearInterval(interval);
-
         }
       }
       , 5000);

@@ -1,6 +1,6 @@
 import {TestBed} from '@angular/core/testing';
 
-import {RestapiService} from './restapi.service';
+import {RestapiService} from './service/restapi.service';
 
 describe('RestapiService', () => {
   let service: RestapiService;

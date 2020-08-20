@@ -1,6 +1,6 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import {async, ComponentFixture, TestBed} from '@angular/core/testing';
 
-import { AbsenceFormComponent } from './absence-form.component';
+import {AbsenceFormComponent} from './absence-form.component';
 
 describe('AbsenceFormComponent', () => {
   let component: AbsenceFormComponent;

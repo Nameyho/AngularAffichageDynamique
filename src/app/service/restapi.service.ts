@@ -1,21 +1,16 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Persons} from './persons/persons';
-import {Message} from './messages/message';
-import {Absence} from './absences/absence';
-import {Indisponibilite} from './indisponibilite/Indisponibilite';
-import {Cours} from './cours/cours';
-import {Resultat} from './ajout-resultat/resultat';
-import {Ecranresultat} from './cours/ecranresultat';
-import {Ecran} from './affichages/ecran';
-import {Ecranabsence} from './absences/ecranabsence';
-import {Ecranmessage} from './messages/ecranmessage';
-
-
-
-
-
+import {Persons} from '../persons/persons';
+import {Message} from '../messages/message';
+import {Absence} from '../absences/absence';
+import {Indisponibilite} from '../indisponibilite/Indisponibilite';
+import {Cours} from '../cours/cours';
+import {Resultat} from '../ajout-resultat/resultat';
+import {Ecranresultat} from '../cours/ecranresultat';
+import {Ecran} from '../affichages/ecran';
+import {Ecranabsence} from '../absences/ecranabsence';
+import {Ecranmessage} from '../messages/ecranmessage';
 
 
 @Injectable({
