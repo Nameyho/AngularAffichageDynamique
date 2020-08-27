@@ -1,31 +1,31 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
-import {LoginComponent} from './login/login.component';
-import {HomeComponent} from './home/home.component';
-import {CoursComponent} from './cours/cours.component';
-import {CoursDetailsComponent} from './cours-details/cours-details.component';
-import {PersonsComponent} from './persons/persons.component';
-import {MessagesComponent} from './messages/messages.component';
-import {AbsencesComponent} from './absences/absences.component';
-import {PersonsResultatsComponent} from './persons-resultats/persons-resultats.component';
-import {PersonsDetailsComponent} from './persons-details/persons-details.component';
-import {MessagesCreationComponent} from './messages-creation/messages-creation.component';
-import {PersonsFormComponent} from './persons-form/persons-form.component';
-import {MessagesModificationComponent} from './messages-modification/messages-modification.component';
-import {AbsenceFormComponent} from './absence-form/absence-form.component';
-import {AbsenceUpdateFormComponent} from './absence-update-form/absence-update-form.component';
-import {AjoutCoursComponent} from './ajout-cours/ajout-cours.component';
-import {AjoutResultatComponent} from './ajout-resultat/ajout-resultat.component';
+import {LoginComponent} from './component/login/login.component';
+import {HomeComponent} from './component/home/home.component';
+import {CoursComponent} from './component/cours/cours-lists/cours.component';
+import {CoursDetailsComponent} from './component/cours/cours-details/cours-details.component';
+import {PersonsComponent} from './component/persons/persons-lists/persons.component';
+import {MessagesComponent} from './component/messages/messages-list/messages.component';
+import {AbsencesComponent} from './component/absences/absences-list/absences.component';
+import {PersonsResultatsComponent} from './component/persons/persons-resultats/persons-resultats.component';
+import {PersonsDetailsComponent} from './component/persons/persons-details/persons-details.component';
+import {MessagesCreationComponent} from './component/messages/messages-creation/messages-creation.component';
+import {PersonsFormComponent} from './component/persons/persons-form/persons-form.component';
+import {MessagesModificationComponent} from './component/messages/messages-modification/messages-modification.component';
+import {AbsenceFormComponent} from './component/absences/absence-form/absence-form.component';
+import {AbsenceUpdateFormComponent} from './component/absences/absence-update-form/absence-update-form.component';
+import {AjoutCoursComponent} from './component/cours/ajout-cours/ajout-cours.component';
+import {AjoutResultatComponent} from './component/cours/ajout-resultat/ajout-resultat.component';
 
 
-import {AffichageresultatComponent} from './affichageresultat/affichageresultat.component';
+import {AffichageresultatComponent} from './component/affichages/affichageresultat/affichageresultat.component';
 
 
-import {AffichageabsenceComponent} from './affichageabsence/affichageabsence.component';
-import {AffichagemessageComponent} from './affichagemessage/affichagemessage.component';
-import {AffichagesComponent} from './affichages/affichages.component';
-import {GestionsAffichagesComponent} from './gestions-affichages/gestions-affichages.component';
-import {RechercheComponent} from './recherche/recherche.component';
+import {AffichageabsenceComponent} from './component/affichages/affichageabsence/affichageabsence.component';
+import {AffichagemessageComponent} from './component/affichages/affichagemessage/affichagemessage.component';
+import {AffichagesComponent} from './component/affichages/affichages-listing/affichages.component';
+import {GestionsAffichagesComponent} from './component/gestions-affichages/gestions-affichages.component';
+import {RechercheComponent} from './component/recherche/recherche.component';
 
 
 const routes: Routes = [

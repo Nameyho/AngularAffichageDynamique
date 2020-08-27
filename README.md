@@ -33,4 +33,76 @@ Début de la création de la liste d'absences
 
 et petit fix au niveau de l'affichage des selects
 
-5 juin : création du formulaire de création, modification et l'outil de suppression d'absence
+5 juillet : création du formulaire de création, modification et l'outil de suppression d'absence
+
+15 juillet …
+
+Ajout liste des résultat d'éléves dans l'onglet cours
+
+/!\ ne pas oublier de rajouter l'option d'ajouts de cours
+
+18 juillet …
+
+Ajout de creation de cours
+
+et
+
+Ajout de resultat dans un cours
+
+19 juillet …
+
+Ajout de la fonction Ajouter ecranresultat.ts
+
+21 juillet …
+
+début de la création de l'affichage dynamique
+
+22 juillet …
+
+fin de l'affichage dynamique général
+
+4 aout …
+
+Ajout du début de l'affichage dynamique
+
+8 aout …
+
+ajout option d'ajout sur un écran sur liste message et absence
+
+10 aout …
+
+ajout de la customisation des tableaux
+
+11 aout …
+
+fin de l'ajout des panneaux customisé
+
+12 aout
+
+ajout delete ecran
+
+13 aout …
+
+début du panel de gestion des écrans
+
+14 aout …
+
+correctif sur la modication message
+
+ 
+14 aout …
+
+fin panel gestion
+
+5 aout 
+
+ajout création absence
+
+
+15 aout …
+
+ajout de fonction de recherche
+
+16 aout …
+
+Ajout d'un ajustement sur les absences

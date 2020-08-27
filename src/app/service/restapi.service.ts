@@ -1,16 +1,16 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Persons} from '../persons/persons';
-import {Message} from '../messages/message';
-import {Absence} from '../absences/absence';
-import {Indisponibilite} from '../indisponibilite/Indisponibilite';
-import {Cours} from '../cours/cours';
-import {Resultat} from '../ajout-resultat/resultat';
-import {Ecranresultat} from '../cours/ecranresultat';
-import {Ecran} from '../affichages/ecran';
-import {Ecranabsence} from '../absences/ecranabsence';
-import {Ecranmessage} from '../messages/ecranmessage';
+import {Persons} from '../model/persons';
+import {Message} from '../model/message';
+import {Absence} from '../model/absence';
+import {Indisponibilite} from '../model/indisponibilite';
+import {Cours} from '../model/cours';
+import {Resultat} from '../model/resultat';
+import {Ecranresultat} from '../model/ecranresultat';
+import {Ecran} from '../model/ecran';
+import {Ecranabsence} from '../model/ecranabsence';
+import {Ecranmessage} from '../model/ecranmessage';
 
 
 @Injectable({
@@ -169,7 +169,7 @@ export class RestapiService {
 
   public addindisponibilite(indisponibilite: Indisponibilite): Observable<Indisponibilite>{
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
-    return this.http.post<Message>( this.url.concat('/indisponibilite'), indisponibilite, {headers});
+    return this.http.post<Indisponibilite>( this.url.concat('/indisponibilite'), indisponibilite, {headers});
   }
 
   public  getResultatByCours(id:any){

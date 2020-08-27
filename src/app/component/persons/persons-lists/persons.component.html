@@ -1,0 +1,58 @@
+<script src="../../../service/restapi.service.ts"></script>
+<body>
+<button  class="btn btn-info" routerLink="../formeleve"> Ajouter personne</button>
+
+<form>
+  <select  [(ngModel)]="idRole"  name="roles " class="form-control form-control-sm">
+    <option  *ngFor="let role of roles" [value]="role.idRole" >
+      {{role.name}}
+    </option>
+  </select>
+
+</form>
+
+<button type="button" class="btn-secondary" (click)="filtrage(idRole)"> Filtrer </button>
+
+<table class="table table-striped">
+  <tr>
+    <th scope="col">#</th>
+    <th scope="col">Nom</th>
+    <th scope="col">Prenom</th>
+    <th scope="col">Email</th>
+    <th scope="col"> Date de naissance</th>
+    <th scope="col"> </th>
+    <th scope="col"> </th>
+    <th scope="col"> </th>
+
+
+  </tr>
+<tbody>
+<tr *ngFor="let eleve of eleve, index as i">
+  <th scope="row">{{ i + 1 }}</th>
+
+
+  <td scope="row">{{eleve.nom}}</td>
+  <td scope="row">{{eleve.prenom}}</td>
+  <td scope="row">{{eleve.email}}</td>
+  <td scope="row">{{eleve.dateAnniversaire | date :'dd-LL-yyyy'}}</td>
+  <td scope="row">
+    <button type="button" class="btn btn-info" routerLink="../detailseleve/{{eleve.idPerson}}"> Détails </button>
+  </td>
+  <td scope="row">
+    <button type="button" class="btn btn-secondary" routerLink="../modifier/{{eleve.idPerson}}"> Modifier </button>
+
+  </td>
+
+  <td scope="row">
+    <button type="button" class="btn btn-danger" (click)="delete(eleve.idPerson)"> Supprimer </button>
+
+  </td>
+
+</tr>
+
+
+</tbody>
+
+</table>
+
+</body>
