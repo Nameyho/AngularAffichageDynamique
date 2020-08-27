@@ -1,28 +1,28 @@
 <head>
   <title>Affichage Dynamique</title>
 
-
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
 </head>
-
-<button type="button" class="btn btn-primary" routerLink="../ajoutcours"> Ajouter Cours</button>
-
-
-<div>
+<body>
+<h1> Listes des cours</h1>
   <table  class="table table-striped">
     <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col" sortable="name">Nom </th>
-      <th scope="col" sortable="datedebut"> Date Début</th>
-      <th scope="col" sortable="datefin"> Date fin</th>
-      <th scope="col" > Détails</th>
-      <th scope="col" > choix affichage
-        <form>
-      <select [(ngModel)]="idE" name="ecrans" >
-        <option *ngFor="let ecran of ecran" [value]="ecran.idEcran"> {{ecran.nomEcran}}</option>
+      <th >#</th>
+      <th  sortable="name">Nom </th>
+      <th  sortable="datedebut"> Date début</th>
+      <th  sortable="datefin"> Date fin</th>
+      <th  > Détails</th>
+      <th  >
 
-      </select>
-        </form>
+        <mat-form-field>
+          <mat-label>Choix de l'affichage</mat-label>
+      <mat-select [(ngModel)]="idE" name="ecrans" >
+        <mat-option *ngFor="let ecran of ecran" [value]="ecran.idEcran"  > {{ecran.nomEcran}}</mat-option>
+
+      </mat-select>
+
+        </mat-form-field>
       </th>
 
     </tr>
@@ -42,9 +42,8 @@
     </tr>
 
     </tbody>
-
+    <button type="button" class="ajouter" routerLink="../ajoutcours"> AJOUTER COURS</button>
 
   </table>
-</div>
 
-
+</body>

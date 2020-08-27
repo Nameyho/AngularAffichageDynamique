@@ -32,6 +32,11 @@ import {AffichagemessageComponent} from './component/affichages/affichagemessage
 import {AffichagesComponent} from './component/affichages/affichages-listing/affichages.component';
 import {GestionsAffichagesComponent} from './component/gestions-affichages/gestions-affichages.component';
 import {RechercheComponent} from './component/recherche/recherche.component';
+import {matSelectAnimations, MatSelectModule} from '@angular/material/select';
+import {MatTableModule} from '@angular/material/table';
+
+
+
 
 
 @NgModule({
@@ -69,8 +74,11 @@ import {RechercheComponent} from './component/recherche/recherche.component';
     BrowserAnimationsModule,
     NgbModule,
     NgxWigModule,
+    MatSelectModule,
+    MatTableModule,
 
-],
+
+  ],
 
   providers: [
     {

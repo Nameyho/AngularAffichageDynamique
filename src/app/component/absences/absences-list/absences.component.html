@@ -1,9 +1,5 @@
 <h1> Liste des absences</h1>
 
-<button  class="btn btn-info" routerLink="../creationabsence"> Ajouter absence</button>
-
-
-
 <table class="table table-striped">
   <thead>
   <tr>
@@ -15,15 +11,15 @@
     <th scope="col"> </th>
     <th scope="col"> </th>
     <th> choix affichage
-    <form>
-      <select [(ngModel)]="idE" name="ecrans" >
-        <option *ngFor="let ecran of ecran" [value]="ecran.idEcran"> {{ecran.nomEcran}}</option>
+    <mat-form-field>
+      <mat-select [(ngModel)]="idE" name="ecrans" >
+        <mat-option *ngFor="let ecran of ecran" [value]="ecran.idEcran"> {{ecran.nomEcran}}</mat-option>
 
-      </select>
+      </mat-select>
 
 
 
-    </form></th>
+    </mat-form-field></th>
 
   </tr>
   </thead>
@@ -50,6 +46,8 @@
 
     <td> <button class="btn btn-primary" (click)="Ajouter(absence.indispo_id,absence.idPerson,absence.idSpecifique)" >
       Ajouter a l'affichage </button>  </td>
+
   </tr>
+  <button  class="ajouter" routerLink="../creationabsence"> Ajouter absence</button>
   </tbody>
   </table>

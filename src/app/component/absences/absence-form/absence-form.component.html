@@ -2,15 +2,15 @@
 
 
 <h2>Personne absente</h2>
-  <form appearance="fill">
-    <label>Personne absente</label>
-    <select  matNativeControl [(ngModel)]="idPerson"  name="person"  class="form-control form-control-sm" #id_person>
+  <mat-form-field appearance="fill">
+    <mat-label>Personne absente</mat-label>
+    <mat-select  matNativeControl [(ngModel)]="idPerson"  name="person"  class="form-control form-control-sm" #id_person>
 
-      <option  *ngFor="let person of persons" [value]="person.idPerson" >
+      <mat-option  *ngFor="let person of persons" [value]="person.idPerson" >
         {{person.nom}} {{person.prenom}}
-      </option>
-    </select>
-  </form>
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
 
 <h2> raison absence </h2>
 

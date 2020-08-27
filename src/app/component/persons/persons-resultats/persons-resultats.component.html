@@ -13,12 +13,19 @@
 
     </thead>
     <tbody>
-    <tr *ngFor="let resultat of resultat, index as i">
+    <tr *ngFor="let resultats of resultat, index as i">
     <th scope="row">{{i+1}}</th>
-      <td scope="row">{{resultat.nomCours}}</td>
-      <td scope="row">{{resultat.resultat}}</td>
-      <td scope="row">{{resultat.reussite}}</td>
-
+      <td scope="row">{{resultats.nomCours}}</td>
+      <td scope="row">{{resultats.resultat}}</td>
+      <td scope="row">
+      <div *ngIf="resultats?.reussite then oui else non" ></div>
+      <ng-template #oui>
+        oui
+      </ng-template>
+      <ng-template #non>
+        non
+      </ng-template>
+      </td>
     </tbody>
 
   </table>

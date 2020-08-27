@@ -1,5 +1,5 @@
-<h2>Liste des messages</h2>
-<button type="button" class="btn btn-info" routerLink="../creationmessage"> Nouveau Message </button>
+<h1>Liste des messages</h1>
+
 <body>
 <table class="table table-striped">
   <tr>
@@ -9,16 +9,17 @@
     <th scope="col">Auteur</th>
     <th scope="col"> </th>
     <th scope="col"> </th>
-    <th> choix affichage
-      <form>
-        <select [(ngModel)]="idE" name="ecrans" >
-          <option *ngFor="let ecran of ecran" [value]="ecran.idEcran"> {{ecran.nomEcran}}</option>
+    <th>
+      <mat-form-field>
+        <mat-label> Choix de l'affichage</mat-label>
+        <mat-select [(ngModel)]="idE" name="ecrans" >
+          <mat-option *ngFor="let ecran of ecran" [value]="ecran.idEcran"> {{ecran.nomEcran}}</mat-option>
 
-        </select>
+        </mat-select>
 
 
 
-      </form></th>
+      </mat-form-field></th>
   </tr>
 
   <thead>
@@ -48,5 +49,5 @@
 
 
 </table>
-
+<button type="button" class="ajouter" routerLink="../creationmessage"> Nouveau Message </button>
 </body>

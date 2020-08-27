@@ -1,17 +1,18 @@
 <script src="../../../service/restapi.service.ts"></script>
 <body>
-<button  class="btn btn-info" routerLink="../formeleve"> Ajouter personne</button>
 
-<form>
-  <select  [(ngModel)]="idRole"  name="roles " class="form-control form-control-sm">
-    <option  *ngFor="let role of roles" [value]="role.idRole" >
+<h1>listing</h1>
+<mat-form-field>
+  <mat-label> choisir un role a filtrer</mat-label>
+  <mat-select  [(ngModel)]="idRole"  name="roles " class="form-control form-control-sm">
+    <mat-option  *ngFor="let role of roles" [value]="role.idRole" >
       {{role.name}}
-    </option>
-  </select>
+    </mat-option>
+  </mat-select>
 
-</form>
+</mat-form-field>
 
-<button type="button" class="btn-secondary" (click)="filtrage(idRole)"> Filtrer </button>
+<button type="button" class="ajouter" (click)="filtrage(idRole)"> Filtrer </button>
 
 <table class="table table-striped">
   <tr>
@@ -54,5 +55,5 @@
 </tbody>
 
 </table>
-
+<button  class="ajouter" routerLink="../formeleve"> Ajouter personne</button>
 </body>

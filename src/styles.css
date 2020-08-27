@@ -1,7 +1,74 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body { height: 100%;
+
+  font-family: 'Open Sans', sans-serif;}
+
+body {
+  margin: 0;
+
+  height: 100%;
+}
+.image{
+
+height: 100%;
+  background-size: cover;
+
+
+}
+.nav{
+  padding-left: 2%;
+  font-size: 1.5em;
+}
+.nav-tabs{
+  border-bottom: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  line-height: 68px;
+
+  background-color: #5A7E8C;
+}
+.btn-primary {
+  background-color: #5A7E8C;
+  border-color: #5A7E8C;
+  color: white;
+  border: 0px;
+
+}
+
+button{
+  padding-left:20px;
+  padding-right: 20px;
+
+
+
+}
+.nav-tabs .nav-item{
+  margin-bottom: 0px;
+}
+
+button.btn-primary:hover {
+  background-color: #7AA5BF;
+  border: 0px;
+
+}
+
+
+
+.btn-danger {
+  color: #fff;
+  background-color: #5A7E8C;
+  border: 0px;
+
+}
+
+.btn-danger:hover {
+  color: #fff;
+
+
+}
+
 
 .example-additional-selection {
   opacity: 0.75;
@@ -17,16 +84,76 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 }
 
-form{
-  padding: 15px;
+.mat-form-field{
+
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
+
+
+}
+h1{
+
+text-align: center;
+  padding-top:5%;
+  font-size: 82px;
+  color: black;
+
 }
 
-
-h2{
-
+thead{
+  height: 10%;
+}
+.mat-h2, .mat-title, .mat-typography h2 {
+  font-family: 'Open Sans', sans-serif;
   padding: 15px;
 }
 
 #example-datetime-local-input{
   margin-left:15px
 }
+
+.mat-h1, .mat-headline, .mat-typography h1{
+  margin: 0 auto;
+  font-size: 40px;
+  font-family: 'Open Sans', sans-serif;
+  padding-top:
+  5%;
+}
+  /*PAGE COURS*/
+
+.btn{
+  border-radius: 0;
+  border-style: none;
+  background-color: #5A7E8C;
+  border-color: #5A7E8C;
+}
+
+.table td, .table th{
+  border: none;
+vertical-align: middle;
+}
+
+button.btn.btn-primary:hover{
+  background-color: #389250;
+}
+
+form.ng-untouched.ng-pristine.ng-valid{
+  padding-top: 5%;
+}
+button.ajouter{
+  background-color: #389250;
+  border: none;
+  vertical-align: middle;
+  color: white;
+  padding: 6px 12px;
+  float: left;
+  position: absolute;
+  left: 45%;
+  margin-top: 20px;
+
+}
+img{
+
+  background-image: cover;
+}
+
