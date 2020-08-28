@@ -26,6 +26,8 @@ import {AffichagemessageComponent} from './component/affichages/affichagemessage
 import {AffichagesComponent} from './component/affichages/affichages-listing/affichages.component';
 import {GestionsAffichagesComponent} from './component/gestions-affichages/gestions-affichages.component';
 import {RechercheComponent} from './component/recherche/recherche.component';
+import {UsersComponent} from './component/users/users-lists/users.component';
+import {UsersFormcomponent} from './component/users/users-form/users-formcomponent';
 
 
 const routes: Routes = [
@@ -52,7 +54,9 @@ const routes: Routes = [
     {path : 'ajoutcours',component : AjoutCoursComponent},
     {path : 'ajoutresultat/:id', component : AjoutResultatComponent },
     {path : 'affichages', component :AffichagesComponent},
-    {path : 'gestions/:id', component :GestionsAffichagesComponent}
+    {path : 'gestions/:id', component :GestionsAffichagesComponent},
+    {path : 'users', component :UsersComponent},
+    {path : 'userform', component :UsersFormcomponent},
 
   ]},
 

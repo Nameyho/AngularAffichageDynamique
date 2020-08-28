@@ -1,18 +1,18 @@
 <body class="image">
-<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+<link  href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
 
 <div *ngIf="nomCours; then oui else non "></div>
 
 <ng-template #oui >
-  <img src="assets/ressources/mat2.png">
-  <h3> Tableau des résultats</h3>
+
 <h4> {{nomCours}}</h4>
 
   <table class="table table-striped">
     <thead>
     <th scope="col">#</th>
-    <th> identifiant </th>
-    <th scope="col">resultat</th>
+    <th> Identifiant </th>
+    <th scope="col"> Résultat</th>
     <th scope="col"> Réussite </th>
 
     </thead>
@@ -38,10 +38,11 @@
   </table>
 
 </ng-template>
+
 <ng-template #non  >
 
   <h2> Chargement des données... </h2>
-  <img src="assets/ressources/math2.png">
+
 
 </ng-template>
 

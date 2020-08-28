@@ -15,6 +15,7 @@ export class AffichageresultatComponent implements OnInit {
    debut= 0;
    fin = 1;
 
+
   constructor(private service: RestapiService, private route: ActivatedRoute,private router: Router) { }
 
   ngOnInit(): void {

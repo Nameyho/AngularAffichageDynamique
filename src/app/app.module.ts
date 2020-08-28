@@ -32,11 +32,10 @@ import {AffichagemessageComponent} from './component/affichages/affichagemessage
 import {AffichagesComponent} from './component/affichages/affichages-listing/affichages.component';
 import {GestionsAffichagesComponent} from './component/gestions-affichages/gestions-affichages.component';
 import {RechercheComponent} from './component/recherche/recherche.component';
-import {matSelectAnimations, MatSelectModule} from '@angular/material/select';
+import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
-
-
-
+import {UsersFormcomponent} from './component/users/users-form/users-formcomponent';
+import {UsersComponent} from './component/users/users-lists/users.component';
 
 
 @NgModule({
@@ -64,7 +63,10 @@ import {MatTableModule} from '@angular/material/table';
     AffichagemessageComponent,
     AffichagesComponent,
     GestionsAffichagesComponent,
-    RechercheComponent
+    RechercheComponent,
+    UsersFormcomponent,
+    UsersComponent
+
   ],
   imports: [
     BrowserModule,

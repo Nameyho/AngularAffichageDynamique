@@ -13,6 +13,11 @@ export class HomeComponent implements OnInit {
   constructor(private service: RestapiService, private router: Router) { }
 
   ngOnInit(): void {
+    this.checkConnection();
+  }
+
+  checkConnection(){
+    this.person= localStorage.getItem("username");
   }
 
 

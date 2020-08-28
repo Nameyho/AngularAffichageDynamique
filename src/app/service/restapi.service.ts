@@ -11,6 +11,7 @@ import {Ecranresultat} from '../model/ecranresultat';
 import {Ecran} from '../model/ecran';
 import {Ecranabsence} from '../model/ecranabsence';
 import {Ecranmessage} from '../model/ecranmessage';
+import {Users} from '../model/users';
 
 
 @Injectable({
@@ -253,4 +254,30 @@ export class RestapiService {
   public findByNumeroUnique( numerounique : number){
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
     return this.http.get(this.url.concat('/persons/n/'+ numerounique ), {headers});
-}}
+}
+
+//users
+
+  public getUsers(){
+
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.get(this.url.concat('/users'), {headers});
+  }
+
+  public addUser(user: Users): Observable<Users>{
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.post<Users>( this.url.concat('/users') , user, {headers});
+  }
+
+
+  public deleteUser( id){
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.delete(this.url.concat('/users/'+id), {headers});
+  }
+
+
+
+
+
+
+}

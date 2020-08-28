@@ -26,7 +26,7 @@ ajout d'un filtre de persons selon les roles
 
 creation + suppression
 
-29 juin : création de la modification de message et petit changement au niveau du formulaire de modification de persons.component.ts
+29 juin : création de la modification de message et petit changement au niveau du formulaire de modification de users.component.ts
 Début de la création de la liste d'absences
 
 30 juin : modification du form absence
