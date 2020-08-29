@@ -21,7 +21,11 @@ export class UsersFormcomponent implements OnInit {
 
  save(username :string,password :string) {
 
-    this.service.addUser({username,password} as Users).subscribe();
+    this.service.addUser({username,password} as Users).subscribe(
+      data => null,
+      ()=> window.alert("Infos Manquantes"),
+      ()=> this.router.navigate(['/home/users'])
+    );
 
   }
 

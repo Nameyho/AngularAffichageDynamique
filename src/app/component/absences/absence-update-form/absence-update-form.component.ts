@@ -40,6 +40,9 @@ export class AbsenceUpdateFormComponent implements OnInit {
 
   update(idPerson: any, indispo_id: any, dateDebut: any, dateFin: any) {
 
-  this.service.updateAbsence({idPerson,indispo_id,dateDebut,dateFin} as Absence,this.route.snapshot.params.id2,this.route.snapshot.params.id1,this.route.snapshot.params.id3).subscribe();
+  this.service.updateAbsence({idPerson,indispo_id,dateDebut,dateFin} as Absence,this.route.snapshot.params.id2,
+    this.route.snapshot.params.id1,this.route.snapshot.params.id3).subscribe(  data => null,
+    ()=> window.alert("Infos  Manquantes"),
+    ()=> this.router.navigate(['/home/absences']));
   }
 }

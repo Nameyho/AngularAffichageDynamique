@@ -36,7 +36,11 @@ export class MessagesModificationComponent implements OnInit {
       const createdDate = Date.now().toString();
 
 
-      this.service.updateMessage({contenu,titreMessage, createdDate, nomPerson} as Message,id).subscribe();
+      this.service.updateMessage({contenu,titreMessage, createdDate, nomPerson} as Message,id).subscribe(
+        data => null,
+        ()=> window.alert("Infos Manquantes"),
+        ()=> this.router.navigate(['/home/messages'])
+      );
 
    // this.router.navigate(["./home/eleves"]);
   }

@@ -34,11 +34,17 @@ export class AbsenceFormComponent implements OnInit {
   }
 
   save(idPerson: String, indispo_id: String, dateDebut: String, dateFin: String) {
-    this.service.addAbsence({idPerson,indispo_id,dateDebut,dateFin}as Absence).subscribe()
+    this.service.addAbsence({idPerson,indispo_id,dateDebut,dateFin}as Absence).subscribe(
+      data => null,
+      ()=> window.alert("Infos Manquantes"),
+      ()=> this.router.navigate(['/home/absences'])
+    )
   }
 
   AjouterMaladie(type: string) {
-    this.service.addindisponibilite({type} as Indisponibilite) .subscribe();
-    this.getPersoninfo();
+    this.service.addindisponibilite({type} as Indisponibilite) .subscribe(
+
+    );
+
   }
 }

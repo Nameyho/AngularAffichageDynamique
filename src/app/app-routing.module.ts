@@ -42,7 +42,7 @@ const routes: Routes = [
     {path: 'cours', component: CoursComponent},
     {path: 'detailscours/:id', component: CoursDetailsComponent},
     {path : 'detailseleve/:id', component: PersonsResultatsComponent},
-    {path : 'eleves', component : PersonsComponent},
+    {path : 'persons', component : PersonsComponent},
     {path: 'modifier/:id', component: PersonsDetailsComponent},
     {path : 'messages', component : MessagesComponent},
     {path : 'absences', component : AbsencesComponent},

@@ -24,7 +24,11 @@ export class PersonsFormComponent implements OnInit {
 
   save(nom: string, prenom: string, email: string , dateAnniversaire: string, idRole :any) {
 
-    this.service.addEleve({nom, prenom, email, dateAnniversaire,idRole} as Persons).subscribe();
+    this.service.addEleve({nom, prenom, email, dateAnniversaire,idRole} as Persons).subscribe(
+      data => null,
+      ()=> window.alert("Infos Manquantes"),
+      ()=> this.router.navigate(['/home/persons'])
+    );
 
   }
 

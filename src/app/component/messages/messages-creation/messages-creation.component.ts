@@ -26,7 +26,11 @@ export class MessagesCreationComponent implements OnInit {
       const createdDate = Date.now().toString();
 
 
-      this.service.addMessage({contenu,titreMessage, createdDate, nomPerson} as Message).subscribe();
+      this.service.addMessage({contenu,titreMessage, createdDate, nomPerson} as Message).subscribe(
+        data => null,
+        ()=> window.alert("Infos Manquantes"),
+        ()=> this.router.navigate(['/home/messages'])
+      );
     }
   }
 
