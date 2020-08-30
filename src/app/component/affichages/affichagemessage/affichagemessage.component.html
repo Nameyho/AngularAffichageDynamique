@@ -1,11 +1,24 @@
+<body class="image">
+<link  href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+<div *ngIf="message; then oui else non "></div>
 
-
-
+<ng-template #oui>
 
   <h1>{{message?.titreMessage}}</h1>
+  <div class="messages" [innerHTML]="message.contenu"> </div>
+</ng-template>
+
+<ng-template #non>
+
+  <h2> Chargements des messages...</h2>
 
 
-  <a> {{message?.contenu}}</a>
+</ng-template>
+
+
+</body>
+
 
 
 

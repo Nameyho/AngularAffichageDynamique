@@ -1,14 +1,16 @@
-<div >
-  <label>Nom</label>
+
+  <label class="ajout">Nom</label>
+  <div>
   <input #nom [ngModel]="person?.nom"  placeholder="{{person?.nom}}"/>
 </div>
+
+  <label >Prenom</label>
 <div >
-  <label>Prenom</label>
   <input #prenom [ngModel]="person?.prenom" placeholder="{{person?.prenom}}">
 </div>
 
 <div >
-  <label >Adresse Email</label>
+  <label>Adresse Email</label>
   <input   [ngModel]="person?.email" type="email" class="form-control" placeholder="{{person?.email}}"  #email/>
 
 </div >
@@ -20,5 +22,5 @@
 </div>
 
 
-<button type="button" class="btn btn-success" (click)="update(nom.value,prenom.value,email.value, date.value,person.idRole ); nom.value =''">   Sauvegarder</button>
-<button type="button" class="btn btn-danger" (click)="goBack()">   Annuler </button>
+<button type="button" class="ajouter" (click)="update(nom.value,prenom.value,email.value, date.value,person.idRole ); nom.value =''">   Sauvegarder</button>
+<button type="button" class="annuler" (click)="goBack()">   Annuler </button>

@@ -18,6 +18,7 @@
         <mat-form-field>
           <mat-label>Choix de l'affichage</mat-label>
       <mat-select [(ngModel)]="idE" name="ecrans" >
+        <mat-label>Choix de l'affichage</mat-label>
         <mat-option *ngFor="let ecran of ecran" [value]="ecran.idEcran"  > {{ecran.nomEcran}}</mat-option>
 
       </mat-select>

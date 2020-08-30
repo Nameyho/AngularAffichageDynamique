@@ -1,5 +1,11 @@
-<div *ngIf="absence">
+<body class="image">
+<link  href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+<div *ngIf="absence; then oui else non "></div>
 
+<ng-template #oui>
+
+  <h4>Liste des absences </h4>
   <table class="table table-striped">
     <thead>
     <tr>
@@ -7,8 +13,7 @@
       <th scope="col">Personne</th>
       <th scope="col">Date de Début</th>
       <th scope="col"> Date de fin</th>
-      <th scope="col"> </th>
-      <th scope="col"> </th>
+
     </tr>
     </thead>
     <tbody>
@@ -24,8 +29,13 @@
     <a> page : {{page}}</a>
   </table>
 
-
-</div>
-
+</ng-template>
 
 
+<ng-template #non>
+
+  <h2> Chargements des absences...</h2>
+</ng-template>
+
+
+</body>

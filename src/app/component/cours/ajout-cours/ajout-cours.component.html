@@ -1,7 +1,8 @@
 <h1> Ajout de cours </h1>
 
-<div >
+
   <label>Nom</label>
+<div class="formulaire-nom">
   <input #nom />
 </div>
 <label >Date début</label>
@@ -16,4 +17,4 @@
 
 </div>
 
-<button type="button" class="btn btn-success" (click)="save(nom.value, dateDebut.value ,dateFin.value);">   Sauvegarder</button>
+<button type="button" class="ajouter" (click)="save(nom.value, dateDebut.value ,dateFin.value);">   Sauvegarder</button>

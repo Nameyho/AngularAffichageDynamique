@@ -30,7 +30,7 @@ import {AffichageresultatComponent} from './component/affichages/affichageresult
 import {AffichageabsenceComponent} from './component/affichages/affichageabsence/affichageabsence.component';
 import {AffichagemessageComponent} from './component/affichages/affichagemessage/affichagemessage.component';
 import {AffichagesComponent} from './component/affichages/affichages-listing/affichages.component';
-import {GestionsAffichagesComponent} from './component/gestions-affichages/gestions-affichages.component';
+import {GestionsAffichagesComponent} from './component/affichages/gestions-affichages/gestions-affichages.component';
 import {RechercheComponent} from './component/recherche/recherche.component';
 import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';

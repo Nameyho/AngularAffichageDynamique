@@ -1,7 +1,7 @@
-<h1> modification absence </h1>
+<h1> Modification absence </h1>
 
 
-<h2>Personne absente</h2>
+
 <form appearance="fill">
   <label>Personne absente</label>
   <select disabled  [ngModel]="absence?.idPerson" name="person"  class="form-control form-control-sm" #id_person>
@@ -14,7 +14,7 @@
 
 
 <form>
-  <label>raison d'absence</label>
+  <label>Raison d'absence</label>
   <select disabled [ngModel]="absence?.indispo_id" name="absence"  class="form-control form-control-sm" #idindisponibilite >
     <option  *ngFor="let absence of absences" [value]="absence.idindisponibilite"  >
       {{absence.type}}
@@ -32,5 +32,5 @@
     <input  class="form-control" type="date" [ngModel]="absence?.dateFin  | date :'yyyy-LL-dd'" id="example-datetime-local-input" #datefin>
   </div>
   <div>
-    <button type="button" class="btn btn-success" (click)="update(id_person.value,idindisponibilite.value,datedebut.value,datefin.value);">   Sauvegarder</button>
+    <button type="button" class="ajouter" (click)="update(id_person.value,idindisponibilite.value,datedebut.value,datefin.value);">   Sauvegarder</button>
   </div></div>

@@ -1,7 +1,7 @@
 <h1> Ajout absence </h1>
 
 
-<h2>Personne absente</h2>
+
   <mat-form-field appearance="fill">
     <mat-label>Personne absente</mat-label>
     <mat-select  matNativeControl [(ngModel)]="idPerson"  name="person"  class="form-control form-control-sm" #id_person>
@@ -12,7 +12,7 @@
     </mat-select>
   </mat-form-field>
 
-<h2> raison absence </h2>
+<h2> Raison absence </h2>
 
 
 
@@ -42,5 +42,5 @@
     <input  class="form-control" type="date"  id="example-datetime-local-input" #datefin>
   </div>
   <div>
-    <button type="button" class="btn btn-success" (click)="save(id_person.value,idindisponibilite.value,datedebut.value,datefin.value);">   Sauvegarder</button>
+    <button type="button" class="ajouter" (click)="save(id_person.value,idindisponibilite.value,datedebut.value,datefin.value);">   Sauvegarder</button>
   </div></div>

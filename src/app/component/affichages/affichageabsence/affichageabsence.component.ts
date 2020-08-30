@@ -37,9 +37,9 @@ export class AffichageabsenceComponent implements OnInit {
         fin = fin + 15;
         if (((absence?.length - fin) < 0)) {
           const id = route.snapshot.params.id;
-          setTimeout(()=>router.navigate(["/affichagemessage/".concat(id)]),5000)
+          setTimeout(()=>router.navigate(["/affichagemessage/".concat(id)]),15000)
           clearInterval(interval);
         }
       }
-      , 5000);
+      , 15000);
   }
