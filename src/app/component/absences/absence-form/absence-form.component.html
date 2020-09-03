@@ -1,10 +1,11 @@
+<link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
 <h1> Ajout absence </h1>
 
 
+<h2>Personne absente</h2>
+  <mat-form-field  class="Personneab" appearance="">
 
-  <mat-form-field appearance="fill">
-    <mat-label>Personne absente</mat-label>
-    <mat-select  matNativeControl [(ngModel)]="idPerson"  name="person"  class="form-control form-control-sm" #id_person>
+    <mat-select   [(ngModel)]="idPerson"  name="person"   #id_person>
 
       <mat-option  *ngFor="let person of persons" [value]="person.idPerson" >
         {{person.nom}} {{person.prenom}}
@@ -16,22 +17,27 @@
 
 
 
-<form>
-  <label> Ajouter une raison absence si nécessaire : </label>
-  <input #nom >
-  <button type="button" class="btn btn-primary" (click)="AjouterMaladie(nom.value)"> Ajouter</button>
-  <br><br>
-  <select [(ngModel)]=" idAbsence"  name="absence"  class="form-control form-control-sm" #idindisponibilite >
+<mat-form-field class="Personneab">
+
+
+  <mat-select [(ngModel)]=" idAbsence"  name="absence"   #idindisponibilite >
 
 
 
 
-    <option  *ngFor="let absence of absences" [value]="absence.idindisponibilite"  >
+    <mat-option  *ngFor="let absence of absences" [value]="absence.idindisponibilite"  >
       {{absence.type}}
-    </option>
-  </select>
-</form>
-<br>
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+
+
+<h2> Ajouter une raison si besoin </h2>
+<input #nom >
+<div class="divaj">
+<button type="button" class="ajout2" (click)="AjouterMaladie(nom.value)"> Ajouter</button>
+</div>
+
 <label >Date début</label>
 <div >
   <input  class="form-control" type="date"  id="example-datetime-local-input" #datedebut>

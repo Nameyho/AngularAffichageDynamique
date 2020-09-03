@@ -99,6 +99,7 @@ text-align: center;
   padding-top:8%;
   font-size: 82px;
   color: black;
+  font-family: 'Alata', sans-serif;
 
 }
 
@@ -107,7 +108,10 @@ thead{
 }
 .mat-h2, .mat-title, .mat-typography h2 {
   font-family: 'Open Sans', sans-serif;
-  padding: 15px;
+  padding-left: 15px;
+  font-size: 25px;
+  padding-top: 45px;
+
 }
 
 #example-datetime-local-input{
@@ -116,8 +120,8 @@ thead{
 
 .mat-h1, .mat-headline, .mat-typography h1{
   margin: 0 auto;
-  font-size: 40px;
-  font-family: 'Open Sans', sans-serif;
+  font-size: 45px;
+  font-family: 'Alata', sans-serif;
   padding-top:
   8%;
 }
@@ -185,8 +189,8 @@ label{
   padding: 6px 12px;
   float: left;
   position: absolute;
-  left:13%;
-  margin-top: 20px;
+  left:12%;
+  margin-top: 10px;
 }
 .annuler{
   background-color: #D21E28;

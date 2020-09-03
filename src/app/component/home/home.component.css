@@ -1,0 +1,13 @@
+.image{
+  background-size: cover;
+  background-image: url("src/assets/ressources/noiretblanc2.jpg");
+}
+#go{
+  text-align: center;
+  margin-left: 2%;
+  margin-top: 2%;
+
+}
+h1{
+  font-family: 'Alata', sans-serif;
+}

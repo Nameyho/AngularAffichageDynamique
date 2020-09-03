@@ -1,18 +1,30 @@
-<div class="background-wrap">
-  <div class="background"></div>
-</div>
 
-<form id="accesspanel" action="">
-  <h1 id="litheader">Affichage dynamique</h1>
-  <div class="inset">
-    <p>
-      <input type="text" name="username" [(ngModel)]="username" id="username" placeholder="username">
-    </p>
-    <p>
-      <input type="password" name="password" [(ngModel)]="password" id="password" placeholder="password">
-    </p>
+<link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+
+<body>
+
+<h1 id="litheader">Affichage dynamique </h1>
+
+
+
+<form>
+
+  <div>
+    <h2> Se connecter</h2>
+    <div class="connexion">
+
+      <input  type="text" name="username" [(ngModel)]="username"  placeholder="Identifiant">
+    </div>
   </div>
-  <p class="p-container">
-    <input type="submit" name="Login" id="go" value="Login" (click)="doLogin()">
-  </p>
+  <div>
+    <div class="connexion">
+      <input  type="password" name="password" [(ngModel)]="password" placeholder="Mot de passe">
+    </div>>
+  </div>
+  <div id="btnconnexion">
+    <button  type="submit" name="Login" id="go" value="Connexion" (click)="doLogin()"> Connexion</button>
+  </div>
+
 </form>
+
+</body>

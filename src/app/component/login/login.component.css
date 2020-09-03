@@ -1,0 +1,44 @@
+#litheader{
+  font-family: 'Alata', sans-serif;
+
+}
+body{
+  /*background-image:url("src/assets/ressources/noiretblanc2.jpg") ;*/
+  background-size: cover;
+
+}
+#btnconnexion{
+  text-align: center;
+  border-radius: 0;
+  border: none;
+  vertical-align: middle;
+
+
+
+}
+.connexion{
+
+  margin-left: 22%;
+  border-radius: 0;
+  width: 60%;
+  height: calc(1.5em + .75rem + 2px);
+  font-size: 18px;
+  padding-bottom:3% ;
+
+}
+#go{
+  background-color: #389250;
+  color: white;
+
+
+}
+
+form.ng-untouched.ng-pristine.ng-valid {
+  padding-top: 0%;
+}
+
+h2{
+  font-family: 'Alata', sans-serif;
+
+  text-align: center;
+}

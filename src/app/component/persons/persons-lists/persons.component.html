@@ -2,9 +2,10 @@
 <body>
 
 <h1>Listing</h1>
-<mat-form-field>
-  <mat-label> choisir un role a filtrer</mat-label>
-  <mat-select  [(ngModel)]="idRole"  name="roles " class="form-control form-control-sm">
+<h2> Filtrer un rôle </h2>
+<mat-form-field class="role">
+
+  <mat-select  [(ngModel)]="idRole"  name="roles ">
     <mat-option  *ngFor="let role of roles" [value]="role.idRole" >
       {{role.name}}
     </mat-option>

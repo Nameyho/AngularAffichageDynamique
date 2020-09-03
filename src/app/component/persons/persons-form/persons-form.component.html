@@ -1,10 +1,12 @@
-<form >
-<div >
+<form>
+
   <label>Nom</label>
+  <div >
   <input #nom />
 </div>
-<div >
-  <label>Prenom</label>
+
+  <label>Prénom</label>
+  <div >
   <input #prenom>
 </div>
 
@@ -18,21 +20,23 @@
 <div >
   <input  class="form-control" type="date"  id="example-datetime-local-input" #date>
 </div>
+</form>
+  <label> attribuer un rôle : </label>
+<div class="attribuer">
+  <mat-form-field>
+
+    <mat-select [(ngModel)]="idRole"  name="roles ">
+
+      <mat-option  *ngFor="let role of roles" [value]="role.idRole" >
+        {{role.name}}
+      </mat-option>
+    </mat-select>
+
+  </mat-form-field>
+</div>
 <div>
 
-  <form>
 
-    <select [(ngModel)]="idRole"  name="roles ">
-
-      <option  *ngFor="let role of roles" [value]="role.idRole" >
-        {{role.name}}
-      </option>
-    </select>
-
-  </form>
+<button type="button" class="ajouter" (click)="save(nom.value,prenom.value,email.value, date.value ,idRole);">   Sauvegarder</button>
 
 </div>
-
-
-<button type="button" class="btn btn-success" (click)="save(nom.value,prenom.value,email.value, date.value ,idRole);">   Sauvegarder</button>
-</form>

@@ -36,6 +36,9 @@ import {MatSelectModule} from '@angular/material/select';
 import {MatTableModule} from '@angular/material/table';
 import {UsersFormcomponent} from './component/users/users-form/users-formcomponent';
 import {UsersComponent} from './component/users/users-lists/users.component';
+import {MatInputModule} from '@angular/material/input';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {MatCardModule} from '@angular/material/card';
 
 
 @NgModule({
@@ -78,7 +81,9 @@ import {UsersComponent} from './component/users/users-lists/users.component';
     NgxWigModule,
     MatSelectModule,
     MatTableModule,
-
+    MatInputModule,
+    MatFormFieldModule,
+    MatCardModule
 
   ],
 

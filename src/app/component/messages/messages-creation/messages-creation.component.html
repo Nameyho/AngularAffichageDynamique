@@ -1,10 +1,11 @@
-<h1> Création de Message</h1>
+<h1> Création du message</h1>
 
-<h2> Titre du message</h2>
+<div class="messages">
+<h2> Titre du message:</h2>
 <input [(ngModel)]="titreMessage" class="form-control" type="text" placeholder="Titre du Message">
 <h2> Corps du message </h2>
 <ngx-wig [(ngModel)]="contenu" placeholder="Corps du message"></ngx-wig>
 
-<button type="button" class="btn btn-success" (click)="valider()"> Enregistrer </button>
-<button type="button" class="btn btn-danger" (click)="annuler()"> Annuler </button>
-
+<button type="button" class="ajouter" (click)="valider()"> Enregistrer </button>
+<button type="button" class="annuler" (click)="annuler()"> Annuler </button>
+</div>

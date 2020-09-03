@@ -1,25 +1,29 @@
-<h1>Ajout de resultat</h1>
+<h1>Ajout de résultat</h1>
 
 <h2> Cours : {{cours?.name}}</h2>
-<h2> période : {{cours?.datedebut|date :'dd-MM-yyyy'}} - {{cours?.datefin|date :'dd-MM-yyyy'}}</h2>
+<h3> période : {{cours?.datedebut|date :'dd-MM-yyyy'}} - {{cours?.datefin|date :'dd-MM-yyyy'}}</h3>
 
 
-<form appearance="fill">
-  <label>Etudiant</label>
-  <select  matNativeControl   name="person"  class="form-control form-control-sm" #idPerson>
+<form >
+  <div>
+  <label>Etudiant : </label>
 
-    <option  *ngFor="let person of persons" [value]="person.idPerson" >
+  <mat-select  matNativeControl   name="person"  class="form-control" #idPerson>
+
+    <mat-option  *ngFor="let person of persons" [value]="person.idPerson" >
       {{person.nom}} {{person.prenom}}
-    </option>
-  </select>
-
-<label> Cote : </label>
+    </mat-option>
+  </mat-select>
+  </div>
+<label> Cote :</label>
+  <div>
 <input type="number" id="cote" name="cote" min="0" max="100" #resultat>
-<div>
-<label> réussite ?</label>
+  </div>
 
-  <input type="checkbox" name="reussite" value=true #reussite>
+<label> Réussite ?</label>
+  <div >
+  <input class="carrevalider" type="checkbox" name="reussite" value=true #reussite>
 </div>
 
-  <button class="btn btn-success" (click)="save(idPerson.value,resultat.value,reussite.value)">  Enregistrer </button>
+  <button class="ajouter" (click)="save(idPerson.value,resultat.value,reussite.value)">  Enregistrer </button>
 </form>

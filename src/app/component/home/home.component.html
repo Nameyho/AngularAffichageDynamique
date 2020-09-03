@@ -1,13 +1,16 @@
+<!DOCTYPE html>
+<html lang="fr">
+
 <div *ngIf="person else pasconnecte">
 
-  <!DOCTYPE html>
-  <html lang="fr">
+
 
   <head>
     <title>Affichage Dynamique</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
 
   </head>
 
@@ -25,25 +28,35 @@
     </li>
 
   </ul>
-
-
-
   <router-outlet></router-outlet>
   </body>
 
-  </html>
+
 
 
 </div>
 
 <ng-template #pasconnecte>
 
-  <h1> vous n'êtes pas connecté</h1>
+  <head>
+    <title>Affichage Dynamique</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Alata&display=swap" rel="stylesheet">
+
+  </head>
+
+
+<div class="image">
+  <h1> Vous n'êtes pas connecté</h1>
+  <button class="ajouter" id="go" [routerLink]="['../login']" > Se connecter </button>
+</div>
 
 </ng-template>
 
 
-
+</html>
 
 
 

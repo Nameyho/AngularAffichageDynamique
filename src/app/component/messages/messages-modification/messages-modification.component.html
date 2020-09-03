@@ -1,10 +1,15 @@
-<h1> Modication de Message</h1>
 
-<h2> Titre du message</h2>
-<input [(ngModel)]="message.titreMessage" placeholder="{{message?.titreMessage}}">
-<h2> Corps du message </h2>
-<ngx-wig [(ngModel)]="message.contenu" placeholder="{{message?.contenu}}"></ngx-wig>
+<h1> Modification du message</h1>
+<div class="messages">
+<h2> Titre du message:</h2>
 
-<button type="button" class="btn btn-success" (click)="update(message.titreMessage,message.contenu)"> Enregistrer </button>
-<button type="button" class="btn btn-danger" (click)="goBack()"> Annuler </button>
+<input id="titre" type="text" [(ngModel)]="message.titreMessage" placeholder="{{message?.titreMessage}}">
+<h2> Corps du message: </h2>
 
+
+<ngx-wig  [(ngModel)]="message.contenu" placeholder="{{message?.contenu}}"></ngx-wig>
+
+<button type="button" class="ajouter" (click)="update(message.titreMessage,message.contenu)"> Enregistrer </button>
+<button type="button" class="annuler" (click)="goBack()"> Annuler </button>
+
+</div>

@@ -1,0 +1,20 @@
+h3{
+  padding-left: 15px;
+
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
+}
+
+form.ng-untouched.ng-pristine.ng-valid {
+padding-top: 0%;
+  background-color: #DEDBDB;
+
+}
+.carrevalider{
+
+  width: 2%;
+
+}
+.form-control{
+  width: 60%;
+}
