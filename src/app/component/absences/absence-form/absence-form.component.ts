@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {RestapiService} from '../../../service/restapi.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Absence} from '../../../model/absence';
-import {Indisponibilite} from '../../../model/Indisponibilite';
+import {Indisponibilite} from '../../../model/indisponibilite';
 
 @Component({
   selector: 'app-absence-form',
