@@ -13,7 +13,7 @@
 
   </tr>
 <tbody>
-<tr *ngFor="let user of users, index as i">
+<tr *ngFor="let user of users|slice:debut:fin index as i">
   <th scope="row">{{ i + 1 }}</th>
 <th> {{user.username}}</th>
 
@@ -28,5 +28,13 @@
 </tbody>
 
 </table>
+<div *ngIf="precedent">
+  <button class="btn btn-primary " (click)="pagination(-1)"> PAGE PRECEDENTE</button>
+</div>
+
+<div *ngIf="suivant">
+  <button class="btn btn-primary" (click)="pagination(1)"> PAGE SUIVANTE</button>
+
+</div>
 <button  class="ajouter" routerLink="../userform"> Ajouter utilisateurs</button>
 </body>

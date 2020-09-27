@@ -15,6 +15,11 @@ export class MessagesComponent implements OnInit {
 
   messages:any
   idE: any;
+  debut = 0;
+  fin = 20;
+  pagedebut = 1;
+  precedent =false ;
+  suivant = false;
 
   ngOnInit(): void {
     this.getMessages()
@@ -23,11 +28,18 @@ export class MessagesComponent implements OnInit {
 
   getMessages() {
     const response = this.service.getMessages();
-    response.subscribe(message => this.messages = message);
+    response.subscribe(message => this.messages = message,
+      ()=>null,
+      ()=> {
+        if (this.fin <= this.messages.length) {
+          this.suivant = true;
+        }
+
+      });
   }
 
   delete(idPerson: any) {
-    console.log(idPerson)
+
 
 
     this.service.deleteMessage(idPerson).subscribe();
@@ -41,4 +53,26 @@ export class MessagesComponent implements OnInit {
     let  idEcran = this.idE;
     this.service.addEcranMessage({idEcran,idMessage} as Ecranmessage).subscribe();
   }
-}
+
+  pagination(nombre : number) {
+
+
+    this.debut = this.debut + (nombre * 20);
+    this.fin = this.fin + (nombre * 20);
+    if (nombre == -1) {
+      this.pagedebut--
+    } else {
+      this.pagedebut++
+    }
+
+    if (this.pagedebut > 1) {
+      this.precedent = true;
+    }else{
+      this.precedent=false;
+    }
+    if (this.pagedebut < this.messages.length) {
+      this.suivant = true;
+    }else{
+      this.suivant =false;
+    }
+  }}

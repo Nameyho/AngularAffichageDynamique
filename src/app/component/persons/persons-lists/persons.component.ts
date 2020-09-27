@@ -10,20 +10,33 @@ import {Persons} from '../../../model/persons';
 })
 export class PersonsComponent implements OnInit {
 
-   eleve: Persons;
-   roles: any;
+  eleve: any;
+  roles: any;
   idRole: String;
+  debut = 0;
+  fin = 20;
+  pagedebut = 1;
+  precedent = false;
+  suivant = false;
 
-  constructor(private service: RestapiService, private route: ActivatedRoute,private router: Router,  ) { }
+  constructor(private service: RestapiService, private route: ActivatedRoute, private router: Router,) {
+  }
 
   ngOnInit(): void {
     this.getPerson();
     this.getRoles();
   }
+
   getPerson() {
     const response = this.service.getPersons();
-    response.subscribe(eleve => this.eleve = eleve);
-  }
+    response.subscribe(eleve => this.eleve = eleve,
+      ()=>null,
+      ()=> {
+        if (this.fin <= this.eleve.length) {
+          this.suivant = true;
+        }
+
+      })}
 
 
   private getRoles() {
@@ -32,7 +45,7 @@ export class PersonsComponent implements OnInit {
   }
 
 
-  delete(id :any) {
+  delete(id: any) {
     this.service.deleteEleve(id).subscribe().add();
 
   }
@@ -43,7 +56,30 @@ export class PersonsComponent implements OnInit {
   }
 
   filtragenom(nom: string) {
-    const  response = this.service.findUserByName(nom);
+    const response = this.service.findUserByName(nom);
     response.subscribe(eleve => this.eleve = eleve)
+  }
+
+  pagination(nombre : number) {
+
+
+    this.debut = this.debut + (nombre * 20);
+    this.fin = this.fin + (nombre * 20);
+    if (nombre == -1) {
+      this.pagedebut--
+    } else {
+      this.pagedebut++
+    }
+
+    if (this.pagedebut > 1) {
+      this.precedent = true;
+    }else{
+      this.precedent=false;
+    }
+    if (this.pagedebut < this.eleve.length) {
+      this.suivant = true;
+    }else{
+      this.suivant =false;
+    }
   }
 }

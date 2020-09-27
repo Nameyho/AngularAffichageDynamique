@@ -24,7 +24,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let absence of absence, index as i">
+  <tr *ngFor="let absence of absence|slice:debut:fin index as i">
     <th scope="row">{{ i + 1 }}</th>
 
 
@@ -48,6 +48,15 @@
       Ajouter a l'affichage </button>  </td>
 
   </tr>
+  <div *ngIf="precedent">
+    <button class="btn btn-primary " (click)="pagination(-1)"> PAGE PRECEDENTE</button>
+  </div>
+
+  <div *ngIf="suivant">
+    <button class="btn btn-primary" (click)="pagination(1)"> PAGE SUIVANTE</button>
+
+  </div>
   <button  class="ajouter" routerLink="../creationabsence"> Ajouter absence</button>
+
   </tbody>
   </table>

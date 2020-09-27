@@ -12,6 +12,11 @@ export class AbsencesComponent implements OnInit {
    absence: any;
   ecran: any;
   idE: any;
+  debut = 0 ;
+  fin = 20;
+  pagedebut = 1;
+  precedent =false ;
+  suivant = false;
 
   constructor(private service: RestapiService, private route: ActivatedRoute,private router: Router) { }
 
@@ -22,7 +27,12 @@ export class AbsencesComponent implements OnInit {
 
   getAbsence(){
     const response = this.service.getAbsences();
-    response.subscribe(absence => this.absence = absence);
+    response.subscribe(absence => this.absence = absence,
+      ()=>null,
+      ()=> {
+        if (this.fin <= this.absence.length) {
+          this.suivant = true;
+        }});
   }
   getEcrans() {
     const response = this.service.getEcrans();
@@ -39,4 +49,27 @@ this.service.deleteAbsence(idPerson,indispo_id,idSpecifique).subscribe()
     let  idEcran = this.idE;
     this.service.addEcranAbsence({idEcran,idIndisponibilite,idPerson,idSpecifique} as Ecranabsence).subscribe();
   }
-}
+
+
+  pagination(nombre : number) {
+
+
+    this.debut = this.debut + (nombre * 20);
+    this.fin = this.fin + (nombre * 20);
+    if (nombre == -1) {
+      this.pagedebut--
+    } else {
+      this.pagedebut++
+    }
+
+    if (this.pagedebut > 1) {
+      this.precedent = true;
+    }else{
+      this.precedent=false;
+    }
+    if (this.pagedebut < this.absence.length) {
+      this.suivant = true;
+    }else{
+      this.suivant =false;
+    }
+  }}

@@ -11,8 +11,11 @@ export class UsersComponent implements OnInit {
 
 
    users: any;
-
-
+  debut = 0;
+  fin=  20;
+  pagedebut = 1;
+  precedent =false ;
+  suivant = false;
 
 
   constructor(private service: RestapiService, private route: ActivatedRoute,private router: Router,  ) { }
@@ -23,8 +26,14 @@ export class UsersComponent implements OnInit {
   }
   getUsers() {
     const response = this.service.getUsers();
-    response.subscribe(data => this.users = data);
-  }
+    response.subscribe(data => this.users = data,
+      ()=>null,
+      ()=> {
+        if (this.fin <= this.users.length) {
+          this.suivant = true;
+        }
+
+      })}
 
 
 
@@ -32,5 +41,28 @@ export class UsersComponent implements OnInit {
     this.service.deleteUser(id).subscribe().add();
 
   }
+  pagination(nombre : number) {
+
+
+    this.debut = this.debut + (nombre * 20);
+    this.fin = this.fin + (nombre * 20);
+    if (nombre == -1) {
+      this.pagedebut--
+    } else {
+      this.pagedebut++
+    }
+
+    if (this.pagedebut > 1) {
+      this.precedent = true;
+    }else{
+      this.precedent=false;
+    }
+    if (this.pagedebut < this.users.length) {
+      this.suivant = true;
+    }else{
+      this.suivant =false;
+    }
+  }
+
 
 }

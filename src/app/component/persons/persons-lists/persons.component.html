@@ -29,7 +29,7 @@
 
   </tr>
 <tbody>
-<tr *ngFor="let eleve of eleve, index as i">
+<tr *ngFor="let eleve of eleve|slice:debut:fin index as i">
   <th scope="row">{{ i + 1 }}</th>
 
 
@@ -56,5 +56,13 @@
 </tbody>
 
 </table>
+<div *ngIf="precedent">
+  <button class="btn btn-primary " (click)="pagination(-1)"> PAGE PRECEDENTE</button>
+</div>
+
+<div *ngIf="suivant">
+  <button class="btn btn-primary" (click)="pagination(1)"> PAGE SUIVANTE</button>
+
+</div>
 <button  class="ajouter" routerLink="../formeleve"> Ajouter personne</button>
 </body>

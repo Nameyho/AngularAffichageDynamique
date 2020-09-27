@@ -111,6 +111,12 @@ export class RestapiService {
     return this.http.get<Persons>(this.url.concat('/persons/roles/'+id), {headers});
   }
 
+  public findUserByName(nom) : Observable<Persons>{
+    const headers = new HttpHeaders(sessionStorage.getItem('authString'));
+    return this.http.get<Persons>(this.url.concat('/persons/l/'+nom), {headers});
+  }
+
+
   public updateMessage (message: Message, id:any): Observable<Message> {
     const headers = new HttpHeaders(sessionStorage.getItem('authString'));
     return this.http.put<Message>( this.url.concat(/messages/+id) , message, {headers});

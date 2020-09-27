@@ -29,7 +29,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let cours of cours ,index as i">
+    <tr *ngFor="let cours of cours |slice:debut:fin index as i">
       <th scope="row">{{ i + 1 }}</th>
       <td scope="row">{{cours?.name}}</td>
       <td scope="row">{{cours?.datedebut |date :"dd-MM-yyyy"}}</td>
@@ -43,6 +43,15 @@
     </tr>
 
     </tbody>
+    <div *ngIf="precedent">
+      <button class="btn btn-primary " (click)="pagination(-1)"> PAGE PRECEDENTE</button>
+    </div>
+
+    <div *ngIf="suivant">
+      <button class="btn btn-primary" (click)="pagination(1)"> PAGE SUIVANTE</button>
+
+    </div>
+
     <button type="button" class="ajouter" routerLink="../ajoutcours"> AJOUTER COURS</button>
 
   </table>

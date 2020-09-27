@@ -27,7 +27,7 @@
   </thead>
 
   <tbody>
-  <tr *ngFor="let message of messages, index as i">
+  <tr *ngFor="let message of messages|slice:debut:fin index as i">
     <th scope="row">{{ i + 1 }}</th>
 
 
@@ -49,5 +49,13 @@
 
 
 </table>
+<div *ngIf="precedent">
+  <button class="btn btn-primary " (click)="pagination(-1)"> PAGE PRECEDENTE</button>
+</div>
+
+<div *ngIf="suivant">
+  <button class="btn btn-primary" (click)="pagination(1)"> PAGE SUIVANTE</button>
+
+</div>
 <button type="button" class="ajouter" routerLink="../creationmessage"> Nouveau Message </button>
 </body>
