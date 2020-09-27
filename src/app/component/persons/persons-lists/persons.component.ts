@@ -10,14 +10,9 @@ import {Persons} from '../../../model/persons';
 })
 export class PersonsComponent implements OnInit {
 
-
-
    eleve: Persons;
    roles: any;
   idRole: String;
-
-
-
 
   constructor(private service: RestapiService, private route: ActivatedRoute,private router: Router,  ) { }
 
@@ -45,5 +40,10 @@ export class PersonsComponent implements OnInit {
   filtrage(idRoles: String) {
     const response = this.service.getPersonbyRoles(idRoles);
     response.subscribe(eleve => this.eleve = eleve);
+  }
+
+  filtragenom(nom: string) {
+    const  response = this.service.findUserByName(nom);
+    response.subscribe(eleve => this.eleve = eleve)
   }
 }

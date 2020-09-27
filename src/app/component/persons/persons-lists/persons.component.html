@@ -10,11 +10,11 @@
       {{role.name}}
     </mat-option>
   </mat-select>
-
 </mat-form-field>
 
 <button type="button" class="filtrer" (click)="filtrage(idRole)"> Filtrer </button>
-
+<input type="text" #nom>
+<button type="button" class="btn btn-info" (click)="filtragenom(nom.value)" > Trouver par nom</button>
 <table class="table table-striped">
   <tr>
     <th scope="col">#</th>
