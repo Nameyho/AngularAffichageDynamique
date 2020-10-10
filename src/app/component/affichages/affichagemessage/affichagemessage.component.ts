@@ -34,13 +34,22 @@ export class AffichagemessageComponent implements OnInit {
         }
         this.page++;
 
+
         if ((this.messages?.length  - this.fin)<0 ) {
           this.debut = 0;
           this.fin = 1;
 
 
           clearInterval(interval);
-          setTimeout(()=>this.router.navigate(["/affichageresultat/".concat(id)]),15000)
+
+
+          if(this.route.snapshot.params.ecran != undefined){
+            console.log("écran unique detecté , rafraichissement de la page")
+            this.animationMessage();
+          }else{
+            setTimeout(()=>this.router.navigate(["/affichageresultat/".concat(id)]),15000)
+          }
+
         }
         this.debut++;
         this.fin ++;

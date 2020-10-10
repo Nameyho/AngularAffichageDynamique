@@ -39,7 +39,13 @@ export class AffichageresultatComponent implements OnInit {
           this.debut=0;
           this.fin= 1;
           clearInterval(interval)
-          setTimeout(()=>this.router.navigate(["/affichageabsences/".concat(id)]),15000)
+          if(this.route.snapshot.params.ecran != undefined){
+              console.log("écran unique detecté , rafraichissement de la page")
+              this.animationCours();
+          }else{
+            setTimeout(()=>this.router.navigate(["/affichageabsences/".concat(id)]),15000)
+          }
+
         }}
       , 15000);
   }

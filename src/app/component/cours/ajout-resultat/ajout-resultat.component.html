@@ -22,8 +22,8 @@
 
 <label> Réussite ?</label>
   <div >
-  <input class="carrevalider" type="checkbox" name="reussite" value=true #reussite>
+  <input class="carrevalider" type="checkbox" name="reussite"  #reussite>
 </div>
 
-  <button class="ajouter" (click)="save(idPerson.value,resultat.value,reussite.value)">  Enregistrer </button>
+  <button class="ajouter" (click)="save(idPerson.value,resultat.value,reussite.checked)">  Enregistrer </button>
 </form>

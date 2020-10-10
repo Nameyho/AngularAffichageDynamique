@@ -37,8 +37,16 @@ export class AffichageabsenceComponent implements OnInit {
         fin = fin + 15;
         if (((absence?.length - fin) < 0)) {
           const id = route.snapshot.params.id;
-          setTimeout(()=>router.navigate(["/affichagemessage/".concat(id)]),15000)
+
+
+
           clearInterval(interval);
+          if(this.route.snapshot.params.ecran != undefined){
+            console.log("écran unique detecté , rafraichissement de la page")
+            this.animationAbsence();
+          }else{
+            setTimeout(()=>router.navigate(["/affichagemessage/".concat(id)]),15000)
+          }
         }
       }
       , 15000);

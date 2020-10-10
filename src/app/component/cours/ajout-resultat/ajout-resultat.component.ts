@@ -30,17 +30,20 @@ export class AjoutResultatComponent implements OnInit {
     this.service.getPersons().subscribe(persons=>this.persons = persons)
   }
 
-  save(idPerson: string, resultat2: string, reussite2: string) {
+  save(idPerson: string, resultat2: string, reussite: Boolean) {
     const cours_id = this.route.snapshot.params.id;
-let reussite;
-  if(reussite2 !="true" ){
-    reussite = false;
-  }else{
-    reussite = true;
-  }
+
+
+
+
 let resultat = parseInt(resultat2);
 
 
-  this.service.addResultat({cours_id,idPerson,reussite,resultat}as Resultat).subscribe()
+  this.service.addResultat({cours_id,idPerson,reussite,resultat}as Resultat).subscribe(
+    data => null,
+    ()=> window.alert("Infos Manquantes"),
+    ()=> this.router.navigate(['/home/detailscours/'+this.route.snapshot.params.id])
+
+  )
   }
 }

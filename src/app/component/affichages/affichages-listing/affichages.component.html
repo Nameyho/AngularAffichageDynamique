@@ -14,6 +14,7 @@
     <th></th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
 
   <thead>
@@ -37,10 +38,17 @@
     </td>
 
     <td scope="row">
-
-      <button type="button" class="btn btn-secondary" routerLink="../../affichageresultat/{{ecran.idEcran}}"> lancer affichage </button>
-
+      <button type="button" class="btn btn-secondary" routerLink="../../affichageresultat/{{ecran.idEcran}}"> lancer affichage complet </button>
     </td>
+    <td>
+<mat-form-field>
+    <mat-select #select>
+      <mat-option value="resultat"> Résultat</mat-option>
+      <mat-option value="absences"> Absences</mat-option>
+      <mat-option value="messages"> Messages</mat-option>
+    </mat-select>
+</mat-form-field></td>
+    <button type="button" class="btn btn-secondary" routerLink="../../affichageresultat/{{ecran.idEcran}}/{{select.value}}"> lancer un écran </button>
   </tr>
 
 

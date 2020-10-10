@@ -35,8 +35,11 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'resultat', component: RechercheComponent},
   {path : 'affichageresultat/:id', component : AffichageresultatComponent},
+  {path : 'affichageresultat/:id/:ecran', component : AffichageresultatComponent},
   {path : 'affichageabsences/:id',component : AffichageabsenceComponent},
+  {path : 'affichageabsences/:id/:ecran',component : AffichageabsenceComponent},
   {path : 'affichagemessage/:id', component : AffichagemessageComponent},
+  {path : 'affichagemessage/:id/:ecran', component : AffichagemessageComponent},
   {path: 'home', component: HomeComponent,
   children: [
     {path: 'cours', component: CoursComponent},
