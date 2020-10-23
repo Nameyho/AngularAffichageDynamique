@@ -62,7 +62,7 @@ this.service.deleteAbsence(idPerson,indispo_id,idSpecifique).subscribe()
       this.pagedebut++
     }
 
-    if (this.pagedebut > 1) {
+    if (this.pagedebut*20 > this.absence.length) {
       this.precedent = true;
     }else{
       this.precedent=false;
