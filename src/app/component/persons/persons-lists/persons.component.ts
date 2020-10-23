@@ -75,10 +75,20 @@ export class PersonsComponent implements OnInit {
       this.precedent = true;
     }else{
       this.precedent=false;
+
     }
-    if (this.pagedebut < this.eleve.length) {
+    if ((this.pagedebut*20)  < this.eleve.length ) {
+
+      console.log("true")
+      console.log(this.pagedebut)
+      console.log(this.eleve.length)
       this.suivant = true;
+
     }else{
+
+      console.log("false")
+      console.log(this.pagedebut)
+      console.log(this.eleve.length)
       this.suivant =false;
     }
   }

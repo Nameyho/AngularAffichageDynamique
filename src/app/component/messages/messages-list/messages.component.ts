@@ -65,7 +65,7 @@ export class MessagesComponent implements OnInit {
       this.pagedebut++
     }
 
-    if (this.pagedebut > 1) {
+    if (this.pagedebut*20 > this.messages.length) {
       this.precedent = true;
     }else{
       this.precedent=false;
