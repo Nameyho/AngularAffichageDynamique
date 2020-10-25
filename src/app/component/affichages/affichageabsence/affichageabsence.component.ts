@@ -9,45 +9,64 @@ import {ActivatedRoute, Router} from '@angular/router';
 })
 export class AffichageabsenceComponent implements OnInit {
 
-  constructor(private service: RestapiService, private route: ActivatedRoute,private router: Router) {
+  constructor(private service: RestapiService, private route: ActivatedRoute, private router: Router) {
   }
 
   debut = 0;
   fin = 15;
   absence: any;
   page = 1;
+
   ngOnInit(): void {
     this.animationAbsence();
 
   }
+
   animationAbsence() {
     const id = this.route.snapshot.params.id;
     const response = this.service.getecranAbsence(id);
     response.subscribe(data => this.absence = data,
-      ()=>console.log("Erreur chargement données absence"),
-      ()=>affichage(this.fin,this.debut,this.page,this.absence,this.route,this.router));
-  }}
+      () => console.log("Erreur chargement données absence"),
+      () => this.affichage(this.fin, this.debut, this.page, this.absence, this.route, this.router));
+  }
 
-  function affichage(fin: number, debut: number,page:any,absence:any,route:any,router) {
+  affichage(fin: number, debut: number, page: any, absence: any, route: any, router: any, ) {
 
-  const interval = setInterval(
-      () => {
-        page++;
-        debut = debut + 15;
-        fin = fin + 15;
-        if (((absence?.length - fin) < 0)) {
-          const id = route.snapshot.params.id;
+    if (route.snapshot.params.ecran == "absences") {
+      const interval = setInterval(
+        () => {
+          page++;
+          debut = debut + 15;
+          fin = fin + 15;
+          if (((absence?.length - fin) < 0)) {
+            const id = route.snapshot.params.id;
 
-
-
-          clearInterval(interval);
-          if(this.route.snapshot.params.ecran != undefined){
             console.log("écran unique detecté , rafraichissement de la page")
-            this.animationAbsence();
-          }else{
-            setTimeout(()=>router.navigate(["/affichagemessage/".concat(id)]),15000)
+            this.animationAbsence()
+
           }
         }
-      }
-      , 15000);
+        , 15000);
+
+    } else {
+      const interval = setInterval(
+        () => {
+          page++;
+          debut = debut + 15;
+          fin = fin + 15;
+          if (((absence?.length - fin) < 0)) {
+            const id = route.snapshot.params.id;
+
+
+            clearInterval(interval);
+
+            setTimeout(() => router.navigate(["/affichagemessage/".concat(id)]), 15000)
+          }
+
+        }
+        , 15000);
+    }
+
+
   }
+}

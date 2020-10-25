@@ -45,10 +45,10 @@
     <mat-select #select>
       <mat-option value="resultat"> Résultat</mat-option>
       <mat-option value="absences"> Absences</mat-option>
-      <mat-option value="messages"> Messages</mat-option>
+      <mat-option value="message"> Messages</mat-option>
     </mat-select>
 </mat-form-field></td>
-    <button type="button" class="btn btn-secondary" routerLink="../../affichageresultat/{{ecran.idEcran}}/{{select.value}}"> lancer un écran </button>
+    <button type="button" class="btn btn-secondary" routerLink="../../affichage{{select.value}}/{{ecran.idEcran}}/{{select.value}}"> lancer un écran </button>
   </tr>
 
 

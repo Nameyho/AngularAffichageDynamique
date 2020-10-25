@@ -23,7 +23,7 @@
     <th scope="row">{{i+1}}</th>
     <td scope="row">{{resultats?.nomPerson}}</td>
     <td scope="row">{{resultats?.prenomPerson}}</td>
-    <td scope="row">{{resultats?.resultat}}</td>
+    <td scope="row">{{resultats?.resultat}} %</td>
     <td scope="row">
       <div *ngIf="resultats?.reussite then oui else non" ></div>
       <ng-template #oui>

@@ -12,7 +12,7 @@
     <thead>
     <th scope="col">#</th>
     <th> Identifiant </th>
-    <th scope="col"> Résultat</th>
+    <th scope="col"> Résultat (%) </th>
     <th scope="col"> Réussite </th>
 
     </thead>
@@ -22,7 +22,7 @@
       <th scope="row">{{i+1}}</th>
 
       <td scope="row">{{resultats?.numerounique}}</td>
-      <td scope="row">{{resultats?.resultat}}</td>
+      <td scope="row">{{resultats?.resultat}}  %</td>
       <td scope="row">
         <div *ngIf="resultats?.reussite then oui else non" ></div>
         <ng-template #oui>
