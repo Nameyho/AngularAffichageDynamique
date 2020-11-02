@@ -24,11 +24,25 @@ export class AffichageresultatComponent implements OnInit {
   }
 
 
+
+
+
   animationCours() {
 
     const id = this.route.snapshot.params.id;
     const response = this.service.getEcransresultat(id);
-    response.subscribe(data => this.cours = data);
+    response.subscribe(data => this.cours = data,
+      () => console.log("Erreur de chargement"),
+      () => (this.boucle()));
+
+  }
+
+  boucle(){
+    const id = this.route.snapshot.params.id;
+    this.nomCours= this?.cours[this?.debut]?.nomCours;
+    const response = this?.service.getResultatByCours(this?.cours[this?.debut]?.idCours);
+    response.subscribe(data =>this.resultat = data)
+    this.debut++,this.fin++;
     const interval = setInterval(
       () =>{
         this.nomCours= this?.cours[this?.debut]?.nomCours;
@@ -38,16 +52,16 @@ export class AffichageresultatComponent implements OnInit {
         if(this.cours?.length<this.fin){
           this.debut=0;
           this.fin= 1;
-          clearInterval(interval)
-          if(this.route.snapshot.params.ecran != undefined){
+   clearInterval(interval)
+          if(this.route.snapshot.params.ecran == "resultat"){
               console.log("écran unique detecté , rafraichissement de la page")
               this.animationCours();
           }else{
-            setTimeout(()=>this.router.navigate(["/affichageabsences/".concat(id)]),15000)
+            setTimeout(()=>this.router.navigate(["/affichageabsences/".concat(id)]),5000)
           }
 
         }}
-      , 15000);
+      , 2000);
   }
 
 

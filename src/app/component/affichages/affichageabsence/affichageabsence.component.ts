@@ -46,7 +46,7 @@ export class AffichageabsenceComponent implements OnInit {
 
           }
         }
-        , 15000);
+        , 5000);
 
     } else {
       const interval = setInterval(
@@ -60,11 +60,11 @@ export class AffichageabsenceComponent implements OnInit {
 
             clearInterval(interval);
 
-            setTimeout(() => router.navigate(["/affichagemessage/".concat(id)]), 15000)
+            setTimeout(() => router.navigate(["/affichagemessage/".concat(id)]), 5000)
           }
 
         }
-        , 15000);
+        , 5000);
     }
 
 

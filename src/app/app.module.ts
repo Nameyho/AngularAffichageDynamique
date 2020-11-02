@@ -68,7 +68,8 @@ import {MatCardModule} from '@angular/material/card';
     GestionsAffichagesComponent,
     RechercheComponent,
     UsersFormcomponent,
-    UsersComponent
+    UsersComponent,
+
 
   ],
   imports: [
@@ -83,7 +84,8 @@ import {MatCardModule} from '@angular/material/card';
     MatTableModule,
     MatInputModule,
     MatFormFieldModule,
-    MatCardModule
+    MatCardModule,
+
 
   ],
 

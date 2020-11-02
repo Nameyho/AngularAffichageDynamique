@@ -23,11 +23,26 @@ export class AffichagemessageComponent implements OnInit {
   animationMessage() {
     const id = this.route.snapshot.params.id;
     const response = this.service.getEcransmessage(id);
-    response.subscribe(data => this.messages = data);
+    response.subscribe(data => this.messages = data,
+      () => console.log("Erreur de chargement"),
+      () => (this.boucle()));
+  }
+
+  boucle(){
+
+    const id = this.route.snapshot.params.id;
+    if(this?.messages[this?.debut]?.idMessage != undefined){
+      const response = this?.service?.getMessageByID(this?.messages[this?.debut]?.idMessage);
+      response.subscribe(data => this.message = data);
+    }
+    this.page++;
+
 
     const interval = setInterval(
 
       () => {
+
+
         if(this?.messages[this?.debut]?.idMessage != undefined){
           const response = this?.service?.getMessageByID(this?.messages[this?.debut]?.idMessage);
           response.subscribe(data => this.message = data);
@@ -54,7 +69,9 @@ export class AffichagemessageComponent implements OnInit {
         this.debut++;
         this.fin ++;
       }
-      , 15000);
+      , 5000);
 
   }
+
+
 }
